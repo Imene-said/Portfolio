@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Projets pro — Imene</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body class="page">
+  <div class="glow"></div>
+  <div class="gridlines"></div>
+  <canvas id="particles"></canvas>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>Projets professionnels</h1>
+            <p>3 projets — cartes grandes + détails</p>
+          </div>
+        </div>
+
+        <nav aria-label="Navigation">
+          <a class="navlink" href="./index.html">Accueil</a>
+          <a class="navlink" href="./cv.html">CV</a>
+          <a class="navlink active" href="./pro.html">Projets pro</a>
+          <a class="navlink" href="./cours.html">Apprentissage</a>
+          <a class="navlink" href="./faq.html">FAQ</a>
+          <a class="navlink" href="./contact.html">Coordonnées</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pageMain">
+    <div class="sectionHeader reveal">
+      <div>
+        <h3>Projets professionnels</h3>
+        <p>Cartes cliquables → modal (détails + téléchargements).</p>
+      </div>
+    </div>
+
+    <div class="galleryWrap reveal">
+      <div class="gallery" id="proGallery"></div>
+    </div>
+  </main>
+
+  <footer class="siteFooter">
+    <div class="container footerMain">
+      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+      <span>Portfolio BUT R&amp;T</span>
+    </div>
+    <div class="legalBar">
+      <div class="container legalRow">
+        <span>Site étudiant — contenu à but pédagogique.</span>
+        <span>
+          <a href="./mentions-legales.html">Mentions légales</a> •
+          <a href="./contact.html">Contact</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Détails du projet">
+    <div class="dialog" role="document">
+      <div class="dialogTop">
+        <div>
+          <h3 id="mTitle">Titre</h3>
+          <p id="mDesc">Description</p>
+        </div>
+        <button class="closeBtn" id="closeModal">Fermer ✕</button>
+      </div>
+
+      <div class="dialogGrid">
+        <div class="preview">
+          <img id="mImg" alt="Aperçu du projet"/>
+        </div>
+
+        <div class="details">
+          <h4>Détails</h4>
+          <div class="chips" id="mChips"></div>
+          <ul id="mBullets"></ul>
+          <div class="dlRow" id="mDownloads"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.PRO_DATA = [
+      {
+        title: "Projet pro 1 — (Titre)",
+        desc: "Contexte + actions + résultat.",
+        img: "./assets/img/pro1.jpg",
+        tags: ["Réseaux", "Support"],
+        bullets: ["Action 1", "Action 2", "Résultat"],
+        downloads: [{ label: "Rapport (PDF)", href: "./assets/files/projet1.pdf" }]
+      },
+      {
+        title: "Projet pro 2 — (Titre)",
+        desc: "Contexte + actions + livrable.",
+        img: "./assets/img/pro2.jpg",
+        tags: ["Sécurité", "Firewall"],
+        bullets: ["Action 1", "Action 2", "Résultat"],
+        downloads: [{ label: "Preuves (ZIP)", href: "./assets/files/projet2.zip" }]
+      },
+      {
+        title: "Projet pro 3 — (Titre)",
+        desc: "Problème → solution → résultat.",
+        img: "./assets/img/pro3.jpg",
+        tags: ["Système", "Services"],
+        bullets: ["Action 1", "Action 2", "Résultat"],
+        downloads: []
+      }
+    ];
+  </script>
+</body>
+</html>

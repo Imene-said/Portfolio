@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Contact — Imene</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body class="page">
+  <div class="glow"></div>
+  <div class="gridlines"></div>
+  <canvas id="particles"></canvas>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>Coordonnées</h1>
+            <p>Formulaire + liens</p>
+          </div>
+        </div>
+
+        <nav aria-label="Navigation">
+          <a class="navlink" href="./index.html">Accueil</a>
+          <a class="navlink" href="./cv.html">CV</a>
+          <a class="navlink" href="./pro.html">Projets pro</a>
+          <a class="navlink" href="./cours.html">Apprentissage</a>
+          <a class="navlink" href="./faq.html">FAQ</a>
+          <a class="navlink active" href="./contact.html">Coordonnées</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pageMain">
+    <div class="sectionHeader reveal">
+      <div>
+        <h3>Me contacter</h3>
+        <p>Envoi de mail via Formspree (compatible GitHub Pages).</p>
+      </div>
+    </div>
+
+    <div class="formWrap reveal">
+      <div class="glass">
+        <div class="inner">
+          <div class="chips" style="margin-top:0;">
+            <span class="chip">📍 Seclin (59113)</span>
+            <a class="chip" href="mailto:imene.saiderrahmani@outlook.com">✉️ imene.saiderrahmani@outlook.com</a>
+            <a class="chip" href="tel:+33762729049">📞 07 62 72 90 49</a>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="formGrid">
+              <div class="field">
+                <label for="name">Nom</label>
+                <input class="input" id="name" name="name" type="text" placeholder="Ton nom" required>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" placeholder="tonmail@example.com" required>
+              </div>
+            </div>
+
+            <div class="field" style="margin-top:12px;">
+              <label for="subject">Sujet</label>
+              <input class="input" id="subject" name="subject" type="text" placeholder="Objet du message" required>
+            </div>
+
+            <div class="field" style="margin-top:12px;">
+              <label for="message">Message</label>
+              <textarea class="textarea" id="message" name="message" placeholder="Écris ton message…" required></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+            <input type="hidden" name="_language" value="fr">
+
+            <div class="formActions">
+              <button class="btn primary" type="submit">Envoyer</button>
+              <a class="btn ghost" href="./index.html">Retour</a>
+            </div>
+          </form>
+
+          <div class="hint">
+            Remplace <b>YOUR_FORM_ID</b> par ton identifiant Formspree.
+          </div>
+
+          <div class="linksRow">
+            <a class="chip" href="https://gitlab.com/" target="_blank" rel="noreferrer">GitLab</a>
+            <a class="chip" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="siteFooter">
+    <div class="container footerMain">
+      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+      <span>Portfolio BUT R&amp;T</span>
+    </div>
+    <div class="legalBar">
+      <div class="container legalRow">
+        <span>Site étudiant — contenu à but pédagogique.</span>
+        <span>
+          <a href="./mentions-legales.html">Mentions légales</a> •
+          <a href="./contact.html">Contact</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
