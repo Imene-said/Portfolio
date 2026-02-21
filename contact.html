@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Contact — Imene</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body class="page">
+  <div class="glow"></div>
+  <div class="gridlines"></div>
+  <canvas id="particles"></canvas>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>Imene SAID ERRAHMANI</h1>
+            <p>Portfolio BUT R&T — Alternance</p>
+          </div>
+        </div>
+
+        <nav aria-label="Navigation">
+          <a class="navlink" href="./index.html">Accueil</a>
+          <a class="navlink" href="./cv.html">CV</a>
+          <a class="navlink" href="./pro.html">Projets pro</a>
+          <a class="navlink" href="./cours.html">Apprentissage</a>
+          <a class="navlink" href="./faq.html">FAQ</a>
+          <a class="navlink active" href="./contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="sectionHeader">
+      <div>
+        <h3>Me contacter</h3>
+        <p>Envoie un message. Pense à laisser une coordonnée pour te répondre.</p>
+      </div>
+    </div>
+
+    <div class="formWrap">
+      <div class="glass reveal">
+        <div class="inner">
+          <!-- ✅ Message de confirmation (injecté par main.js si ?sent=1) -->
+          <div id="contactSuccess"></div>
+
+          <!-- ✅ Remplace XXXXYYYY par ton ID Formspree -->
+          <form action="https://formspree.io/f/XXXXYYYY" method="POST">
+            <!-- Anti-spam -->
+            <input type="text" name="_gotcha" style="display:none">
+
+            <!-- Redirect après envoi -> affiche la confirmation -->
+            <input type="hidden" name="_next" value="./contact.html?sent=1">
+
+            <div class="formGrid">
+              <div class="field">
+                <label>Nom / Prénom *</label>
+                <input class="input" type="text" name="name" required placeholder="Ex : Imene SAID ERRAHMANI">
+                <div class="helper">Utilisé uniquement pour te répondre.</div>
+              </div>
+
+              <div class="field">
+                <label>Coordonnée de recontact *</label>
+                <input class="input" type="text" name="contact" required placeholder="Email ou téléphone (au choix)">
+                <div class="helper">Ex : prenom.nom@mail.com ou +33…</div>
+              </div>
+
+              <div class="field" style="grid-column: 1 / -1;">
+                <label>Objet *</label>
+                <input class="input" type="text" name="subject" required placeholder="Ex : Question / Projet / Entretien…">
+              </div>
+
+              <div class="field" style="grid-column: 1 / -1;">
+                <label>Message *</label>
+                <textarea class="textarea" name="message" required placeholder="Décris ta demande (contexte, dates, besoin…)"></textarea>
+                <div class="helper">Astuce : ajoute une date ou une échéance si nécessaire.</div>
+              </div>
+            </div>
+
+            <div class="formActions">
+              <span class="helper">* champs obligatoires</span>
+              <button class="btn primary" type="submit">Envoyer</button>
+            </div>
+
+            <div class="notice">
+              Les données transmises servent uniquement à répondre à ta demande.
+              Voir <a href="./mentions-legales.html">Mentions légales</a>.
+              <br>
+              ✅ Remplace <code>XXXXYYYY</code> par ton identifiant Formspree.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="siteFooter">
+    <div class="container footerLine">
+      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+      <span>Portfolio BUT R&amp;T</span>
+      <span>Site étudiant — contenu à but pédagogique.</span>
+      <span><a href="./mentions-legales.html">Mentions légales</a> • <a href="./contact.html">Contact</a></span>
+    </div>
+  </footer>
+</body>
+</html>

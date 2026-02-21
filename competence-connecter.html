@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Compétence — Connecter</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="page">
+  <div class="glow"></div>
+  <div class="gridlines"></div>
+  <canvas id="particles"></canvas>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>Connecter</h1>
+            <p>6 blocs — apprentissages critiques + preuves</p>
+          </div>
+        </div>
+
+        <nav aria-label="Navigation">
+          <a class="navlink" href="./index.html">Accueil</a>
+          <a class="navlink" href="./pro.html">Projets pro</a>
+          <a class="navlink active" href="./cours.html">Apprentissage</a>
+          <a class="navlink" href="./faq.html">FAQ</a>
+          <a class="navlink" href="./contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 18px 0 36px;">
+    <div class="sectionHeader">
+      <div>
+        <h3>Connecter — preuves</h3>
+        <p>Clique sur un bloc pour ouvrir le détail (schéma, config, tests, rapport).</p>
+      </div>
+    </div>
+
+    <div style="margin: 10px 0 14px;">
+      <a class="btn ghost" href="./cours.html">← Retour aux compétences</a>
+    </div>
+
+    <div class="skillGrid reveal">
+      <div class="skillCard border-orange" role="button" tabindex="0" data-item="0"><h4>Bloc 1 — Apprentissage critique</h4><p>Apprentissage + preuve.</p></div>
+      <div class="skillCard border-orange" role="button" tabindex="0" data-item="1"><h4>Bloc 2 — Contexte / besoin</h4><p>Contraintes + objectifs.</p></div>
+      <div class="skillCard border-orange" role="button" tabindex="0" data-item="2"><h4>Bloc 3 — Architecture</h4><p>Schéma, VLAN, adressage.</p></div>
+      <div class="skillCard border-orange" role="button" tabindex="0" data-item="3"><h4>Bloc 4 — Configuration</h4><p>Configs + captures.</p></div>
+      <div class="skillCard border-orange" role="button" tabindex="0" data-item="4"><h4>Bloc 5 — Tests / validation</h4><p>ping, iperf, etc.</p></div>
+      <div class="skillCard border-orange" role="button" tabindex="0" data-item="5"><h4>Bloc 6 — Auto-évaluation</h4><p>Bilan.</p></div>
+    </div>
+  </main>
+
+  <footer class="siteFooter">
+    <div class="container footerLine">
+      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+      <span>Portfolio BUT R&amp;T</span>
+      <span>Site étudiant — contenu à but pédagogique.</span>
+      <span><a href="./mentions-legales.html">Mentions légales</a> • <a href="./contact.html">Contact</a></span>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Détails">
+    <div class="dialog" role="document">
+      <div class="dialogTop">
+        <div><h3 id="mTitle">Titre</h3><p id="mDesc">Description</p></div>
+        <button class="closeBtn" id="closeModal">Fermer ✕</button>
+      </div>
+      <div class="dialogGrid">
+        <div class="preview"><img id="mImg" alt="Preuve"/></div>
+        <div class="details">
+          <h4>Détails</h4>
+          <div class="chips" id="mChips"></div>
+          <ul id="mBullets"></ul>
+          <div class="dlRow" id="mDownloads"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.PAGE_ITEMS = [
+      { title:"Connecter — Bloc 1", desc:"Apprentissage critique + preuve.", img:"./assets/images/connecter-1.jpg", tags:["Réseau"], bullets:["…","…","…"], downloads:[{label:"Rapport (PDF)", href:"./assets/files/connecter-rapport.pdf"}] },
+      { title:"Connecter — Bloc 2", desc:"Contexte / besoin.", img:"./assets/images/connecter-2.jpg", tags:["Contexte"], bullets:["…","…","…"], downloads:[] },
+      { title:"Connecter — Bloc 3", desc:"Architecture.", img:"./assets/images/connecter-3.jpg", tags:["VLAN","IP"], bullets:["…","…","…"], downloads:[] },
+      { title:"Connecter — Bloc 4", desc:"Configuration.", img:"./assets/images/connecter-4.jpg", tags:["Config"], bullets:["…","…","…"], downloads:[{label:"Captures (ZIP)", href:"./assets/files/connecter-preuves.zip"}] },
+      { title:"Connecter — Bloc 5", desc:"Tests / validation.", img:"./assets/images/connecter-5.jpg", tags:["Tests"], bullets:["…","…","…"], downloads:[] },
+      { title:"Connecter — Bloc 6", desc:"Auto-évaluation.", img:"./assets/images/connecter-6.jpg", tags:["Bilan"], bullets:["…","…","…"], downloads:[] }
+    ];
+  </script>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

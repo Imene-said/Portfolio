@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>CV — Imene</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="page">
+  <div class="glow"></div>
+  <div class="gridlines"></div>
+  <canvas id="particles"></canvas>
+
+  <!-- HEADER IDENTIQUE AUX AUTRES PAGES -->
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>Imene SAID ERRAHMANI</h1>
+            <p>Portfolio BUT R&T — Alternance</p>
+          </div>
+        </div>
+
+        <nav aria-label="Navigation">
+          <a class="navlink" href="./index.html">Accueil</a>
+          <a class="navlink active" href="./cv.html">CV</a>
+          <a class="navlink" href="./pro.html">Projets pro</a>
+          <a class="navlink" href="./cours.html">Apprentissage</a>
+          <a class="navlink" href="./faq.html">FAQ</a>
+          <a class="navlink" href="./contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 18px 0 36px;">
+
+    <!-- TITRE + BOUTON PDF -->
+    <div class="sectionHeader">
+      <div>
+        <h3>Curriculum Vitae</h3>
+        <p>Présentation structurée de mon parcours académique et professionnel.</p>
+      </div>
+      <a class="btn primary" href="./assets/files/cv-imene.pdf" download>
+        ⬇️ Télécharger CV
+      </a>
+    </div>
+
+    <!-- INTRO (SIMPLE, SANS BLOCS) -->
+    <section class="cvIntro">
+      <h2 class="cvName">Imene SAID ERRAHMANI</h2>
+      <p class="cvSubtitle">
+        Étudiante en BUT Réseaux & Télécommunications — Alternance
+      </p>
+      <p class="cvDesc">
+        Étudiante en Réseaux & Télécommunications, spécialisée dans la supervision,
+        les systèmes, la sécurité et le développement. Je m’intéresse particulièrement
+        à l’analyse technique, la documentation et l’amélioration continue des systèmes.
+        Ce CV présente mon parcours, mes compétences et mes expériences de manière claire
+        et visuelle.
+      </p>
+    </section>
+
+    <!-- TIMELINE / SCHÉMA DU PARCOURS -->
+    <section class="cvSection">
+      <h3 class="cvSectionTitle">🎓 Parcours & Expériences (Timeline)</h3>
+
+      <div class="timelineSimple">
+
+        <div class="timelineRow">
+          <div class="timelineYear">2023 - Aujourd’hui</div>
+          <div class="timelineText">
+            <strong>BUT Réseaux & Télécommunications</strong><br>
+            Formation en réseaux, systèmes, cybersécurité, programmation
+            et supervision des infrastructures informatiques.
+          </div>
+        </div>
+
+        <div class="timelineRow">
+          <div class="timelineYear">2024 - Aujourd’hui</div>
+          <div class="timelineText">
+            <strong>Alternance — (Entreprise à compléter)</strong><br>
+            Participation à des projets techniques, supervision des systèmes,
+            documentation et amélioration des services informatiques.
+          </div>
+        </div>
+
+        <div class="timelineRow">
+          <div class="timelineYear">Année</div>
+          <div class="timelineText">
+            <strong>Baccalauréat</strong><br>
+            Diplôme de fin d’études secondaires (spécialité à compléter).
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES AVEC SCHÉMA VISUEL -->
+    <section class="cvSection">
+      <h3 class="cvSectionTitle">🧠 Compétences (Schéma)</h3>
+
+      <div class="skillsChart">
+
+        <div class="skillLine">
+          <span>Réseaux</span>
+          <div class="skillBar">
+            <div class="skillFill" style="width:85%"></div>
+          </div>
+        </div>
+
+        <div class="skillLine">
+          <span>Systèmes</span>
+          <div class="skillBar">
+            <div class="skillFill" style="width:80%"></div>
+          </div>
+        </div>
+
+        <div class="skillLine">
+          <span>Supervision</span>
+          <div class="skillBar">
+            <div class="skillFill" style="width:75%"></div>
+          </div>
+        </div>
+
+        <div class="skillLine">
+          <span>Sécurité</span>
+          <div class="skillBar">
+            <div class="skillFill" style="width:65%"></div>
+          </div>
+        </div>
+
+        <div class="skillLine">
+          <span>Programmation</span>
+          <div class="skillBar">
+            <div class="skillFill" style="width:70%"></div>
+          </div>
+        </div>
+
+        <div class="skillLine">
+          <span>Documentation technique</span>
+          <div class="skillBar">
+            <div class="skillFill" style="width:90%"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OUTILS & TECHNOLOGIES -->
+    <section class="cvSection">
+      <h3 class="cvSectionTitle">🛠️ Outils & Technologies</h3>
+      <p class="cvText">
+        Linux • Cisco • Wireshark • Git • Virtualisation • HTML • CSS • JavaScript • Outils de supervision
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER IDENTIQUE À TOUTES TES AUTRES PAGES (IMPORTANT) -->
+  <footer class="siteFooter">
+    <div class="container footerLine">
+      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+      <span>Portfolio BUT R&amp;T</span>
+      <span>Site étudiant — contenu à but pédagogique.</span>
+      <span>
+        <a href="./mentions-legales.html">Mentions légales</a> • 
+        <a href="./contact.html">Contact</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
