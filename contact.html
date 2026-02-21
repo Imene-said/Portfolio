@@ -17,7 +17,7 @@
     <div class="container">
       <div class="topbar">
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
+          <!--<div class="logo" aria-hidden="true"></div>-->
           <div>
             <h1>Imene SAID ERRAHMANI</h1>
             <p>Portfolio BUT R&T — Alternance</p>
@@ -27,7 +27,7 @@
         <nav aria-label="Navigation">
           <a class="navlink" href="./index.html">Accueil</a>
           <a class="navlink" href="./cv.html">CV</a>
-          <a class="navlink" href="./pro.html">Projets pro</a>
+          <a class="navlink" href="./pro.html">Projets professionnels</a>
           <a class="navlink" href="./cours.html">Apprentissage</a>
           <a class="navlink" href="./faq.html">FAQ</a>
           <a class="navlink active" href="./contact.html">Contact</a>
@@ -40,7 +40,6 @@
     <div class="sectionHeader">
       <div>
         <h3>Me contacter</h3>
-        <p>Envoie un message. Pense à laisser une coordonnée pour te répondre.</p>
       </div>
     </div>
 
@@ -51,7 +50,7 @@
           <div id="contactSuccess"></div>
 
           <!-- ✅ Remplace XXXXYYYY par ton ID Formspree -->
-          <form action="https://formspree.io/f/XXXXYYYY" method="POST">
+          <form action="https://formspree.io/f/mnjbgzdb" method="POST">
             <!-- Anti-spam -->
             <input type="text" name="_gotcha" style="display:none">
 
@@ -61,14 +60,17 @@
             <div class="formGrid">
               <div class="field">
                 <label>Nom / Prénom *</label>
-                <input class="input" type="text" name="name" required placeholder="Ex : Imene SAID ERRAHMANI">
-                <div class="helper">Utilisé uniquement pour te répondre.</div>
+                <input class="input" type="text" name="name" required placeholder="Ex : DUPONT Jean">
               </div>
 
               <div class="field">
-                <label>Coordonnée de recontact *</label>
-                <input class="input" type="text" name="contact" required placeholder="Email ou téléphone (au choix)">
-                <div class="helper">Ex : prenom.nom@mail.com ou +33…</div>
+                <label>Email *</label>
+                <input class="input" type="text" name="contact" required placeholder="Email">
+              </div>
+
+              <div class="field">
+                <label>Téléphone</label>
+                <input class="input" type="text" name="contact" placeholder=" Téléphone ">
               </div>
 
               <div class="field" style="grid-column: 1 / -1;">
@@ -78,21 +80,20 @@
 
               <div class="field" style="grid-column: 1 / -1;">
                 <label>Message *</label>
-                <textarea class="textarea" name="message" required placeholder="Décris ta demande (contexte, dates, besoin…)"></textarea>
-                <div class="helper">Astuce : ajoute une date ou une échéance si nécessaire.</div>
+                <textarea class="textarea" name="message" required placeholder="Description de la demande"></textarea>
               </div>
             </div>
-
+            <span class="helper">* champs obligatoires</span>
             <div class="formActions">
-              <span class="helper">* champs obligatoires</span>
-              <button class="btn primary" type="submit">Envoyer</button>
+
+            <div class="center">
+              <button class="btn-send" type="submit">Envoyer</button>
+            </div>
             </div>
 
             <div class="notice">
               Les données transmises servent uniquement à répondre à ta demande.
               Voir <a href="./mentions-legales.html">Mentions légales</a>.
-              <br>
-              ✅ Remplace <code>XXXXYYYY</code> par ton identifiant Formspree.
             </div>
           </form>
         </div>

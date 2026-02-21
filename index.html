@@ -17,7 +17,7 @@
     <div class="container">
       <div class="topbar">
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
+          <!--<div class="logo" aria-hidden="true"></div>-->
           <div>
             <h1>Imene SAID ERRAHMANI</h1>
             <p>Portfolio BUT R&amp;T — Alternance</p>
@@ -27,7 +27,7 @@
         <nav aria-label="Navigation">
           <a class="navlink active" href="./index.html">Accueil</a>
           <a class="navlink" href="./cv.html">CV</a>
-          <a class="navlink" href="./pro.html">Projets pro</a>
+          <a class="navlink" href="./pro.html">Projets professionnels</a>
           <a class="navlink" href="./cours.html">Apprentissage</a>
           <a class="navlink" href="./faq.html">FAQ</a>
           <a class="navlink" href="./contact.html">Contact</a>
@@ -38,30 +38,79 @@
 
   <section class="heroFull">
     <div class="container">
-      <div class="glass" style="max-width:980px;margin:0 auto;">
+      <!--<div class="glass" style="max-width:980px;margin:0 auto;">-->
         <div class="inner">
-          <h2 class="hTitle">Bonjour, je suis <span class="grad">Imene</span>.</h2>
-          <p class="sub">
-            Étudiante en BUT Réseaux &amp; Télécommunications et alternante.
-            Ce portfolio présente mes projets professionnels et mes apprentissages (preuves, captures, auto-évaluations).
-          </p>
-          <div class="actions">
-            <a class="btn primary" href="./pro.html">Projets professionnels</a>
-            <a class="btn ghost" href="./cours.html">Apprentissage</a>
-          </div>
-        </div>
+          <h2><span id="type" class="cursor"></span></h2>
+          <p><span id="text" class="cursor sub"></span></p>
       </div>
     </div>
+
   </section>
 
-  <footer class="siteFooter">
-    <div class="container footerLine">
-      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
-      <span>Portfolio BUT R&amp;T</span>
-      <span>Site étudiant — contenu à but pédagogique.</span>
-      <span><a href="./mentions-legales.html">Mentions légales</a> • <a href="./contact.html">Contact</a></span>
-    </div>
-  </footer>
+  <script>
+    const text = "Bonjour, je suis Imene.";
+    const speed = 52; // ms par caractère (plus petit = plus rapide)
+
+    const el = document.getElementById("type");
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        // optionnel : enlever le curseur à la fin
+         el.classList.remove("cursor");
+      }
+    }
+
+    typeWriter();
+  </script>
+  <script>
+    const phrases = [
+      "Je suis étudiante en 3ème année en BUT Réseaux et Telecommunications à l'IUT de Béthune.",
+      "Je suis Alternante",
+    ];
+    
+    let phraseIndex = 0;
+    let letterIndex = 0;
+    let isDeleting = false;
+    
+    const speedWrite = 50;   // vitesse d'écriture
+    const speedDelete = 30;  // vitesse d'effacement
+    const pauseTime = 2000;  // temps d'affichage avant disparition
+    
+    const textElement = document.getElementById("text"); // ID de ton élément
+    
+    function typeEffect() {
+      const fullText = phrases[phraseIndex];
+    
+      if (!isDeleting) {
+        textElement.textContent = fullText.substring(0, letterIndex++);
+        
+        if (letterIndex > fullText.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, pauseTime);
+          return;
+        }
+        setTimeout(typeEffect, speedWrite);
+    
+      } else {
+        textElement.textContent = fullText.substring(0, letterIndex--);
+    
+        if (letterIndex < 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeEffect, 500);
+          return;
+        }
+        setTimeout(typeEffect, speedDelete);
+      }
+    }
+    
+    typeEffect();
+    </script>
 
   <script src="./assets/js/main.js"></script>
 </body>
