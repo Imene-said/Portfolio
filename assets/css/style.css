@@ -946,3 +946,42 @@ footer.siteFooter{
   color: var(--muted);
   font-size: 14px;
 }
+/* ===== APPRENTISSAGE CENTRÉ COMME FAQ ===== */
+.apprentissageCenter{
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apprentissageBlock{
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.apprentissageHeader{
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.apprentissageTitle{
+  font-size: 38px;
+  margin: 0;
+  letter-spacing: 0.6px;
+  background: linear-gradient(90deg, #1E7BFF, #00D4FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.apprentissageHeader p{
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Centre visuellement la grille */
+.apprentissageGrid{
+  justify-content: center;
+}
