@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Projets pro — Imene</title>
+  <title>Projets professionnels — Imene SAID ERRAHMANI</title>
+
+  <!-- TON CSS GLOBAL (on garde le vrai) -->
   <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- TON JS (modal + particles + reveal) -->
+  <script defer src="./assets/js/main.js"></script>
 </head>
 
 <body class="page">
@@ -12,11 +17,11 @@
   <div class="gridlines"></div>
   <canvas id="particles"></canvas>
 
+  <!-- HEADER IDENTIQUE AUX AUTRES PAGES -->
   <header>
     <div class="container">
       <div class="topbar">
         <div class="brand">
-           <!--<div class="logo" aria-hidden="true"></div>-->
           <div>
             <h1>Imene SAID ERRAHMANI</h1>
             <p>Portfolio BUT R&T — Alternance</p>
@@ -35,33 +40,104 @@
     </div>
   </header>
 
-  <main class="container proCenter">
-    <div class="proWrap">
-      <div class="sectionHeader">
-        <div>
-          <h3>Projets professionnels</h3>
-          <p>Cartes cliquables → modal (détails + téléchargements).</p>
+  <!-- MAIN NORMAL (COMME TES AUTRES PAGES) -->
+  <main class="container">
+
+    <!-- TITRE CENTRÉ EN BLEU -->
+    <div class="sectionHeader" style="justify-content:center; text-align:center; margin-top:20px;">
+      <div>
+        <h2 style="font-size:42px; color:#3b82f6; margin-bottom:10px;">
+          Projets Professionnels
+        </h2>
+        <p style="color:var(--muted); font-size:15px;">
+          Clique sur un projet pour ouvrir le détail, les preuves et les documents.
+        </p>
+      </div>
+    </div>
+
+    <!-- TES VRAIES CARTES (DESIGN ORIGINAL DU SITE) -->
+    <div class="gallery reveal" style="margin-top:40px;">
+
+      <!-- CARTE 1 -->
+      <div class="cardP" data-item="0">
+        <div class="thumb">
+          <img src="./assets/images/projet-reseau.jpg" alt="Projet Réseau">
+          <div class="openHint">Voir</div>
+        </div>
+        <div class="cardBody">
+          <h4>Projet Réseau & Infrastructure</h4>
+          <p>
+            Mise en place d’une architecture réseau complète,
+            configuration VLAN, routage et supervision.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Réseau</span>
+            <span class="tag">VLAN</span>
+            <span class="tag">Infrastructure</span>
+          </div>
         </div>
       </div>
 
-      <div class="galleryPro3">
-        <div class="gallery" id="proGallery"></div>
+      <!-- CARTE 2 -->
+      <div class="cardP" data-item="1">
+        <div class="thumb">
+          <img src="./assets/images/projet-securite.jpg" alt="Audit Sécurité">
+          <div class="openHint">Voir</div>
+        </div>
+        <div class="cardBody">
+          <h4>Audit de Sécurité</h4>
+          <p>
+            Analyse des vulnérabilités, audit cybersécurité
+            et rédaction d’un rapport technique détaillé.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Cybersécurité</span>
+            <span class="tag">Audit</span>
+            <span class="tag">Pentest</span>
+          </div>
+        </div>
       </div>
+
+      <!-- CARTE 3 -->
+      <div class="cardP" data-item="2">
+        <div class="thumb">
+          <img src="./assets/images/projet-supervision.jpg" alt="Supervision Réseau">
+          <div class="openHint">Voir</div>
+        </div>
+        <div class="cardBody">
+          <h4>Supervision & Analyse Réseau</h4>
+          <p>
+            Surveillance du trafic, diagnostic réseau
+            et analyse avec Wireshark et outils professionnels.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Wireshark</span>
+            <span class="tag">Monitoring</span>
+            <span class="tag">Analyse</span>
+          </div>
+        </div>
+      </div>
+
     </div>
+
   </main>
 
+  <!-- FOOTER (NE PAS TOUCHER) -->
   <footer class="siteFooter">
     <div class="container footerLine">
       <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
       <span>Portfolio BUT R&amp;T</span>
       <span>Site étudiant — contenu à but pédagogique.</span>
-      <span><a href="./mentions-legales.html">Mentions légales</a> • <a href="./contact.html">Contact</a></span>
+      <span>
+        <a href="./mentions-legales.html">Mentions légales</a> • 
+        <a href="./contact.html">Contact</a>
+      </span>
     </div>
   </footer>
 
-  <!-- MODAL -->
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Détails du projet">
-    <div class="dialog" role="document">
+  <!-- MODAL (COMPATIBLE AVEC TON main.js) -->
+  <div class="modal" id="modal">
+    <div class="dialog">
       <div class="dialogTop">
         <div>
           <h3 id="mTitle">Titre</h3>
@@ -72,7 +148,7 @@
 
       <div class="dialogGrid">
         <div class="preview">
-          <img id="mImg" alt="Aperçu du projet"/>
+          <img id="mImg" alt="Preuve"/>
         </div>
 
         <div class="details">
@@ -85,121 +161,47 @@
     </div>
   </div>
 
+  <!-- DONNÉES DES PROJETS (OBLIGATOIRE POUR TON main.js) -->
   <script>
-    // ✅ Remplace par tes vrais projets / images / fichiers
-    const proProjects = [
+    window.PAGE_ITEMS = [
       {
-        title: "Projet pro 1",
-        desc: "Décris le contexte, objectifs, et résultat mesurable.",
-        img: "./assets/img/pro1.jpg",
-        tags: ["R&amp;T", "Réseau", "Système"],
+        title: "Projet Réseau & Infrastructure",
+        desc: "Architecture réseau complète avec VLAN, routage et supervision.",
+        img: "./assets/images/projet-reseau.jpg",
+        tags: ["Réseau", "VLAN", "Infrastructure"],
         bullets: [
-          "Contexte + besoin",
-          "Ce que j’ai fait (actions)",
-          "Résultat / preuves / captures"
+          "Conception de l’architecture réseau",
+          "Configuration VLAN et routage",
+          "Mise en place de la supervision"
         ],
-        downloads: [
-          { label: "Rapport (PDF)", href: "./assets/files/projet1-rapport.pdf" }
-        ]
+        downloads: []
       },
       {
-        title: "Projet pro 2",
-        desc: "Décris la problématique + solution technique.",
-        img: "./assets/img/pro2.jpg",
-        tags: ["Sécurité", "Docs"],
+        title: "Audit de Sécurité",
+        desc: "Audit cybersécurité et analyse des vulnérabilités.",
+        img: "./assets/images/projet-securite.jpg",
+        tags: ["Cybersécurité", "Audit"],
         bullets: [
-          "Choix techniques",
-          "Difficultés + solutions",
-          "Bilan / amélioration"
+          "Scan de vulnérabilités",
+          "Analyse des risques",
+          "Rédaction d’un rapport technique"
         ],
-        downloads: [
-          { label: "Rapport (PDF)", href: "./assets/files/projet2-rapport.pdf" }
-        ]
+        downloads: []
       },
       {
-        title: "Projet pro 3",
-        desc: "Décris ce que tu veux mettre en avant.",
-        img: "./assets/img/pro3.jpg",
-        tags: ["Supervision", "Logs"],
+        title: "Supervision & Analyse Réseau",
+        desc: "Surveillance du trafic et diagnostic réseau avec outils professionnels.",
+        img: "./assets/images/projet-supervision.jpg",
+        tags: ["Wireshark", "Monitoring"],
         bullets: [
-          "Mise en place",
-          "Tests / validation",
-          "Preuves"
+          "Analyse du trafic réseau",
+          "Diagnostic des performances",
+          "Supervision de l’infrastructure"
         ],
         downloads: []
       }
     ];
-
-    function renderGallery(targetId, items){
-      const root = document.getElementById(targetId);
-      root.innerHTML = items.map((p, idx) => `
-        <div class="cardP" role="button" tabindex="0" data-idx="${idx}">
-          <div class="thumb">
-            <img src="${p.img}" alt="Aperçu ${p.title}">
-            <div class="openHint">Ouvrir</div>
-          </div>
-          <div class="cardBody">
-            <h4>${p.title}</h4>
-            <p>${p.desc}</p>
-            <div class="tagRow">
-              ${(p.tags||[]).slice(0,4).map(t => `<span class="tag">${t}</span>`).join("")}
-            </div>
-          </div>
-        </div>
-      `).join("");
-
-      root.querySelectorAll(".cardP").forEach(card=>{
-        card.addEventListener("keydown", (e)=>{ if(e.key === "Enter") card.click(); });
-      });
-    }
-    renderGallery("proGallery", proProjects);
-
-    const modal = document.getElementById("modal");
-    const closeModal = document.getElementById("closeModal");
-
-    const mTitle = document.getElementById("mTitle");
-    const mDesc  = document.getElementById("mDesc");
-    const mImg   = document.getElementById("mImg");
-    const mChips = document.getElementById("mChips");
-    const mBullets = document.getElementById("mBullets");
-    const mDownloads = document.getElementById("mDownloads");
-
-    function openProject(p){
-      mTitle.textContent = p.title;
-      mDesc.textContent = p.desc;
-      mImg.src = p.img;
-
-      mChips.innerHTML = (p.tags||[]).map(t => `<span class="chip">${t}</span>`).join("");
-      mBullets.innerHTML = (p.bullets||[]).map(b => `<li>${b}</li>`).join("");
-
-      if(p.downloads && p.downloads.length){
-        mDownloads.innerHTML = p.downloads.map(d => `
-          <a class="dl" href="${d.href}" download>⬇️ <span>${d.label}</span></a>
-        `).join("");
-      } else {
-        mDownloads.innerHTML = `<span class="chip">Aucun fichier à télécharger</span>`;
-      }
-
-      modal.classList.add("show");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeProject(){
-      modal.classList.remove("show");
-      document.body.style.overflow = "";
-    }
-
-    closeModal.addEventListener("click", closeProject);
-    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeProject(); });
-    window.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeProject(); });
-
-    document.getElementById("proGallery").addEventListener("click", (e)=>{
-      const card = e.target.closest(".cardP");
-      if(!card) return;
-      openProject(proProjects[Number(card.dataset.idx)]);
-    });
   </script>
 
-  <script src="./assets/js/main.js"></script>
 </body>
 </html>
