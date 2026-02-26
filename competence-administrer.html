@@ -1,31 +1,106 @@
-<div class="skillGrid reveal">
-  <!-- ADMINISTRER -->
-  <div class="skillCard border-admin" role="button" tabindex="0" data-item="0">
-    <h4>Administrer</h4>
-    <p>Configurer, déployer, maintenir et documenter des systèmes et services.</p>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Compétence — Administrer</title>
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body class="page">
+  <div class="glow"></div>
+  <div class="gridlines"></div>
+  <canvas id="particles"></canvas>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div>
+            <h1>Administrer</h1>
+            <p>6 projets — systèmes & services</p>
+          </div>
+        </div>
+
+        <nav aria-label="Navigation">
+          <a class="navlink" href="./index.html">Accueil</a>
+          <a class="navlink" href="./cv.html">CV</a>
+          <a class="navlink" href="./pro.html">Projets professionnels</a>
+          <a class="navlink active" href="./cours.html">Apprentissage</a>
+          <a class="navlink" href="./faq.html">FAQ</a>
+          <a class="navlink" href="./contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 18px 0 36px;">
+
+    <div class="backTop">
+      <a class="backBtn" href="./cours.html">← Retour</a>
+    </div>
+
+    <div class="sectionHeader" style="justify-content:center; text-align:center;">
+      <div style="width:100%;">
+        <h2 style="font-size:34px; margin-bottom:8px;">Administrer — Projets & Preuves</h2>
+        <p style="color: var(--muted);">Clique sur un projet pour voir le détail.</p>
+      </div>
+    </div>
+
+    <section class="projectsCenter">
+      <div class="projectsList">
+        <div class="projectRow" data-item="0" tabindex="0"><span>Projet 1 — Installation Windows Server</span><span class="arrow">&gt;</span></div>
+        <div class="projectRow" data-item="1" tabindex="0"><span>Projet 2 — Active Directory & GPO</span><span class="arrow">&gt;</span></div>
+        <div class="projectRow" data-item="2" tabindex="0"><span>Projet 3 — Gestion des utilisateurs</span><span class="arrow">&gt;</span></div>
+        <div class="projectRow" data-item="3" tabindex="0"><span>Projet 4 — Services DNS & DHCP</span><span class="arrow">&gt;</span></div>
+        <div class="projectRow" data-item="4" tabindex="0"><span>Projet 5 — Administration Linux</span><span class="arrow">&gt;</span></div>
+        <div class="projectRow" data-item="5" tabindex="0"><span>Projet 6 — Documentation & maintenance</span><span class="arrow">&gt;</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="siteFooter">
+    <div class="container footerLine">
+      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+      <span>Portfolio BUT R&amp;T</span>
+      <span>Site étudiant — contenu pédagogique.</span>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="dialog">
+      <div class="dialogTop">
+        <div>
+          <h3 id="mTitle"></h3>
+          <p id="mDesc"></p>
+        </div>
+        <button class="closeBtn" id="closeModal">Fermer ✕</button>
+      </div>
+      <div class="dialogGrid">
+        <div class="preview"><img id="mImg" alt="preuve"></div>
+        <div class="details">
+          <h4>Détails</h4>
+          <div class="chips" id="mChips"></div>
+          <ul id="mBullets"></ul>
+          <div class="dlRow" id="mDownloads"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- CONNECTER -->
-  <div class="skillCard border-conn" role="button" tabindex="0" data-item="1">
-    <h4>Connecter</h4>
-    <p>Concevoir et mettre en œuvre des réseaux et services de communication.</p>
-  </div>
-
-  <!-- PROGRAMMER -->
-  <div class="skillCard border-prog" role="button" tabindex="0" data-item="2">
-    <h4>Programmer</h4>
-    <p>Développer des applications, structurer le code et livrer.</p>
-  </div>
-
-  <!-- SÉCURISER -->
-  <div class="skillCard border-secu row2 left" role="button" tabindex="0" data-item="3">
-    <h4>Sécuriser</h4>
-    <p>Protéger les systèmes et réduire les risques de sécurité.</p>
-  </div>
-
-  <!-- SURVEILLER -->
-  <div class="skillCard border-surv row2 right" role="button" tabindex="0" data-item="4">
-    <h4>Surveiller</h4>
-    <p>Superviser, diagnostiquer et améliorer la performance.</p>
-  </div>
-</div>
+  <script>
+    window.PAGE_ITEMS = [
+      { title:"Installation Windows Server", desc:"Déploiement et configuration initiale.", img:"./assets/images/admin-1.jpg", tags:["Windows Server"], bullets:["Installation","Configuration","Tests"], downloads:[] },
+      { title:"Active Directory & GPO", desc:"Mise en place d’un domaine et stratégies.", img:"./assets/images/admin-2.jpg", tags:["AD","GPO"], bullets:["Domaine","Stratégies","Organisation"], downloads:[] },
+      { title:"Gestion des utilisateurs", desc:"Création et gestion des comptes.", img:"./assets/images/admin-3.jpg", tags:["AD"], bullets:["Comptes","Groupes","Droits"], downloads:[] },
+      { title:"Services DNS & DHCP", desc:"Configuration des services réseau.", img:"./assets/images/admin-4.jpg", tags:["DNS","DHCP"], bullets:["Zones DNS","Baux DHCP"], downloads:[] },
+      { title:"Administration Linux", desc:"Gestion système et réseau Linux.", img:"./assets/images/admin-5.jpg", tags:["Linux"], bullets:["Commandes","Réseau","Services"], downloads:[] },
+      { title:"Documentation & maintenance", desc:"Suivi et maintenance des systèmes.", img:"./assets/images/admin-6.jpg", tags:["Maintenance"], bullets:["Documentation","Mises à jour"], downloads:[] }
+    ];
+  </script>
+</body>
+</html>

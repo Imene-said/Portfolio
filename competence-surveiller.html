@@ -4,7 +4,9 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Compétence — Surveiller</title>
+
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
 </head>
 
 <body class="page">
@@ -16,10 +18,9 @@
     <div class="container">
       <div class="topbar">
         <div class="brand">
-          <!--<div class="logo" aria-hidden="true"></div>-->
           <div>
             <h1>Surveiller</h1>
-            <p>6 blocs — apprentissages critiques + preuves</p>
+            <p>6 projets — supervision & diagnostic réseau</p>
           </div>
         </div>
 
@@ -36,25 +37,59 @@
   </header>
 
   <main class="container" style="padding: 18px 0 36px;">
-    <div class="sectionHeader">
-      <div>
-        <h3>Surveiller — preuves</h3>
-        <p>Clique sur un bloc pour ouvrir le détail (dashboard, alertes, logs).</p>
+
+    <!-- Bouton retour discret -->
+    <div class="backTop">
+      <a class="backBtn" href="./cours.html">← Retour</a>
+    </div>
+
+    <!-- Titre centré -->
+    <div class="sectionHeader" style="justify-content:center; text-align:center;">
+      <div style="width:100%;">
+        <h2 style="font-size:34px; margin-bottom:8px;">Surveiller — Projets & Preuves</h2>
+        <p style="color: var(--muted);">
+          Clique sur un projet pour afficher les détails et preuves.
+        </p>
       </div>
     </div>
 
-    <div style="margin: 10px 0 14px;">
-      <a class="btn ghost" href="./cours.html">← Retour aux compétences</a>
-    </div>
+    <!-- Liste centrée style FAQ -->
+    <section class="projectsCenter">
+      <div class="projectsList">
 
-    <div class="skillGrid reveal">
-      <div class="skillCard border-blue" role="button" tabindex="0" data-item="0"><h4>Bloc 1 — Apprentissage critique</h4><p>Apprentissage + preuve.</p></div>
-      <div class="skillCard border-blue" role="button" tabindex="0" data-item="1"><h4>Bloc 2 — Contexte / besoin</h4><p>SLA, objectifs.</p></div>
-      <div class="skillCard border-blue" role="button" tabindex="0" data-item="2"><h4>Bloc 3 — Mise en place</h4><p>Outils, métriques.</p></div>
-      <div class="skillCard border-blue" role="button" tabindex="0" data-item="3"><h4>Bloc 4 — Alerting</h4><p>Seuils + notif.</p></div>
-      <div class="skillCard border-blue" role="button" tabindex="0" data-item="4"><h4>Bloc 5 — Analyse / diagnostic</h4><p>Logs + diagnostic.</p></div>
-      <div class="skillCard border-blue" role="button" tabindex="0" data-item="5"><h4>Bloc 6 — Auto-évaluation</h4><p>Bilan.</p></div>
-    </div>
+        <div class="projectRow" role="button" tabindex="0" data-item="0">
+          <span>Projet 1 — Supervision réseau</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="1">
+          <span>Projet 2 — Analyse Wireshark</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="2">
+          <span>Projet 3 — Diagnostic d’incidents réseau</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="3">
+          <span>Projet 4 — Monitoring des performances</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="4">
+          <span>Projet 5 — Analyse des logs & alertes</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="5">
+          <span>Projet 6 — Optimisation & disponibilité réseau</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer class="siteFooter">
@@ -62,18 +97,29 @@
       <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
       <span>Portfolio BUT R&amp;T</span>
       <span>Site étudiant — contenu à but pédagogique.</span>
-      <span><a href="./mentions-legales.html">Mentions légales</a> • <a href="./contact.html">Contact</a></span>
+      <span>
+        <a href="./mentions-legales.html">Mentions légales</a> •
+        <a href="./contact.html">Contact</a>
+      </span>
     </div>
   </footer>
 
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Détails">
-    <div class="dialog" role="document">
+  <!-- MODAL -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="dialog">
       <div class="dialogTop">
-        <div><h3 id="mTitle">Titre</h3><p id="mDesc">Description</p></div>
+        <div>
+          <h3 id="mTitle">Titre</h3>
+          <p id="mDesc">Description</p>
+        </div>
         <button class="closeBtn" id="closeModal">Fermer ✕</button>
       </div>
+
       <div class="dialogGrid">
-        <div class="preview"><img id="mImg" alt="Preuve"/></div>
+        <div class="preview">
+          <img id="mImg" alt="Preuve projet">
+        </div>
+
         <div class="details">
           <h4>Détails</h4>
           <div class="chips" id="mChips"></div>
@@ -86,15 +132,56 @@
 
   <script>
     window.PAGE_ITEMS = [
-      { title:"Surveiller — Bloc 1", desc:"Apprentissage critique + preuve.", img:"./assets/images/surveiller-1.jpg", tags:["Monitoring"], bullets:["…","…","…"], downloads:[{label:"Rapport (PDF)", href:"./assets/files/surveiller-rapport.pdf"}] },
-      { title:"Surveiller — Bloc 2", desc:"Contexte / besoin.", img:"./assets/images/surveiller-2.jpg", tags:["SLA"], bullets:["…","…","…"], downloads:[] },
-      { title:"Surveiller — Bloc 3", desc:"Mise en place.", img:"./assets/images/surveiller-3.jpg", tags:["Dashboard"], bullets:["…","…","…"], downloads:[] },
-      { title:"Surveiller — Bloc 4", desc:"Alerting.", img:"./assets/images/surveiller-4.jpg", tags:["Alertes"], bullets:["…","…","…"], downloads:[] },
-      { title:"Surveiller — Bloc 5", desc:"Analyse / diagnostic.", img:"./assets/images/surveiller-5.jpg", tags:["Logs"], bullets:["…","…","…"], downloads:[{label:"Preuves (ZIP)", href:"./assets/files/surveiller-preuves.zip"}] },
-      { title:"Surveiller — Bloc 6", desc:"Auto-évaluation.", img:"./assets/images/surveiller-6.jpg", tags:["Bilan"], bullets:["…","…","…"], downloads:[] }
+      {
+        title: "Supervision réseau",
+        desc: "Mise en place d’outils de supervision et analyse du trafic.",
+        img: "./assets/images/surv-1.jpg",
+        tags: ["Supervision", "Réseau"],
+        bullets: ["Surveillance trafic", "Disponibilité", "Alertes"],
+        downloads: []
+      },
+      {
+        title: "Analyse Wireshark",
+        desc: "Capture et analyse de paquets réseau.",
+        img: "./assets/images/surv-2.jpg",
+        tags: ["Wireshark"],
+        bullets: ["Analyse paquets", "Diagnostic", "Protocoles"],
+        downloads: []
+      },
+      {
+        title: "Diagnostic incidents",
+        desc: "Identification et résolution d’incidents réseau.",
+        img: "./assets/images/surv-3.jpg",
+        tags: ["Diagnostic"],
+        bullets: ["Pannes réseau", "Analyse", "Correction"],
+        downloads: []
+      },
+      {
+        title: "Monitoring performance",
+        desc: "Mesure des performances et optimisation.",
+        img: "./assets/images/surv-4.jpg",
+        tags: ["Monitoring"],
+        bullets: ["Performance", "Optimisation", "Analyse"],
+        downloads: []
+      },
+      {
+        title: "Logs & alertes",
+        desc: "Analyse des journaux systèmes et alertes.",
+        img: "./assets/images/surv-5.jpg",
+        tags: ["Logs"],
+        bullets: ["Analyse logs", "Alertes", "Sécurité"],
+        downloads: []
+      },
+      {
+        title: "Optimisation réseau",
+        desc: "Amélioration de la disponibilité et des performances réseau.",
+        img: "./assets/images/surv-6.jpg",
+        tags: ["Optimisation"],
+        bullets: ["Disponibilité", "Qualité de service", "Amélioration"],
+        downloads: []
+      }
     ];
   </script>
 
-  <script src="./assets/js/main.js"></script>
 </body>
 </html>

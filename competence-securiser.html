@@ -4,7 +4,9 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Compétence — Sécuriser</title>
+
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
 </head>
 
 <body class="page">
@@ -16,10 +18,9 @@
     <div class="container">
       <div class="topbar">
         <div class="brand">
-          <!--<div class="logo" aria-hidden="true"></div>-->
           <div>
             <h1>Sécuriser</h1>
-            <p>6 blocs — apprentissages critiques + preuves</p>
+            <p>6 projets — cybersécurité & protection des systèmes</p>
           </div>
         </div>
 
@@ -36,25 +37,59 @@
   </header>
 
   <main class="container" style="padding: 18px 0 36px;">
-    <div class="sectionHeader">
-      <div>
-        <h3>Sécuriser — preuves</h3>
-        <p>Clique sur un bloc pour ouvrir le détail (preuves sécurité + rapport).</p>
+
+    <!-- Bouton retour petit en haut à gauche -->
+    <div class="backTop">
+      <a class="backBtn" href="./cours.html">← Retour</a>
+    </div>
+
+    <!-- Titre centré comme FAQ -->
+    <div class="sectionHeader" style="justify-content:center; text-align:center;">
+      <div style="width:100%;">
+        <h2 style="font-size:34px; margin-bottom:8px;">Sécuriser — Projets & Preuves</h2>
+        <p style="color: var(--muted);">
+          Clique sur un projet pour ouvrir la fenêtre explicative.
+        </p>
       </div>
     </div>
 
-    <div style="margin: 10px 0 14px;">
-      <a class="btn ghost" href="./cours.html">← Retour aux compétences</a>
-    </div>
+    <!-- Liste centrée type FAQ (sans accordéon) -->
+    <section class="projectsCenter">
+      <div class="projectsList">
 
-    <div class="skillGrid reveal">
-      <div class="skillCard border-green" role="button" tabindex="0" data-item="0"><h4>Bloc 1 — Apprentissage critique</h4><p>Apprentissage + preuve.</p></div>
-      <div class="skillCard border-green" role="button" tabindex="0" data-item="1"><h4>Bloc 2 — Contexte / besoin</h4><p>Menaces, contraintes.</p></div>
-      <div class="skillCard border-green" role="button" tabindex="0" data-item="2"><h4>Bloc 3 — Actions réalisées</h4><p>Hardening, règles…</p></div>
-      <div class="skillCard border-green" role="button" tabindex="0" data-item="3"><h4>Bloc 4 — Résultats</h4><p>Avant / après.</p></div>
-      <div class="skillCard border-green" role="button" tabindex="0" data-item="4"><h4>Bloc 5 — Difficultés / solutions</h4><p>Dépannage.</p></div>
-      <div class="skillCard border-green" role="button" tabindex="0" data-item="5"><h4>Bloc 6 — Auto-évaluation</h4><p>Bilan.</p></div>
-    </div>
+        <div class="projectRow" role="button" tabindex="0" data-item="0">
+          <span>Projet 1 — Audit de sécurité réseau</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="1">
+          <span>Projet 2 — Configuration Firewall & ACL</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="2">
+          <span>Projet 3 — Mise en place VPN & IPsec</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="3">
+          <span>Projet 4 — Tests d’intrusion (Pentest)</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="4">
+          <span>Projet 5 — Scan de ports & Metasploit</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="5">
+          <span>Projet 6 — Attaques MITM & défense</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer class="siteFooter">
@@ -62,18 +97,29 @@
       <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
       <span>Portfolio BUT R&amp;T</span>
       <span>Site étudiant — contenu à but pédagogique.</span>
-      <span><a href="./mentions-legales.html">Mentions légales</a> • <a href="./contact.html">Contact</a></span>
+      <span>
+        <a href="./mentions-legales.html">Mentions légales</a> •
+        <a href="./contact.html">Contact</a>
+      </span>
     </div>
   </footer>
 
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Détails">
-    <div class="dialog" role="document">
+  <!-- MODAL (compatible avec ton main.js) -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="dialog">
       <div class="dialogTop">
-        <div><h3 id="mTitle">Titre</h3><p id="mDesc">Description</p></div>
+        <div>
+          <h3 id="mTitle">Titre</h3>
+          <p id="mDesc">Description</p>
+        </div>
         <button class="closeBtn" id="closeModal">Fermer ✕</button>
       </div>
+
       <div class="dialogGrid">
-        <div class="preview"><img id="mImg" alt="Preuve"/></div>
+        <div class="preview">
+          <img id="mImg" alt="Preuve projet">
+        </div>
+
         <div class="details">
           <h4>Détails</h4>
           <div class="chips" id="mChips"></div>
@@ -86,15 +132,56 @@
 
   <script>
     window.PAGE_ITEMS = [
-      { title:"Sécuriser — Bloc 1", desc:"Apprentissage critique + preuve.", img:"./assets/images/securiser-1.jpg", tags:["Sécurité"], bullets:["…","…","…"], downloads:[{label:"Rapport (PDF)", href:"./assets/files/securiser-rapport.pdf"}] },
-      { title:"Sécuriser — Bloc 2", desc:"Contexte / besoin.", img:"./assets/images/securiser-2.jpg", tags:["Contexte"], bullets:["…","…","…"], downloads:[] },
-      { title:"Sécuriser — Bloc 3", desc:"Actions réalisées.", img:"./assets/images/securiser-3.jpg", tags:["Hardening"], bullets:["…","…","…"], downloads:[] },
-      { title:"Sécuriser — Bloc 4", desc:"Résultats.", img:"./assets/images/securiser-4.jpg", tags:["Preuves"], bullets:["…","…","…"], downloads:[{label:"Preuves (ZIP)", href:"./assets/files/securiser-preuves.zip"}] },
-      { title:"Sécuriser — Bloc 5", desc:"Difficultés / solutions.", img:"./assets/images/securiser-5.jpg", tags:["Dépannage"], bullets:["…","…","…"], downloads:[] },
-      { title:"Sécuriser — Bloc 6", desc:"Auto-évaluation.", img:"./assets/images/securiser-6.jpg", tags:["Bilan"], bullets:["…","…","…"], downloads:[] }
+      {
+        title: "Audit de sécurité réseau",
+        desc: "Analyse des vulnérabilités et rédaction d’un rapport d’audit.",
+        img: "./assets/images/secu-1.jpg",
+        tags: ["Audit", "Cybersécurité"],
+        bullets: ["Analyse des risques", "Rapport technique", "Recommandations"],
+        downloads: []
+      },
+      {
+        title: "Firewall & ACL",
+        desc: "Configuration de pare-feu et règles de contrôle d’accès.",
+        img: "./assets/images/secu-2.jpg",
+        tags: ["Firewall", "ACL"],
+        bullets: ["Règles ACL", "Filtrage trafic", "Sécurisation réseau"],
+        downloads: []
+      },
+      {
+        title: "VPN & IPsec",
+        desc: "Mise en place de tunnels sécurisés VPN/IPsec.",
+        img: "./assets/images/secu-3.jpg",
+        tags: ["VPN", "IPsec"],
+        bullets: ["Tunnel sécurisé", "Chiffrement", "Configuration"],
+        downloads: []
+      },
+      {
+        title: "Pentest",
+        desc: "Réalisation de tests d’intrusion et analyse des failles.",
+        img: "./assets/images/secu-4.jpg",
+        tags: ["Pentest"],
+        bullets: ["Tests d'intrusion", "Exploitation", "Rapport"],
+        downloads: []
+      },
+      {
+        title: "Scan & Metasploit",
+        desc: "Utilisation d’outils offensifs et défensifs.",
+        img: "./assets/images/secu-5.jpg",
+        tags: ["Metasploit", "Scan"],
+        bullets: ["Scan de ports", "Exploitation", "Analyse sécurité"],
+        downloads: []
+      },
+      {
+        title: "MITM & Défense",
+        desc: "Simulation d’attaques MITM et mise en place de protections.",
+        img: "./assets/images/secu-6.jpg",
+        tags: ["MITM", "Défense"],
+        bullets: ["Attaques MITM", "Détection", "Protection réseau"],
+        downloads: []
+      }
     ];
   </script>
 
-  <script src="./assets/js/main.js"></script>
 </body>
 </html>
