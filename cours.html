@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Apprentissage — Portfolio</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=3">
-
-  <!-- JS -->
-  <script defer src="./assets/js/main.js?v=3"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
 </head>
 
 <body class="page">
@@ -21,10 +18,9 @@
     <div class="container">
       <div class="topbar">
         <div class="brand">
-          <!--<div class="logo" aria-hidden="true"></div>-->
           <div>
             <h1>Imene SAID ERRAHMANI</h1>
-            <p>Portfolio BUT R&T — Alternance</p>
+            <p>Portfolio BUT R&amp;T — Alternance</p>
           </div>
         </div>
 
@@ -40,20 +36,20 @@
     </div>
   </header>
 
-  <!-- MAIN CENTRÉ COMME FAQ -->
-  <main class="container apprentissageCenter">
+  <!-- PAGE CENTRÉE COMME FAQ -->
+  <main class="container faqCenter">
+    <div class="faqWrap">
 
-    <div class="apprentissageBlock">
-      <div class="sectionHeader apprentissageHeader">
-        <div>
-          <h2 class="apprentissageTitle">Compétences</h2>
+      <div class="sectionHeader faqPageHeader" style="text-align:center;">
+        <div style="width:100%;">
+          <h2 class="faqTitle" style="font-size:36px;">Compétences</h2>
+          <p>Clique sur une compétence pour accéder aux 6 sous-blocs détaillés.</p>
         </div>
       </div>
 
-      <!-- GRID COMPÉTENCES CENTRÉE -->
-      <div class="skillGrid reveal apprentissageGrid">
-        
-        <!-- Ligne du haut -->
+      <!-- 5 BLOCS PRINCIPAUX -->
+      <div class="skillGrid reveal center">
+
         <a class="skillCard border-admin" href="./competence-administrer.html">
           <h4>Administrer</h4>
           <p>Configurer, déployer, maintenir et documenter des systèmes et services.</p>
@@ -69,7 +65,6 @@
           <p>Développer des applications, structurer le code, tester et livrer.</p>
         </a>
 
-        <!-- Ligne du bas (positions conservées) -->
         <a class="skillCard border-secu row2 left" href="./competence-securiser.html">
           <h4>Sécuriser</h4>
           <p>Protéger les systèmes, appliquer des bonnes pratiques et réduire les risques.</p>
@@ -77,12 +72,12 @@
 
         <a class="skillCard border-surv row2 right" href="./competence-surveiller.html">
           <h4>Surveiller</h4>
-          <p>Superviser, diagnostiquer, mesurer et améliorer la disponibilité et la performance.</p>
+          <p>Superviser, diagnostiquer, mesurer et améliorer la disponibilité.</p>
         </a>
 
       </div>
-    </div>
 
+    </div>
   </main>
 
   <footer class="siteFooter">
@@ -96,5 +91,6 @@
       </span>
     </div>
   </footer>
+
 </body>
 </html>

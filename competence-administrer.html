@@ -1,131 +1,31 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Compétence — Administrer</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-
-<body class="page">
-  <div class="glow"></div>
-  <div class="gridlines"></div>
-  <canvas id="particles"></canvas>
-
-  <header>
-    <div class="container">
-      <div class="topbar">
-        <div class="brand">
-          <!--<div class="logo" aria-hidden="true"></div>-->
-          <div>
-            <h1>Administrer</h1>
-            <p>6 blocs — apprentissages critiques + preuves</p>
-          </div>
-        </div>
-
-        <nav aria-label="Navigation">
-          <a class="navlink" href="./index.html">Accueil</a>
-          <a class="navlink" href="./cv.html">CV</a>
-          <a class="navlink" href="./pro.html">Projets professionnels</a>
-          <a class="navlink active" href="./cours.html">Apprentissage</a>
-          <a class="navlink" href="./faq.html">FAQ</a>
-          <a class="navlink" href="./contact.html">Contact</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="container" style="padding: 18px 0 36px;">
-    <div class="sectionHeader">
-      <div>
-        <h3>Administrer — preuves</h3>
-        <p>Clique sur un bloc pour ouvrir le détail (explication + image + rapport).</p>
-      </div>
-    </div>
-
-    <!-- ✅ BOUTON RETOUR (toujours présent) -->
-    <div style="margin: 10px 0 14px;">
-      <a class="btn ghost" href="./cours.html">← Retour aux compétences</a>
-    </div>
-
-    <div class="skillGrid reveal">
-      <div class="skillCard border-red" role="button" tabindex="0" data-item="0">
-        <h4>Bloc 1 — Apprentissage critique</h4>
-        <p>Ce que tu as appris + preuve principale.</p>
-      </div>
-
-      <div class="skillCard border-red" role="button" tabindex="0" data-item="1">
-        <h4>Bloc 2 — Contexte / besoin</h4>
-        <p>Objectifs + contraintes.</p>
-      </div>
-
-      <div class="skillCard border-red" role="button" tabindex="0" data-item="2">
-        <h4>Bloc 3 — Actions réalisées</h4>
-        <p>Configuration, services, scripts…</p>
-      </div>
-
-      <div class="skillCard border-red" role="button" tabindex="0" data-item="3">
-        <h4>Bloc 4 — Résultats</h4>
-        <p>Tests, captures, validation.</p>
-      </div>
-
-      <div class="skillCard border-red" role="button" tabindex="0" data-item="4">
-        <h4>Bloc 5 — Difficultés / solutions</h4>
-        <p>Problèmes + résolution.</p>
-      </div>
-
-      <div class="skillCard border-red" role="button" tabindex="0" data-item="5">
-        <h4>Bloc 6 — Auto-évaluation</h4>
-        <p>Bilan + axes d’amélioration.</p>
-      </div>
-    </div>
-  </main>
-
-  <footer class="siteFooter">
-    <div class="container footerLine">
-      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
-      <span>Portfolio BUT R&amp;T</span>
-      <span>Site étudiant — contenu à but pédagogique.</span>
-      <span><a href="./mentions-legales.html">Mentions légales</a> • <a href="./contact.html">Contact</a></span>
-    </div>
-  </footer>
-
-  <!-- Modal -->
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Détails">
-    <div class="dialog" role="document">
-      <div class="dialogTop">
-        <div>
-          <h3 id="mTitle">Titre</h3>
-          <p id="mDesc">Description</p>
-        </div>
-        <button class="closeBtn" id="closeModal">Fermer ✕</button>
-      </div>
-
-      <div class="dialogGrid">
-        <div class="preview">
-          <img id="mImg" alt="Preuve"/>
-        </div>
-
-        <div class="details">
-          <h4>Détails</h4>
-          <div class="chips" id="mChips"></div>
-          <ul id="mBullets"></ul>
-          <div class="dlRow" id="mDownloads"></div>
-        </div>
-      </div>
-    </div>
+<div class="skillGrid reveal">
+  <!-- ADMINISTRER -->
+  <div class="skillCard border-admin" role="button" tabindex="0" data-item="0">
+    <h4>Administrer</h4>
+    <p>Configurer, déployer, maintenir et documenter des systèmes et services.</p>
   </div>
 
-  <script>
-    window.PAGE_ITEMS = [
-      { title:"Administrer — Bloc 1", desc:"Apprentissage critique + preuve.", img:"./assets/images/administrer-1.jpg", tags:["Admin"], bullets:["…","…","…"], downloads:[{label:"Rapport (PDF)", href:"./assets/files/administrer-rapport.pdf"}] },
-      { title:"Administrer — Bloc 2", desc:"Contexte / besoin.", img:"./assets/images/administrer-2.jpg", tags:["Contexte"], bullets:["…","…","…"], downloads:[] },
-      { title:"Administrer — Bloc 3", desc:"Actions réalisées.", img:"./assets/images/administrer-3.jpg", tags:["Config"], bullets:["…","…","…"], downloads:[] },
-      { title:"Administrer — Bloc 4", desc:"Résultats.", img:"./assets/images/administrer-4.jpg", tags:["Tests"], bullets:["…","…","…"], downloads:[{label:"Preuves (ZIP)", href:"./assets/files/administrer-preuves.zip"}] },
-      { title:"Administrer — Bloc 5", desc:"Difficultés / solutions.", img:"./assets/images/administrer-5.jpg", tags:["Dépannage"], bullets:["…","…","…"], downloads:[] },
-      { title:"Administrer — Bloc 6", desc:"Auto-évaluation.", img:"./assets/images/administrer-6.jpg", tags:["Bilan"], bullets:["…","…","…"], downloads:[] }
-    ];
-  </script>
+  <!-- CONNECTER -->
+  <div class="skillCard border-conn" role="button" tabindex="0" data-item="1">
+    <h4>Connecter</h4>
+    <p>Concevoir et mettre en œuvre des réseaux et services de communication.</p>
+  </div>
 
-  <script src="./assets/js/main.js"></script>
-</body>
-</html>
+  <!-- PROGRAMMER -->
+  <div class="skillCard border-prog" role="button" tabindex="0" data-item="2">
+    <h4>Programmer</h4>
+    <p>Développer des applications, structurer le code et livrer.</p>
+  </div>
+
+  <!-- SÉCURISER -->
+  <div class="skillCard border-secu row2 left" role="button" tabindex="0" data-item="3">
+    <h4>Sécuriser</h4>
+    <p>Protéger les systèmes et réduire les risques de sécurité.</p>
+  </div>
+
+  <!-- SURVEILLER -->
+  <div class="skillCard border-surv row2 right" role="button" tabindex="0" data-item="4">
+    <h4>Surveiller</h4>
+    <p>Superviser, diagnostiquer et améliorer la performance.</p>
+  </div>
+</div>

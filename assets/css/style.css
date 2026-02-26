@@ -985,3 +985,197 @@ footer.siteFooter{
 .apprentissageGrid{
   justify-content: center;
 }
+/* ===== SOUS-COMPÉTENCES EN MODE ACCORDÉON (SANS DÉPLIEMENT) ===== */
+.skillAccordion{
+  width: 100%;
+}
+
+/* conteneur des sous-blocs */
+.subSkills{
+  margin-top: 12px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.02);
+  backdrop-filter: blur(8px);
+}
+
+/* chaque ligne = faux accordéon cliquable */
+.subSkill{
+  display: block;
+  padding: 14px 18px;
+  font-size: 13.5px;
+  color: var(--muted);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  text-decoration: none;
+  transition: all .25s ease;
+  position: relative;
+}
+
+/* effet hover cyber (cohérent avec ton thème) */
+.subSkill:hover{
+  background: rgba(0,212,255,.08);
+  color: var(--text);
+  padding-left: 24px;
+}
+
+/* flèche à droite style accordéon */
+.subSkill::after{
+  content: "›";
+  position: absolute;
+  right: 18px;
+  color: rgba(255,255,255,.6);
+  transition: transform .2s ease;
+}
+
+.subSkill:hover::after{
+  transform: translateX(4px);
+  color: #00D4FF;
+}
+
+/* retire la bordure du dernier */
+.subSkill:last-child{
+  border-bottom: none;
+}
+/* ===== MODAL SOUS-COMPÉTENCES ===== */
+#modalSkillList{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skillLink{
+  display: block;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  font-size: 14px;
+  transition: all .25s ease;
+}
+
+.skillLink:hover{
+  background: rgba(0,212,255,.10);
+  border-color: rgba(0,212,255,.45);
+  transform: translateX(4px);
+  color: #ffffff;
+}
+/* ===== PROJETS (STYLE FAQ CENTRÉE SANS ACCORDÉON) ===== */
+.projectItem {
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.projectItem:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0,212,255,.35);
+  background: rgba(255,255,255,.04);
+}
+
+/* Bouton projet (alignement propre) */
+.projectQ {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  padding: 18px 16px;
+}
+
+/* Flèche ">" à droite */
+.projectQ .arrow {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00D4FF;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Animation légère au hover (comme ton site) */
+.projectItem:hover .arrow {
+  transform: translateX(4px);
+  color: #3b82f6;
+}
+
+/* Centrage global comme la FAQ */
+.faqCenter {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+}
+
+.faqWrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* ===== PAGE COMPÉTENCE (LISTE CENTRÉE PROPRE) ===== */
+
+.backTop {
+  margin-bottom: 8px;
+}
+
+.backBtn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.backBtn:hover {
+  background: rgba(0,212,255,.12);
+  border-color: rgba(0,212,255,.4);
+}
+
+.projectsCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 55vh;
+}
+
+.projectsList {
+  width: 100%;
+  max-width: 720px;
+}
+
+.projectRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  color: rgba(255,255,255,.92);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+
+.projectRow:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0,212,255,.45);
+  background: rgba(255,255,255,.05);
+}
+
+.projectRow .arrow {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00D4FF;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.projectRow:hover .arrow {
+  transform: translateX(6px);
+  color: #3b82f6;
+}

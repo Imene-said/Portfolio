@@ -4,7 +4,12 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Compétence — Connecter</title>
+
+  <!-- TON CSS GLOBAL -->
   <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- TON JS (modal + particles + reveal) -->
+  <script defer src="./assets/js/main.js"></script>
 </head>
 
 <body class="page">
@@ -12,14 +17,13 @@
   <div class="gridlines"></div>
   <canvas id="particles"></canvas>
 
+  <!-- HEADER IDENTIQUE AU RESTE DU SITE -->
   <header>
     <div class="container">
       <div class="topbar">
         <div class="brand">
-          <!--<div class="logo" aria-hidden="true"></div>-->
           <div>
             <h1>Connecter</h1>
-            <p>6 blocs — apprentissages critiques + preuves</p>
           </div>
         </div>
 
@@ -35,47 +39,95 @@
     </div>
   </header>
 
+  <!-- CONTENU PRINCIPAL CENTRÉ -->
   <main class="container" style="padding: 18px 0 36px;">
-    <div class="sectionHeader">
-      <div>
-        <h3>Connecter — preuves</h3>
-        <p>Clique sur un bloc pour ouvrir le détail (schéma, config, tests, rapport).</p>
+
+    <!-- BOUTON RETOUR (PETIT EN HAUT À GAUCHE) -->
+    <div class="backTop">
+      <a class="backBtn" href="./cours.html">← Retour</a>
+    </div>
+
+    <!-- TITRE CENTRÉ COMME FAQ -->
+    <div class="sectionHeader" style="justify-content:center; text-align:center; margin-top:10px;">
+      <div style="width:100%;">
+        <h2 style="font-size:34px; margin-bottom:8px;">
+          Connecter 
+        </h2>
+        <p style="color: var(--muted);">
+        </p>
       </div>
     </div>
 
-    <div style="margin: 10px 0 14px;">
-      <a class="btn ghost" href="./cours.html">← Retour aux compétences</a>
-    </div>
+    <!-- LISTE CENTRÉE (STYLE FAQ SANS ACCORDÉON) -->
+    <section class="projectsCenter">
+      <div class="projectsList">
 
-    <div class="skillGrid reveal">
-      <div class="skillCard border-orange" role="button" tabindex="0" data-item="0"><h4>Bloc 1 — Apprentissage critique</h4><p>Apprentissage + preuve.</p></div>
-      <div class="skillCard border-orange" role="button" tabindex="0" data-item="1"><h4>Bloc 2 — Contexte / besoin</h4><p>Contraintes + objectifs.</p></div>
-      <div class="skillCard border-orange" role="button" tabindex="0" data-item="2"><h4>Bloc 3 — Architecture</h4><p>Schéma, VLAN, adressage.</p></div>
-      <div class="skillCard border-orange" role="button" tabindex="0" data-item="3"><h4>Bloc 4 — Configuration</h4><p>Configs + captures.</p></div>
-      <div class="skillCard border-orange" role="button" tabindex="0" data-item="4"><h4>Bloc 5 — Tests / validation</h4><p>ping, iperf, etc.</p></div>
-      <div class="skillCard border-orange" role="button" tabindex="0" data-item="5"><h4>Bloc 6 — Auto-évaluation</h4><p>Bilan.</p></div>
-    </div>
+        <div class="projectRow" role="button" tabindex="0" data-item="0">
+          <span>Projet 1 — Apprentissage critique réseau</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="1">
+          <span>Projet 2 — Analyse du besoin et contexte</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="2">
+          <span>Projet 3 — Architecture réseau (VLAN, IP)</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="3">
+          <span>Projet 4 — Configuration équipements réseau</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="4">
+          <span>Projet 5 — Tests & validation (ping, diagnostic)</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+        <div class="projectRow" role="button" tabindex="0" data-item="5">
+          <span>Projet 6 — Auto-évaluation & bilan</span>
+          <span class="arrow">&gt;</span>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
+  <!-- FOOTER IDENTIQUE -->
   <footer class="siteFooter">
     <div class="container footerLine">
       <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
       <span>Portfolio BUT R&amp;T</span>
       <span>Site étudiant — contenu à but pédagogique.</span>
-      <span><a href="./mentions-legales.html">Mentions légales</a> • <a href="./contact.html">Contact</a></span>
+      <span>
+        <a href="./mentions-legales.html">Mentions légales</a> • 
+        <a href="./contact.html">Contact</a>
+      </span>
     </div>
   </footer>
 
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Détails">
+  <!-- MODAL (UTILISÉE PAR TON main.js — NE PAS SUPPRIMER) -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
     <div class="dialog" role="document">
       <div class="dialogTop">
-        <div><h3 id="mTitle">Titre</h3><p id="mDesc">Description</p></div>
+        <div>
+          <h3 id="mTitle">Titre du projet</h3>
+          <p id="mDesc">Description du projet</p>
+        </div>
         <button class="closeBtn" id="closeModal">Fermer ✕</button>
       </div>
+
       <div class="dialogGrid">
-        <div class="preview"><img id="mImg" alt="Preuve"/></div>
+        <div class="preview">
+          <img id="mImg" alt="Preuve du projet"/>
+        </div>
+
         <div class="details">
-          <h4>Détails</h4>
+          <h4>Détails du projet</h4>
           <div class="chips" id="mChips"></div>
           <ul id="mBullets"></ul>
           <div class="dlRow" id="mDownloads"></div>
@@ -84,17 +136,84 @@
     </div>
   </div>
 
+  <!-- DONNÉES DES PROJETS (COMPATIBLE AVEC TON main.js) -->
   <script>
     window.PAGE_ITEMS = [
-      { title:"Connecter — Bloc 1", desc:"Apprentissage critique + preuve.", img:"./assets/images/connecter-1.jpg", tags:["Réseau"], bullets:["…","…","…"], downloads:[{label:"Rapport (PDF)", href:"./assets/files/connecter-rapport.pdf"}] },
-      { title:"Connecter — Bloc 2", desc:"Contexte / besoin.", img:"./assets/images/connecter-2.jpg", tags:["Contexte"], bullets:["…","…","…"], downloads:[] },
-      { title:"Connecter — Bloc 3", desc:"Architecture.", img:"./assets/images/connecter-3.jpg", tags:["VLAN","IP"], bullets:["…","…","…"], downloads:[] },
-      { title:"Connecter — Bloc 4", desc:"Configuration.", img:"./assets/images/connecter-4.jpg", tags:["Config"], bullets:["…","…","…"], downloads:[{label:"Captures (ZIP)", href:"./assets/files/connecter-preuves.zip"}] },
-      { title:"Connecter — Bloc 5", desc:"Tests / validation.", img:"./assets/images/connecter-5.jpg", tags:["Tests"], bullets:["…","…","…"], downloads:[] },
-      { title:"Connecter — Bloc 6", desc:"Auto-évaluation.", img:"./assets/images/connecter-6.jpg", tags:["Bilan"], bullets:["…","…","…"], downloads:[] }
+      {
+        title: "Projet 1 — Apprentissage critique réseau",
+        desc: "Mise en place d’une infrastructure réseau et analyse technique.",
+        img: "./assets/images/connecter-1.jpg",
+        tags: ["Réseau", "Analyse"],
+        bullets: [
+          "Analyse du besoin",
+          "Conception de l’architecture réseau",
+          "Configuration des équipements",
+          "Validation du fonctionnement"
+        ],
+        downloads: []
+      },
+      {
+        title: "Projet 2 — Analyse du besoin et contexte",
+        desc: "Étude du contexte technique et des contraintes du projet.",
+        img: "./assets/images/connecter-2.jpg",
+        tags: ["Contexte"],
+        bullets: [
+          "Identification des besoins",
+          "Analyse des contraintes",
+          "Choix des solutions techniques"
+        ],
+        downloads: []
+      },
+      {
+        title: "Projet 3 — Architecture réseau",
+        desc: "Conception d’une architecture réseau avec VLAN et adressage IP.",
+        img: "./assets/images/connecter-3.jpg",
+        tags: ["VLAN", "IP"],
+        bullets: [
+          "Schéma réseau",
+          "Plan d’adressage IP",
+          "Segmentation VLAN"
+        ],
+        downloads: []
+      },
+      {
+        title: "Projet 4 — Configuration équipements réseau",
+        desc: "Configuration des switchs, routeurs et services réseau.",
+        img: "./assets/images/connecter-4.jpg",
+        tags: ["Configuration", "Cisco"],
+        bullets: [
+          "Configuration switch",
+          "Configuration routeur",
+          "Mise en place des services réseau"
+        ],
+        downloads: []
+      },
+      {
+        title: "Projet 5 — Tests & validation",
+        desc: "Tests de connectivité et validation des performances réseau.",
+        img: "./assets/images/connecter-5.jpg",
+        tags: ["Tests"],
+        bullets: [
+          "Tests ping",
+          "Diagnostic réseau",
+          "Validation des performances"
+        ],
+        downloads: []
+      },
+      {
+        title: "Projet 6 — Auto-évaluation & bilan",
+        desc: "Bilan des compétences acquises et axes d’amélioration.",
+        img: "./assets/images/connecter-6.jpg",
+        tags: ["Bilan"],
+        bullets: [
+          "Compétences techniques acquises",
+          "Difficultés rencontrées",
+          "Améliorations futures"
+        ],
+        downloads: []
+      }
     ];
   </script>
 
-  <script src="./assets/js/main.js"></script>
 </body>
 </html>
