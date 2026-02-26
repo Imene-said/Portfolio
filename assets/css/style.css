@@ -374,6 +374,20 @@ nav{display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px;}
 .border-secu {border-color: rgba(70,220,140,.95);}
 .border-surv {border-color: rgba(80,170,255,.95);}
 
+.parent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.page-centree {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
 /* ======= FAQ ======= */
 .faqCenter{
   min-height: calc(100vh - 160px);
@@ -748,4 +762,187 @@ footer.siteFooter{
 }
 .center {
   margin: 0 auto;
+}
+
+/* ===== CV CARTES (PAGE CV) ===== */
+.cvCardsSection {
+  margin-top: 40px;
+}
+
+.cvCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.cvBigCard {
+  display: block;
+  text-decoration: none;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.cvBigCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #3b82f6;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.cvBigCardImage {
+  height: 180px;
+  overflow: hidden;
+}
+
+.cvBigCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cvBigCard:hover .cvBigCardImage img {
+  transform: scale(1.08);
+}
+
+.cvBigCardContent {
+  padding: 24px;
+}
+
+.cvBigCardContent h3 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.cvBigCardContent p {
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.cvCardButton {
+  color: #3b82f6;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== NAV BUTTONS (RETRO/ACCUEIL) ===== */
+.pageActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 14px 0 22px;
+}
+
+.btnIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+  user-select: none;
+}
+
+.btnIcon:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59,130,246,.6);
+  background: rgba(59,130,246,.12);
+}
+
+.btnIcon:active {
+  transform: translateY(0);
+}
+
+.btnIcon .ico {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(59,130,246,.18);
+  border: 1px solid rgba(59,130,246,.25);
+  font-size: 18px;
+}
+
+.btnIcon.primary .ico {
+  background: rgba(34,197,94,.16);
+  border-color: rgba(34,197,94,.25);
+}
+
+.btnIcon.warn .ico {
+  background: rgba(245,158,11,.16);
+  border-color: rgba(245,158,11,.25);
+}
+/* ===== PHOTO HERO ACCUEIL (COMPATIBLE DESIGN GLASS) ===== */
+.heroPhoto{
+  display:flex;
+  justify-content:center;
+  margin-bottom: 18px;
+}
+
+.heroPhoto img{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(0,212,255,.35);
+  box-shadow:
+    0 0 20px rgba(0,212,255,.25),
+    0 0 60px rgba(30,123,255,.15);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.heroPhoto img:hover{
+  transform: scale(1.05);
+  box-shadow:
+    0 0 30px rgba(0,212,255,.45),
+    0 0 80px rgba(30,123,255,.25);
+}
+
+/* ===== FAQ 100% CENTRÉE (TITRE + ACCORDÉON ENSEMBLE) ===== */
+.faqCenterFull{
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faqBlockCentered{
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Titre centré et plus grand */
+.faqPageHeader{
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.faqTitle{
+  font-size: 38px;
+  margin: 0;
+  letter-spacing: 0.6px;
+  background: linear-gradient(90deg, #1E7BFF, #00D4FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.faqPageHeader p{
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
 }

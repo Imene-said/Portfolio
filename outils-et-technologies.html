@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outils & Technologies </title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0f19;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    border-bottom: 1px solid #1e293b;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* FILTRES */
+.filters {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.filter-btn {
+    background: #111827;
+    border: 1px solid #1f2937;
+    color: white;
+    padding: 10px 18px;
+    margin: 6px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #2563eb;
+}
+
+/* GRID */
+.grid {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+/* CARTES CLIQUABLES */
+.card {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 25px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: #3b82f6;
+    box-shadow: 0 15px 40px rgba(37,99,235,0.25);
+}
+
+.card.hide {
+    opacity: 0;
+    transform: scale(0.6);
+    position: absolute;
+    pointer-events: none;
+}
+
+.card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* POPUP MODALE */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2,6,23,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #020617;
+    border: 1px solid #3b82f6;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.7); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.modal img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+}
+
+.modal p {
+    color: #cbd5f5;
+    line-height: 1.6;
+}
+
+.close {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Mes Outils & Technologies</h1>
+    <p>Clique sur une compétence pour voir le descriptif</p>
+</header>
+
+<div class="filters">
+    <button class="filter-btn active" data-filter="all">Tout</button>
+    <button class="filter-btn" data-filter="analyse">Analyse réseau</button>
+    <button class="filter-btn" data-filter="securite">Sécurité</button>
+    <button class="filter-btn" data-filter="pentest">Pentest</button>
+    <button class="filter-btn" data-filter="dev">Développement</button>
+    <button class="filter-btn" data-filter="systemes">Systèmes</button>
+    <button class="filter-btn" data-filter="infra">Infrastructure</button>
+</div>
+
+<div class="grid">
+
+    <div class="card" data-category="analyse"
+         data-title="Wireshark"
+         data-description="Analyse avancée du trafic réseau, capture de paquets, diagnostic réseau et investigation de problèmes de communication.">
+        <img src="img/outil-et-technologies/wireshark.png">
+        <h3>Wireshark</h3>
+    </div>
+
+    <div class="card" data-category="securite"
+         data-title="Cisco ASA & VPN"
+         data-description="Configuration de pare-feu Cisco ASA, mise en place d’ACL, VPN sécurisés, tunnels GRE et IPsec pour la protection des infrastructures.">
+        <img src="img/outil-et-technologies/cisco.png">
+        <h3>Cisco ASA / VPN</h3>
+    </div>
+
+    <div class="card" data-category="pentest"
+         data-title="Metasploit & Scan"
+         data-description="Réalisation d’audits de sécurité, scan de ports, tests d’intrusion, attaques MITM et utilisation d’outils offensifs et défensifs en cybersécurité.">
+        <img src="img/outil-et-technologies/metasploit.png">
+        <h3>Pentest & Cybersécurité</h3>
+    </div>
+
+    <div class="card" data-category="dev"
+         data-title="Python & Web"
+         data-description="Développement en Python, création de scripts automatisés et développement web en HTML/CSS pour des projets techniques et portfolio.">
+        <img src="img/outil-et-technologies/python.png">
+        <h3>Python / HTML-CSS</h3>
+    </div>
+
+    <div class="card" data-category="systemes"
+         data-title="Windows Server & Linux"
+         data-description="Administration systèmes : Active Directory, GPO, gestion utilisateurs, DNS, DHCP sur Windows Server et configuration réseau sous Linux.">
+        <img src="img/outil-et-technologies/windows-server.png">
+        <h3>Systèmes (Windows & Linux)</h3>
+    </div>
+
+    <div class="card" data-category="infra"
+         data-title="Infrastructure Réseaux"
+         data-description="Configuration d’équipements réseau professionnels : switch Juniper, borne WiFi Aruba, VLAN, routage OSPF, BGP et architecture réseau.">
+        <img src="img/outil-et-technologies/network.png">
+        <h3>Infrastructure Réseau</h3>
+    </div>
+
+</div>
+
+<!-- POPUP -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <img id="modal-img" src="">
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <button class="close" onclick="closeModal()">Fermer</button>
+    </div>
+</div>
+
+<script>
+// FILTRE
+const filterBtns = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".card");
+
+filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+            if (filter === "all" || card.dataset.category === filter) {
+                card.classList.remove("hide");
+            } else {
+                card.classList.add("hide");
+            }
+        });
+    });
+});
+
+// MODAL (DESCRIPTIF AU CLIC)
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modal-title");
+const modalDesc = document.getElementById("modal-desc");
+const modalImg = document.getElementById("modal-img");
+
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        modal.classList.add("active");
+        modalTitle.textContent = card.dataset.title;
+        modalDesc.textContent = card.dataset.description;
+        modalImg.src = card.querySelector("img").src;
+    });
+});
+
+function closeModal() {
+    modal.classList.remove("active");
+}
+
+// Fermer en cliquant en dehors
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+</script>
+
+</body>
+</html>

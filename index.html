@@ -13,6 +13,7 @@
   <div class="gridlines"></div>
   <canvas id="particles"></canvas>
 
+  <!-- HEADER -->
   <header>
     <div class="container">
       <div class="topbar">
@@ -36,20 +37,31 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="heroFull">
     <div class="container">
-      <!--<div class="glass" style="max-width:980px;margin:0 auto;">-->
-        <div class="inner">
+      <!-- ON UTILISE TA CLASSE GLASS EXISTANTE -->
+      <div class="glass" style="max-width:980px;margin:0 auto;">
+        <div class="inner" style="text-align:center;">
+
+          <!-- PHOTO (AU DESSUS DU BONJOUR) -->
+          <div class="heroPhoto">
+            <img src="./assets/img/accueil/photo-presentation.jpg" alt="Photo de Imene">
+          </div>
+
+          <!-- TEXTE TYPING -->
           <h2><span id="type" class="cursor"></span></h2>
           <p><span id="text" class="cursor sub"></span></p>
+
+        </div>
       </div>
     </div>
-
   </section>
 
+  <!-- SCRIPT TYPING BONJOUR -->
   <script>
     const text = "Bonjour, je suis Imene.";
-    const speed = 52; // ms par caractère (plus petit = plus rapide)
+    const speed = 52;
 
     const el = document.getElementById("type");
     let i = 0;
@@ -60,28 +72,30 @@
         i++;
         setTimeout(typeWriter, speed);
       } else {
-        // optionnel : enlever le curseur à la fin
-         el.classList.remove("cursor");
+        el.classList.remove("cursor");
       }
     }
 
     typeWriter();
   </script>
+
+  <!-- SCRIPT TEXTE DYNAMIQUE -->
   <script>
     const phrases = [
-      "Je suis étudiante en 3ème année en BUT Réseaux et Telecommunications à l'IUT de Béthune.",
-      "Je suis Alternante",
+      "Je suis étudiante en 3ème année en BUT Réseaux et Télécommunications à l'IUT de Béthune.",
+      "Je suis alternante en informatique et réseaux.",
+      "Passionnée par la cybersécurité, les systèmes et les infrastructures réseau."
     ];
     
     let phraseIndex = 0;
     let letterIndex = 0;
     let isDeleting = false;
     
-    const speedWrite = 50;   // vitesse d'écriture
-    const speedDelete = 30;  // vitesse d'effacement
-    const pauseTime = 2000;  // temps d'affichage avant disparition
+    const speedWrite = 50;
+    const speedDelete = 30;
+    const pauseTime = 2000;
     
-    const textElement = document.getElementById("text"); // ID de ton élément
+    const textElement = document.getElementById("text");
     
     function typeEffect() {
       const fullText = phrases[phraseIndex];
@@ -110,7 +124,7 @@
     }
     
     typeEffect();
-    </script>
+  </script>
 
   <script src="./assets/js/main.js"></script>
 </body>

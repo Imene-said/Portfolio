@@ -17,7 +17,6 @@
     <div class="container">
       <div class="topbar">
         <div class="brand">
-          <!--<div class="logo" aria-hidden="true"></div>-->
           <div>
             <h1>Imene SAID ERRAHMANI</h1>
             <p>Portfolio BUT R&T — Alternance</p>
@@ -38,14 +37,28 @@
 
   <main class="container" style="padding: 18px 0 36px;">
 
-    <!-- TITRE + BOUTON PDF -->
+    <!-- BOUTONS ACTIONS -->
+    <div class="pageActions">
+      <button class="btnIcon warn" type="button" onclick="history.back()">
+        <span class="ico">↩</span> Retour
+      </button>
+      <a class="btnIcon" href="./index.html">
+        <span class="ico">🏠</span> Accueil
+      </a>
+      <a class="btnIcon primary" href="./assets/files/cv-imene.pdf" download>
+        <span class="ico">⬇</span> Télécharger PDF
+      </a>
+    </div>
+
+    <!-- TITRE -->
     <div class="sectionHeader">
       <div>
-        <h3>Curriculum Vitae</h3>
-        <p>Présentation structurée de mon parcours académique et professionnel.</p>
-      
+        <h3>Mon CV</h3>
+        <p>Présentation structurée de mon parcours, mes formations et mes compétences techniques.</p>
+      </div>
+    </div>
 
-    <!-- INTRO (SIMPLE, SANS BLOCS) -->
+    <!-- INTRO -->
     <section class="cvIntro">
       <h2 class="cvName">Imene SAID ERRAHMANI</h2>
       <p class="cvSubtitle">
@@ -53,76 +66,60 @@
       </p>
       <p class="cvDesc">
         Étudiante en Réseaux & Télécommunications, spécialisée dans la supervision,
-        les systèmes, la sécurité et le développement. Je m’intéresse particulièrement
+        les systèmes, la cybersécurité et le développement. Je m’intéresse particulièrement
         à l’analyse technique, la documentation et l’amélioration continue des systèmes.
-        Ce CV présente mon parcours, mes compétences et mes expériences de manière claire
-        et visuelle.
       </p>
     </section>
 
-    <!-- TIMELINE / SCHÉMA DU PARCOURS -->
-    <section class="cvSection">
-      <h3 class="cvSectionTitle">🎓 Parcours & Expériences (Timeline)</h3>
+    <!-- CARTES -->
+    <section class="cvCardsSection">
+      <div class="cvCardsGrid">
 
-      <div class="timelineSimple">
-
-        <div class="timelineRow">
-          <div class="timelineYear">2023 - Aujourd’hui</div>
-          <div class="timelineText">
-            <strong>BUT Réseaux & Télécommunications</strong><br>
-            Formation en réseaux, systèmes, cybersécurité, programmation
-            et supervision des infrastructures informatiques.
+        <a href="./formations.html" class="cvBigCard">
+          <div class="cvBigCardImage">
+            <img src="./assets/img/cv/formations.png" alt="Formations">
           </div>
-        </div>
-
-        <div class="timelineRow">
-          <div class="timelineYear">2024 - Aujourd’hui</div>
-          <div class="timelineText">
-            <strong>Alternance — (Entreprise à compléter)</strong><br>
-            Participation à des projets techniques, supervision des systèmes,
-            documentation et amélioration des services informatiques.
+          <div class="cvBigCardContent">
+            <h3>🎓 Mes Formations</h3>
+            <p>Parcours académique, diplômes, apprentissages et progression.</p>
+            <span class="cvCardButton">Accéder →</span>
           </div>
-        </div>
+        </a>
 
-        <div class="timelineRow">
-          <div class="timelineYear">Année</div>
-          <div class="timelineText">
-            <strong>Baccalauréat</strong><br>
-            Diplôme de fin d’études secondaires (spécialité à compléter).
+        <a href="./formations.html" class="cvBigCard">
+          <div class="cvBigCardImage">
+            <img src="./assets/img/cv/experiences.png" alt="Expériences">
           </div>
-        </div>
+          <div class="cvBigCardContent">
+            <h3>💼 Mes Expériences</h3>
+            <p>Alternance, missions techniques, projets et réalisation en entreprise.</p>
+            <span class="cvCardButton">Accéder →</span>
+          </div>
+        </a>
+
+        <a href="./outils-et-technologies.html" class="cvBigCard">
+          <div class="cvBigCardImage">
+            <img src="./assets/img/cv/technologies.png" alt="Outils & technologies">
+          </div>
+          <div class="cvBigCardContent">
+            <h3>🛠️ Outils & Technologies</h3>
+            <p>Analyse réseau, sécurité, systèmes, pentest, dev & infrastructure.</p>
+            <span class="cvCardButton">Accéder →</span>
+          </div>
+        </a>
 
       </div>
     </section>
 
-  
-    <!-- OUTILS & TECHNOLOGIES -->
-    <section class="cvSection">
-      <h3 class="cvSectionTitle">🛠️ Outils & Technologies</h3>
-      <p class="cvText">
-        Linux • Cisco • Wireshark • Git • Virtualisation • HTML • CSS • JavaScript • Outils de supervision
-      </p>
-    </section>
-    <br>
-  </div>
-    <div class="center">
-  <a class="button" href="./assets/files/cv-imene.pdf" download><br>
-    ⬇️ Télécharger CV
-  </a>
-</div>
-</div>
   </main>
-  
 
-
-  <!-- FOOTER IDENTIQUE À TOUTES TES AUTRES PAGES (IMPORTANT) -->
   <footer class="siteFooter">
     <div class="container footerLine">
       <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
       <span>Portfolio BUT R&amp;T</span>
       <span>Site étudiant — contenu à but pédagogique.</span>
       <span>
-        <a href="./mentions-legales.html">Mentions légales</a> • 
+        <a href="./mentions-legales.html">Mentions légales</a> •
         <a href="./contact.html">Contact</a>
       </span>
     </div>
