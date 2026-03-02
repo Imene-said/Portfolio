@@ -1346,3 +1346,175 @@ footer.siteFooter{
   font-size: 14px;
   line-height: 1.6;
 }
+/* ===== CV CARTES PLUS PETITES ===== */
+.cvSmallCards{
+  max-width: 800px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cvSmallCards .cvBigCard{
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.cvSmallCards .cvBigCardImage{
+  height: 140px; /* image plus petite */
+}
+
+.cvSmallCards .cvBigCardContent{
+  padding: 18px;
+}
+
+.cvSmallCards .cvBigCardContent h3{
+  font-size: 1.2rem;
+}
+
+.cvSmallCards .cvBigCardContent p{
+  font-size: 13px;
+}
+/* ===== CV : CARTES PLUS PETITES (SANS CHANGER LE STYLE GLOBAL) ===== */
+.cvCardsSection .cvCardsGrid{
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.cvCardsSection .cvBigCard{
+  transform: scale(0.9);
+}
+
+.cvCardsSection .cvBigCardImage{
+  height: 150px; /* plus petite hauteur */
+}
+/* ===== CV CENTRAGE TOTAL ===== */
+.cvCenterFix{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cvHeaderCenter{
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.cvIntroCenter{
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 30px auto;
+}
+
+/* ===== CARTES PLUS PETITES + CENTRÉES ===== */
+.cvGridCentered{
+  justify-content: center;
+}
+
+.cvGridSmaller{
+  max-width: 950px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.cvGridSmaller .cvBigCard{
+  transform: scale(0.88); /* réduit la taille sans casser le design */
+}
+
+.cvGridSmaller .cvBigCardImage{
+  height: 150px; /* images moins hautes */
+}
+/* ===== CV VERSION PROPRE (SANS DEMARCATION) ===== */
+
+.cvCleanLayout{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Bouton retour seul */
+.cvBackOnly{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Titre centré */
+.cvTitleCenter{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cvMainTitle{
+  font-size: 38px;
+  color: #3b82f6;
+  margin-bottom: 8px;
+}
+
+.cvMainSubtitle{
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* SUPPRIME L'EFFET GROS BLOC / DEMARCATION */
+.cvCardsNoBox{
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+/* CARTES PLUS PETITES */
+.cvMiniCard{
+  width: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.cvMiniCard:hover{
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(59,130,246,.6);
+  box-shadow: 0 20px 50px rgba(0,0,0,.45);
+}
+
+/* Image plus propre */
+.cvMiniImage{
+  height: 140px;
+  overflow: hidden;
+  background: transparent; /* enlève le fond moche */
+}
+
+.cvMiniImage img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenu carte */
+.cvMiniContent{
+  padding: 18px;
+}
+
+.cvMiniContent h3{
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.cvMiniContent p{
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+/* Fond spécifique Outils & Technologies (corrige ton problème) */
+.techCard{
+  background: linear-gradient(
+    180deg,
+    rgba(30,123,255,.08),
+    rgba(0,212,255,.05)
+  );
+}

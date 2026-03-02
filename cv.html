@@ -12,7 +12,7 @@
   <div class="gridlines"></div>
   <canvas id="particles"></canvas>
 
-  <!-- HEADER IDENTIQUE AUX AUTRES PAGES -->
+  <!-- HEADER IDENTIQUE -->
   <header>
     <div class="container">
       <div class="topbar">
@@ -35,80 +35,52 @@
     </div>
   </header>
 
-  <main class="container" style="padding: 18px 0 36px;">
+  <main class="container cvCleanLayout">
 
-    <!-- BOUTONS ACTIONS -->
-    <div class="pageActions">
-      <button class="btnIcon warn" type="button" onclick="history.back()">
-        <span class="ico">↩</span> Retour
-      </button>
-      <a class="btnIcon" href="./index.html">
-        <span class="ico">🏠</span> Accueil
-      </a>
-      <a class="btnIcon primary" href="./assets/files/cv-imene.pdf" download>
-        <span class="ico">⬇</span> Télécharger PDF
-      </a>
+    <!-- TITRE CENTRÉ -->
+    <div class="cvTitleCenter">
+      <h2 class="cvMainTitle">Mon CV</h2>
+      <p class="cvMainSubtitle">
+        Présentation de mon parcours, mes formations et mes compétences techniques.
+      </p>
     </div>
 
-    <!-- TITRE -->
-    <div class="sectionHeader">
-      <div>
-        <h3>Mon CV</h3>
-        <p>Présentation structurée de mon parcours, mes formations et mes compétences techniques.</p>
-      </div>
-    </div>
+    <!-- CARTES (PLUS PETITES + SANS DEMARCATION) -->
+    <section class="cvCardsNoBox">
 
-    <!-- INTRO -->
-    <section class="cvIntro">
-      <h2 class="cvName">Imene SAID ERRAHMANI</h2>
-      <p class="cvSubtitle">
-        Étudiante en BUT Réseaux & Télécommunications — Alternance
-      </p>
-      <p class="cvDesc">
-        Étudiante en Réseaux & Télécommunications, spécialisée dans la supervision,
-        les systèmes, la cybersécurité et le développement. Je m’intéresse particulièrement
-        à l’analyse technique, la documentation et l’amélioration continue des systèmes.
-      </p>
-    </section>
+      <a href="./formations.html" class="cvMiniCard">
+        <div class="cvMiniImage">
+          <img src="./assets/img/cv/formations.png" alt="Formations">
+        </div>
+        <div class="cvMiniContent">
+          <h3>🎓 Mes Formations</h3>
+          <p>Parcours académique, diplômes, apprentissages et progression.</p>
+          <span class="cvCardButton">Accéder →</span>
+        </div>
+      </a>
 
-    <!-- CARTES -->
-    <section class="cvCardsSection">
-      <div class="cvCardsGrid">
+      <a href="./Experiences-pro.html" class="cvMiniCard">
+        <div class="cvMiniImage">
+          <img src="./assets/img/cv/experiences.png" alt="Expériences">
+        </div>
+        <div class="cvMiniContent">
+          <h3>💼 Mes Expériences</h3>
+          <p>Alternance, missions techniques, projets et réalisations.</p>
+          <span class="cvCardButton">Accéder →</span>
+        </div>
+      </a>
 
-        <a href="./formations.html" class="cvBigCard">
-          <div class="cvBigCardImage">
-            <img src="./assets/img/cv/formations.png" alt="Formations">
-          </div>
-          <div class="cvBigCardContent">
-            <h3>🎓 Mes Formations</h3>
-            <p>Parcours académique, diplômes, apprentissages et progression.</p>
-            <span class="cvCardButton">Accéder →</span>
-          </div>
-        </a>
+      <a href="./outils-et-technologies.html" class="cvMiniCard techCard">
+        <div class="cvMiniImage">
+          <img src="./assets/img/cv/technologies.png" alt="Outils & technologies">
+        </div>
+        <div class="cvMiniContent">
+          <h3>🛠️ Outils & Technologies</h3>
+          <p>Analyse réseau, sécurité, systèmes, pentest, dev & infrastructure.</p>
+          <span class="cvCardButton">Accéder →</span>
+        </div>
+      </a>
 
-        <a href="./formations.html" class="cvBigCard">
-          <div class="cvBigCardImage">
-            <img src="./assets/img/cv/experiences.png" alt="Expériences">
-          </div>
-          <div class="cvBigCardContent">
-            <h3>💼 Mes Expériences</h3>
-            <p>Alternance, missions techniques, projets et réalisation en entreprise.</p>
-            <span class="cvCardButton">Accéder →</span>
-          </div>
-        </a>
-
-        <a href="./outils-et-technologies.html" class="cvBigCard">
-          <div class="cvBigCardImage">
-            <img src="./assets/img/cv/technologies.png" alt="Outils & technologies">
-          </div>
-          <div class="cvBigCardContent">
-            <h3>🛠️ Outils & Technologies</h3>
-            <p>Analyse réseau, sécurité, systèmes, pentest, dev & infrastructure.</p>
-            <span class="cvCardButton">Accéder →</span>
-          </div>
-        </a>
-
-      </div>
     </section>
 
   </main>

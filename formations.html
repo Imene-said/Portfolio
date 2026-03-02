@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Formations & Parcours — Imene</title>
   <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
 </head>
 
 <body class="page">
+  <!-- FOND PARTICULES IDENTIQUE AUX AUTRES PAGES -->
   <div class="glow"></div>
   <div class="gridlines"></div>
   <canvas id="particles"></canvas>
 
+  <!-- HEADER -->
   <header>
     <div class="container">
       <div class="topbar">
@@ -34,32 +37,36 @@
     </div>
   </header>
 
-  <main class="container" style="padding: 18px 0 36px;">
+  <!-- MAIN CENTRÉ COMME FAQ -->
+  <main class="container" style="padding: 40px 0 60px;">
 
-    <!-- BOUTONS ACTIONS -->
-    <div class="pageActions">
+    <!-- BOUTON RETOUR (PROPRE EN HAUT À GAUCHE) -->
+    <div style="margin-bottom: 30px;">
       <button class="btnIcon warn" type="button" onclick="history.back()">
-        <span class="ico">↩</span> Retour
+        <span class="ico">←</span> Retour
       </button>
-      <a class="btnIcon" href="./cv.html">
-        <span class="ico">📄</span> CV
-      </a>
-      <a class="btnIcon" href="./outils-et-technologies.html">
-        <span class="ico">🛠</span> Outils
-      </a>
     </div>
 
-    <div class="sectionHeader">
+    <!-- HEADER CENTRÉ -->
+    <div class="sectionHeader" style="justify-content:center; text-align:center; margin-bottom: 40px;">
       <div>
-        <h3>🎓 Parcours & Expériences</h3>
-        <p>Présentation chronologique de mon parcours académique et professionnel.</p>
+        <h3 style="font-size: 34px; color: #3b82f6;">
+          🎓 Parcours & Expériences
+        </h3>
+        <p style="max-width: 700px; margin: 10px auto 0;">
+          Présentation chronologique de mon parcours académique et professionnel.
+        </p>
       </div>
     </div>
 
-    <section class="cvSection">
-      <h3 class="cvSectionTitle">Timeline</h3>
+    <!-- TIMELINE CENTRÉE -->
+    <section class="cvSection" style="max-width: 800px; margin: 0 auto;">
+      <h3 class="cvSectionTitle" style="text-align: center; margin-bottom: 30px;">
+        Timeline
+      </h3>
 
       <div class="timelineSimple">
+
         <div class="timelineRow">
           <div class="timelineYear">2023 - Aujourd’hui</div>
           <div class="timelineText">
@@ -84,11 +91,13 @@
             Diplôme de fin d’études secondaires (spécialité à compléter).
           </div>
         </div>
+
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="siteFooter">
     <div class="container footerLine">
       <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
@@ -101,6 +110,5 @@
     </div>
   </footer>
 
-  <script src="./assets/js/main.js"></script>
 </body>
 </html>

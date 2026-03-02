@@ -3,79 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Outils & Technologies </title>
+<title>Outils & Technologies — Imene</title>
+
+<!-- CSS GLOBAL DU SITE (IMPORTANT) -->
+<link rel="stylesheet" href="./assets/css/style.css">
+<script defer src="./assets/js/main.js"></script>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0b0f19;
-    color: white;
+/* ===== ON GARDE TON DESIGN MAIS ADAPTÉ AU PORTFOLIO ===== */
+
+/* CONTENEUR CENTRÉ */
+.outilsContainer{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 18px 60px;
 }
 
-header {
+/* TITRE CENTRÉ COMME FAQ / PRO */
+.outilsHeader{
     text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #020617, #0f172a);
-    border-bottom: 1px solid #1e293b;
+    margin: 20px 0 30px;
 }
 
-h1 {
-    margin: 0;
-    font-size: 2.5rem;
+.outilsHeader h1{
+    font-size: 38px;
+    color: #3b82f6;
+    margin-bottom: 10px;
+}
+
+.outilsHeader p{
+    color: var(--muted);
+    font-size: 15px;
 }
 
 /* FILTRES */
 .filters {
     text-align: center;
-    margin: 40px 0;
+    margin: 30px 0 40px;
 }
 
 .filter-btn {
-    background: #111827;
-    border: 1px solid #1f2937;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
     color: white;
     padding: 10px 18px;
     margin: 6px;
-    border-radius: 30px;
+    border-radius: 999px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .filter-btn:hover {
-    background: #2563eb;
+    background: rgba(59,130,246,0.2);
+    border-color: #3b82f6;
     transform: translateY(-2px);
 }
 
 .filter-btn.active {
-    background: #2563eb;
+    background: rgba(59,130,246,0.35);
+    border-color: #3b82f6;
 }
 
-/* GRID */
+/* GRID CARTES */
 .grid {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 28px;
 }
 
-/* CARTES CLIQUABLES */
+/* CARTES STYLE PORTFOLIO */
 .card {
-    background: #020617;
-    border: 1px solid #1e293b;
-    border-radius: 16px;
-    padding: 25px 15px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 20px;
+    padding: 28px 20px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.35s ease;
+    backdrop-filter: blur(10px);
 }
 
 .card:hover {
     transform: translateY(-8px) scale(1.03);
     border-color: #3b82f6;
-    box-shadow: 0 15px 40px rgba(37,99,235,0.25);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
 .card.hide {
@@ -86,25 +97,23 @@ h1 {
 }
 
 .card img {
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
     margin-bottom: 15px;
 }
 
 .card h3 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
-/* POPUP MODALE */
+/* MODAL (COMPATIBLE AVEC TON THEME) */
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(2,6,23,0.9);
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,23 +129,18 @@ h1 {
 }
 
 .modal-content {
-    background: #020617;
-    border: 1px solid #3b82f6;
-    border-radius: 20px;
+    background: rgba(10,16,40,0.9);
+    border: 1px solid rgba(59,130,246,0.5);
+    border-radius: 22px;
     padding: 30px;
     max-width: 500px;
     width: 90%;
     text-align: center;
-    animation: zoomIn 0.4s ease;
-}
-
-@keyframes zoomIn {
-    from {transform: scale(0.7); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}
+    box-shadow: 0 30px 100px rgba(0,0,0,0.8);
 }
 
 .modal img {
-    width: 80px;
+    width: 90px;
     margin-bottom: 15px;
 }
 
@@ -145,85 +149,127 @@ h1 {
 }
 
 .modal p {
-    color: #cbd5f5;
+    color: var(--muted);
     line-height: 1.6;
 }
 
 .close {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border: none;
-    background: #2563eb;
+    background: #3b82f6;
     color: white;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
 }
 </style>
 </head>
-<body>
 
+<body class="page">
+<!-- FOND PARTICULES COMME LES AUTRES PAGES -->
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+<!-- HEADER IDENTIQUE AU SITE -->
 <header>
-    <h1>Mes Outils & Technologies</h1>
-    <p>Clique sur une compétence pour voir le descriptif</p>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div>
+          <h1>Imene SAID ERRAHMANI</h1>
+          <p>Portfolio BUT R&T — Alternance</p>
+        </div>
+      </div>
+
+      <nav aria-label="Navigation">
+        <a class="navlink" href="./index.html">Accueil</a>
+        <a class="navlink" href="./cv.html">CV</a>
+        <a class="navlink" href="./pro.html">Projets professionnels</a>
+        <a class="navlink" href="./cours.html">Apprentissage</a>
+        <a class="navlink" href="./faq.html">FAQ</a>
+        <a class="navlink" href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
 </header>
 
-<div class="filters">
-    <button class="filter-btn active" data-filter="all">Tout</button>
-    <button class="filter-btn" data-filter="analyse">Analyse réseau</button>
-    <button class="filter-btn" data-filter="securite">Sécurité</button>
-    <button class="filter-btn" data-filter="pentest">Pentest</button>
-    <button class="filter-btn" data-filter="dev">Développement</button>
-    <button class="filter-btn" data-filter="systemes">Systèmes</button>
-    <button class="filter-btn" data-filter="infra">Infrastructure</button>
-</div>
+<main class="outilsContainer">
 
-<div class="grid">
-
-    <div class="card" data-category="analyse"
-         data-title="Wireshark"
-         data-description="Analyse avancée du trafic réseau, capture de paquets, diagnostic réseau et investigation de problèmes de communication.">
-        <img src="img/outil-et-technologies/wireshark.png">
-        <h3>Wireshark</h3>
+    <!-- BOUTON RETOUR EN HAUT GAUCHE -->
+    <div class="pageActions" style="margin-bottom:20px;">
+        <button class="btnIcon warn" onclick="history.back()">
+            <span class="ico">←</span> Retour
+        </button>
     </div>
 
-    <div class="card" data-category="securite"
-         data-title="Cisco ASA & VPN"
-         data-description="Configuration de pare-feu Cisco ASA, mise en place d’ACL, VPN sécurisés, tunnels GRE et IPsec pour la protection des infrastructures.">
-        <img src="img/outil-et-technologies/cisco.png">
-        <h3>Cisco ASA / VPN</h3>
+    <!-- TITRE -->
+    <div class="outilsHeader">
+        <h1>Mes Outils & Technologies</h1>
+        <p>Clique sur une compétence pour voir le descriptif</p>
     </div>
 
-    <div class="card" data-category="pentest"
-         data-title="Metasploit & Scan"
-         data-description="Réalisation d’audits de sécurité, scan de ports, tests d’intrusion, attaques MITM et utilisation d’outils offensifs et défensifs en cybersécurité.">
-        <img src="img/outil-et-technologies/metasploit.png">
-        <h3>Pentest & Cybersécurité</h3>
+    <!-- FILTRES -->
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tout</button>
+        <button class="filter-btn" data-filter="analyse">Analyse réseau</button>
+        <button class="filter-btn" data-filter="securite">Sécurité</button>
+        <button class="filter-btn" data-filter="pentest">Pentest</button>
+        <button class="filter-btn" data-filter="dev">Développement</button>
+        <button class="filter-btn" data-filter="systemes">Systèmes</button>
+        <button class="filter-btn" data-filter="infra">Infrastructure</button>
     </div>
 
-    <div class="card" data-category="dev"
-         data-title="Python & Web"
-         data-description="Développement en Python, création de scripts automatisés et développement web en HTML/CSS pour des projets techniques et portfolio.">
-        <img src="img/outil-et-technologies/python.png">
-        <h3>Python / HTML-CSS</h3>
+    <!-- GRID -->
+    <div class="grid">
+
+        <div class="card" data-category="analyse"
+             data-title="Wireshark"
+             data-description="Analyse avancée du trafic réseau, capture de paquets et diagnostic réseau.">
+            <img src="img/outil-et-technologies/wireshark.png">
+            <h3>Wireshark</h3>
+        </div>
+
+        <div class="card" data-category="securite"
+             data-title="Cisco ASA & VPN"
+             data-description="Configuration de pare-feu Cisco ASA, ACL, VPN et tunnels IPsec.">
+            <img src="img/outil-et-technologies/cisco.png">
+            <h3>Cisco ASA / VPN</h3>
+        </div>
+
+        <div class="card" data-category="pentest"
+             data-title="Metasploit & Scan"
+             data-description="Tests d’intrusion, scan de ports, MITM et audits de sécurité.">
+            <img src="img/outil-et-technologies/metasploit.png">
+            <h3>Pentest & Cybersécurité</h3>
+        </div>
+
+        <div class="card" data-category="dev"
+             data-title="Python & Web"
+             data-description="Développement Python, scripts automatisés et HTML/CSS.">
+            <img src="img/outil-et-technologies/python.png">
+            <h3>Python / HTML-CSS</h3>
+        </div>
+
+        <div class="card" data-category="systemes"
+             data-title="Windows Server & Linux"
+             data-description="Active Directory, GPO, DNS, DHCP et administration Linux.">
+            <img src="img/outil-et-technologies/windows-server.png">
+            <h3>Systèmes (Windows & Linux)</h3>
+        </div>
+
+        <div class="card" data-category="infra"
+             data-title="Infrastructure Réseaux"
+             data-description="Switch Juniper, borne WiFi Aruba, VLAN, OSPF, BGP.">
+            <img src="img/outil-et-technologies/network.png">
+            <h3>Infrastructure Réseau</h3>
+        </div>
+
     </div>
 
-    <div class="card" data-category="systemes"
-         data-title="Windows Server & Linux"
-         data-description="Administration systèmes : Active Directory, GPO, gestion utilisateurs, DNS, DHCP sur Windows Server et configuration réseau sous Linux.">
-        <img src="img/outil-et-technologies/windows-server.png">
-        <h3>Systèmes (Windows & Linux)</h3>
-    </div>
+</main>
 
-    <div class="card" data-category="infra"
-         data-title="Infrastructure Réseaux"
-         data-description="Configuration d’équipements réseau professionnels : switch Juniper, borne WiFi Aruba, VLAN, routage OSPF, BGP et architecture réseau.">
-        <img src="img/outil-et-technologies/network.png">
-        <h3>Infrastructure Réseau</h3>
-    </div>
-
-</div>
-
-<!-- POPUP -->
+<!-- MODAL -->
 <div class="modal" id="modal">
     <div class="modal-content">
         <img id="modal-img" src="">
@@ -234,7 +280,6 @@ h1 {
 </div>
 
 <script>
-// FILTRE
 const filterBtns = document.querySelectorAll(".filter-btn");
 const cards = document.querySelectorAll(".card");
 
@@ -242,7 +287,6 @@ filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         filterBtns.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
-
         const filter = btn.dataset.filter;
 
         cards.forEach(card => {
@@ -255,7 +299,6 @@ filterBtns.forEach(btn => {
     });
 });
 
-// MODAL (DESCRIPTIF AU CLIC)
 const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modal-title");
 const modalDesc = document.getElementById("modal-desc");
@@ -274,11 +317,8 @@ function closeModal() {
     modal.classList.remove("active");
 }
 
-// Fermer en cliquant en dehors
 modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        closeModal();
-    }
+    if (e.target === modal) closeModal();
 });
 </script>
 
