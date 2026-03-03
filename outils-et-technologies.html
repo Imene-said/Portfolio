@@ -1,177 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Outils & Technologies — Imene</title>
 
-<!-- CSS GLOBAL DU SITE (IMPORTANT) -->
 <link rel="stylesheet" href="./assets/css/style.css">
 <script defer src="./assets/js/main.js"></script>
 
 <style>
-/* ===== ON GARDE TON DESIGN MAIS ADAPTÉ AU PORTFOLIO ===== */
 
-/* CONTENEUR CENTRÉ */
-.outilsContainer{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 18px 60px;
+/* ===== CONTAINER ===== */
+.techContainer{
+    max-width:1200px;
+    margin:0 auto;
+    padding:80px 20px 120px;
+    text-align:center;
 }
 
-/* TITRE CENTRÉ COMME FAQ / PRO */
-.outilsHeader{
-    text-align: center;
-    margin: 20px 0 30px;
+.techContainer h2{
+    font-size:42px;
+    color:#3b82f6;
+    margin-bottom:10px;
 }
 
-.outilsHeader h1{
-    font-size: 38px;
-    color: #3b82f6;
-    margin-bottom: 10px;
+.techContainer p{
+    opacity:0.75;
+    margin-bottom:60px;
+    font-size:16px;
 }
 
-.outilsHeader p{
-    color: var(--muted);
-    font-size: 15px;
+/* ===== BOUTON RETOUR ===== */
+.backBtn{
+    position:absolute;
+    top:120px;
+    left:40px;
+    background:white;
+    color:#0f172a;
+    border:none;
+    padding:8px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
 }
 
-/* FILTRES */
-.filters {
-    text-align: center;
-    margin: 30px 0 40px;
+.backBtn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(255,255,255,0.3);
 }
 
-.filter-btn {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.10);
-    color: white;
-    padding: 10px 18px;
-    margin: 6px;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: 0.3s ease;
+/* ===== GRID ===== */
+.sectionGrid{
+    display:flex;
+    gap:40px;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
-.filter-btn:hover {
-    background: rgba(59,130,246,0.2);
-    border-color: #3b82f6;
-    transform: translateY(-2px);
+/* ===== CARTES ===== */
+.card{
+    width:260px;
+    height:260px;
+    padding:25px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:22px;
+    cursor:pointer;
+    transition:0.35s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    backdrop-filter: blur(6px);
 }
 
-.filter-btn.active {
-    background: rgba(59,130,246,0.35);
-    border-color: #3b82f6;
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#3b82f6;
+    box-shadow:0 20px 50px rgba(59,130,246,0.35);
 }
 
-/* GRID CARTES */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 28px;
+.card img{
+    width:150px;
+    height:110px;
+    object-fit:cover;
+    border-radius:14px;
+    margin-bottom:25px;
+    transition:0.3s;
 }
 
-/* CARTES STYLE PORTFOLIO */
-.card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 20px;
-    padding: 28px 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.35s ease;
-    backdrop-filter: blur(10px);
+.card:hover img{
+    transform:scale(1.05);
 }
 
-.card:hover {
-    transform: translateY(-8px) scale(1.03);
-    border-color: #3b82f6;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+.card h4{
+    margin:0;
+    font-size:18px;
+    font-weight:600;
 }
 
-.card.hide {
-    opacity: 0;
-    transform: scale(0.6);
-    position: absolute;
-    pointer-events: none;
+/* ===== MODAL ===== */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    visibility:hidden;
+    opacity:0;
+    transition:0.3s;
+    z-index:1000;
 }
 
-.card img {
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-    margin-bottom: 15px;
+.modal.active{
+    visibility:visible;
+    opacity:1;
 }
 
-.card h3 {
-    margin: 0;
-    font-size: 1.05rem;
+.modal-content{
+    background:#0f172a;
+    padding:40px;
+    border-radius:20px;
+    border:1px solid #3b82f6;
+    width:90%;
+    max-width:550px;
+    text-align:center;
 }
 
-/* MODAL (COMPATIBLE AVEC TON THEME) */
-.modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.4s ease;
-    z-index: 1000;
+.modal-content img{
+    width:100px;
+    margin-bottom:20px;
 }
 
-.modal.active {
-    opacity: 1;
-    visibility: visible;
+.modal-content h2{
+    margin-bottom:15px;
 }
 
-.modal-content {
-    background: rgba(10,16,40,0.9);
-    border: 1px solid rgba(59,130,246,0.5);
-    border-radius: 22px;
-    padding: 30px;
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 30px 100px rgba(0,0,0,0.8);
+.modal-content p{
+    opacity:0.85;
+    line-height:1.6;
+    font-size:15px;
 }
 
-.modal img {
-    width: 90px;
-    margin-bottom: 15px;
+.close{
+    margin-top:25px;
+    padding:10px 22px;
+    border:none;
+    background:#3b82f6;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
 }
 
-.modal h2 {
-    margin-bottom: 15px;
-}
-
-.modal p {
-    color: var(--muted);
-    line-height: 1.6;
-}
-
-.close {
-    margin-top: 20px;
-    padding: 10px 22px;
-    border: none;
-    background: #3b82f6;
-    color: white;
-    border-radius: 12px;
-    cursor: pointer;
-}
 </style>
 </head>
 
 <body class="page">
-<!-- FOND PARTICULES COMME LES AUTRES PAGES -->
+
 <div class="glow"></div>
 <div class="gridlines"></div>
 <canvas id="particles"></canvas>
 
-<!-- HEADER IDENTIQUE AU SITE -->
 <header>
   <div class="container">
     <div class="topbar">
@@ -182,9 +173,9 @@
         </div>
       </div>
 
-      <nav aria-label="Navigation">
+      <nav>
         <a class="navlink" href="./index.html">Accueil</a>
-        <a class="navlink" href="./cv.html">CV</a>
+        <a class="navlink active" href="./cv.html">CV</a>
         <a class="navlink" href="./pro.html">Projets professionnels</a>
         <a class="navlink" href="./cours.html">Apprentissage</a>
         <a class="navlink" href="./faq.html">FAQ</a>
@@ -194,131 +185,88 @@
   </div>
 </header>
 
-<main class="outilsContainer">
+<button class="backBtn" onclick="history.back()">← Retour</button>
 
-    <!-- BOUTON RETOUR EN HAUT GAUCHE -->
-    <div class="pageActions" style="margin-bottom:20px;">
-        <button class="btnIcon warn" onclick="history.back()">
-            <span class="ico">←</span> Retour
-        </button>
-    </div>
+<main class="techContainer">
 
-    <!-- TITRE -->
-    <div class="outilsHeader">
-        <h1>Mes Outils & Technologies</h1>
-        <p>Clique sur une compétence pour voir le descriptif</p>
-    </div>
+<h2>Outils & Technologies</h2>
+<p></p>
 
-    <!-- FILTRES -->
-    <div class="filters">
-        <button class="filter-btn active" data-filter="all">Tout</button>
-        <button class="filter-btn" data-filter="analyse">Analyse réseau</button>
-        <button class="filter-btn" data-filter="securite">Sécurité</button>
-        <button class="filter-btn" data-filter="pentest">Pentest</button>
-        <button class="filter-btn" data-filter="dev">Développement</button>
-        <button class="filter-btn" data-filter="systemes">Systèmes</button>
-        <button class="filter-btn" data-filter="infra">Infrastructure</button>
-    </div>
+<div class="sectionGrid">
 
-    <!-- GRID -->
-    <div class="grid">
+<div class="card" data-title="Wireshark"
+data-description="Analyse avancée du trafic réseau, capture de paquets et diagnostic réseau.">
+<img src="assets/img/outils-et-technologies/wireshark.png">
+<h4>Wireshark</h4>
+</div>
 
-        <div class="card" data-category="analyse"
-             data-title="Wireshark"
-             data-description="Analyse avancée du trafic réseau, capture de paquets et diagnostic réseau.">
-            <img src="img/outil-et-technologies/wireshark.png">
-            <h3>Wireshark</h3>
-        </div>
+<div class="card" data-title="Sécurité"
+data-description="Configuration Cisco ASA, ACL, VPN, tunnels GRE/IPsec et sécurisation d'infrastructure.">
+<img src="assets/img/outils-et-technologies/securite.png">
+<h4>Sécurité</h4>
+</div>
 
-        <div class="card" data-category="securite"
-             data-title="Cisco ASA & VPN"
-             data-description="Configuration de pare-feu Cisco ASA, ACL, VPN et tunnels IPsec.">
-            <img src="img/outil-et-technologies/cisco.png">
-            <h3>Cisco ASA / VPN</h3>
-        </div>
+<div class="card" data-title="Pentest"
+data-description="Audit de sécurité, scan de ports, MITM, utilisation de Metasploit et outils offensifs.">
+<img src="assets/img/outils-et-technologies/pentest.png">
+<h4>Pentest</h4>
+</div>
 
-        <div class="card" data-category="pentest"
-             data-title="Metasploit & Scan"
-             data-description="Tests d’intrusion, scan de ports, MITM et audits de sécurité.">
-            <img src="img/outil-et-technologies/metasploit.png">
-            <h3>Pentest & Cybersécurité</h3>
-        </div>
+<div class="card" data-title="Développement"
+data-description="Développement Python, HTML/CSS et scripts d’automatisation.">
+<img src="assets/img/outils-et-technologies/dev.png">
+<h4>Développement</h4>
+</div>
 
-        <div class="card" data-category="dev"
-             data-title="Python & Web"
-             data-description="Développement Python, scripts automatisés et HTML/CSS.">
-            <img src="img/outil-et-technologies/python.png">
-            <h3>Python / HTML-CSS</h3>
-        </div>
+<div class="card" data-title="Systèmes"
+data-description="Administration Windows Server, Active Directory, Linux, DNS et DHCP.">
+<img src="assets/img/outils-et-technologies/system.png">
+<h4>Systèmes</h4>
+</div>
 
-        <div class="card" data-category="systemes"
-             data-title="Windows Server & Linux"
-             data-description="Active Directory, GPO, DNS, DHCP et administration Linux.">
-            <img src="img/outil-et-technologies/windows-server.png">
-            <h3>Systèmes (Windows & Linux)</h3>
-        </div>
+<div class="card" data-title="Infrastructure"
+data-description="Configuration switch Juniper, borne WiFi Aruba et architecture réseau professionnelle.">
+<img src="assets/img/outils-et-technologies/reseau.png">
+<h4>Infrastructure</h4>
+</div>
 
-        <div class="card" data-category="infra"
-             data-title="Infrastructure Réseaux"
-             data-description="Switch Juniper, borne WiFi Aruba, VLAN, OSPF, BGP.">
-            <img src="img/outil-et-technologies/network.png">
-            <h3>Infrastructure Réseau</h3>
-        </div>
-
-    </div>
+</div>
 
 </main>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
-    <div class="modal-content">
-        <img id="modal-img" src="">
-        <h2 id="modal-title"></h2>
-        <p id="modal-desc"></p>
-        <button class="close" onclick="closeModal()">Fermer</button>
-    </div>
+<div class="modal-content">
+<img id="modal-img">
+<h2 id="modal-title"></h2>
+<p id="modal-desc"></p>
+<button class="close" onclick="closeModal()">Fermer</button>
+</div>
 </div>
 
 <script>
-const filterBtns = document.querySelectorAll(".filter-btn");
-const cards = document.querySelectorAll(".card");
+const cards=document.querySelectorAll(".card");
+const modal=document.getElementById("modal");
+const modalTitle=document.getElementById("modal-title");
+const modalDesc=document.getElementById("modal-desc");
+const modalImg=document.getElementById("modal-img");
 
-filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        filterBtns.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        const filter = btn.dataset.filter;
-
-        cards.forEach(card => {
-            if (filter === "all" || card.dataset.category === filter) {
-                card.classList.remove("hide");
-            } else {
-                card.classList.add("hide");
-            }
-        });
-    });
+cards.forEach(card=>{
+card.addEventListener("click",()=>{
+modal.classList.add("active");
+modalTitle.textContent=card.dataset.title;
+modalDesc.textContent=card.dataset.description;
+modalImg.src=card.querySelector("img").src;
+});
 });
 
-const modal = document.getElementById("modal");
-const modalTitle = document.getElementById("modal-title");
-const modalDesc = document.getElementById("modal-desc");
-const modalImg = document.getElementById("modal-img");
-
-cards.forEach(card => {
-    card.addEventListener("click", () => {
-        modal.classList.add("active");
-        modalTitle.textContent = card.dataset.title;
-        modalDesc.textContent = card.dataset.description;
-        modalImg.src = card.querySelector("img").src;
-    });
-});
-
-function closeModal() {
-    modal.classList.remove("active");
+function closeModal(){
+modal.classList.remove("active");
 }
 
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
+modal.addEventListener("click",(e)=>{
+if(e.target===modal){
+closeModal();
+}
 });
 </script>
 
