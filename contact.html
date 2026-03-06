@@ -17,7 +17,6 @@
     <div class="container">
       <div class="topbar">
         <div class="brand">
-          <!--<div class="logo" aria-hidden="true"></div>-->
           <div>
             <h1>Imene SAID ERRAHMANI</h1>
             <p>Portfolio BUT R&T — Alternance</p>
@@ -26,7 +25,7 @@
 
         <nav aria-label="Navigation">
           <a class="navlink" href="./index.html">Accueil</a>
-          <a class="navlink" href="./cv.html">CV</a>
+          <a class="navlink" href="./cv.html">About</a>
           <a class="navlink" href="./pro.html">Projets professionnels</a>
           <a class="navlink" href="./cours.html">Apprentissage</a>
           <a class="navlink" href="./faq.html">FAQ</a>
@@ -37,27 +36,28 @@
   </header>
 
   <main class="container">
-    <div class="sectionHeader">
+
+    <!-- TITRE CENTRÉ -->
+    <div class="sectionHeader" style="justify-content:center; text-align:center;">
       <div>
-        <h3>Me contacter</h3>
+        <h3 class="contactTitle">Me contacter</h3>
       </div>
     </div>
 
     <div class="formWrap">
+
       <div class="glass reveal">
         <div class="inner">
-          <!-- ✅ Message de confirmation (injecté par main.js si ?sent=1) -->
+
           <div id="contactSuccess"></div>
 
-          <!-- ✅ Remplace XXXXYYYY par ton ID Formspree -->
           <form action="https://formspree.io/f/mnjbgzdb" method="POST">
-            <!-- Anti-spam -->
-            <input type="text" name="_gotcha" style="display:none">
 
-            <!-- Redirect après envoi -> affiche la confirmation -->
+            <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_next" value="./contact.html?sent=1">
 
             <div class="formGrid">
+
               <div class="field">
                 <label>Nom / Prénom *</label>
                 <input class="input" type="text" name="name" required placeholder="Ex : DUPONT Jean">
@@ -70,31 +70,42 @@
 
               <div class="field">
                 <label>Téléphone</label>
-                <input class="input" type="text" name="contact" placeholder=" Téléphone ">
+                <input class="input" type="text" name="contact" placeholder="Téléphone">
               </div>
 
-              <div class="field" style="grid-column: 1 / -1;">
+              <div class="field" style="grid-column:1 / -1;">
                 <label>Objet *</label>
                 <input class="input" type="text" name="subject" required placeholder="Ex : Question / Projet / Entretien…">
               </div>
 
-              <div class="field" style="grid-column: 1 / -1;">
+              <div class="field" style="grid-column:1 / -1;">
                 <label>Message *</label>
                 <textarea class="textarea" name="message" required placeholder="Description de la demande"></textarea>
               </div>
-            </div>
-            <span class="helper">* champs obligatoires</span>
-            <div class="formActions">
 
-            <div class="center">
+            </div>
+
+            <span class="helper">* champs obligatoires</span>
+
+            <div class="formActions">
               <button class="btn-send" type="submit">Envoyer</button>
             </div>
-            </div>
-            </div>
+
           </form>
+
         </div>
       </div>
+
+      <!-- BOUTON LINKEDIN À GAUCHE -->
+      <div class="linkedinBlockLeft">
+        <a href="https://www.linkedin.com/in/TON-LINKEDIN/" target="_blank" class="linkedinBtn">
+          <img src="./assets/img/Contact/linkedin.png">
+          LinkedIn
+        </a>
+      </div>
+
     </div>
+
   </main>
 
   <footer class="siteFooter">
@@ -105,5 +116,6 @@
       <span><a href="./mentions-legales.html">Mentions légales</a> • <a href="./contact.html">Contact</a></span>
     </div>
   </footer>
+
 </body>
 </html>
