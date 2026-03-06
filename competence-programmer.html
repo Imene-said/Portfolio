@@ -1,87 +1,161 @@
 <!doctype html>
 <html lang="fr">
 <head>
+
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Compétence — Programmer</title>
+
+<title>Programmer — Compétence</title>
+
 <link rel="stylesheet" href="./assets/css/style.css">
 <script defer src="./assets/js/main.js"></script>
+
 </head>
 
 <body class="page">
+
 <div class="glow"></div>
 <div class="gridlines"></div>
 <canvas id="particles"></canvas>
 
-<header> <!-- identique -->
+<header>
 <div class="container">
+
 <div class="topbar">
+
 <div class="brand">
 <div>
-<h1>Programmer</h1>
-<p>6 projets — développement & scripts</p>
+<h1>Imene SAID ERRAHMANI</h1>
+<p>Portfolio BUT R&T — Alternance</p>
 </div>
 </div>
 
-<nav>
+<nav aria-label="Navigation">
+
 <a class="navlink" href="./index.html">Accueil</a>
 <a class="navlink" href="./cv.html">About</a>
 <a class="navlink" href="./pro.html">Projets professionnels</a>
 <a class="navlink active" href="./cours.html">Apprentissage</a>
 <a class="navlink" href="./faq.html">FAQ</a>
 <a class="navlink" href="./contact.html">Contact</a>
+
 </nav>
+
 </div>
 </div>
 </header>
 
+
 <main class="container">
-<div class="backTop">
-<a class="backBtn" href="./cours.html">← Retour</a>
+
+<!-- bouton retour -->
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+<span class="ico">←</span>
+Retour
+</button>
+
 </div>
 
-<div class="sectionHeader" style="justify-content:center;text-align:center;">
-<h2 style="font-size:34px;">Programmer — Projets & Preuves</h2>
+
+<!-- titre -->
+
+<div class="sectionHeader" style="justify-content:center; text-align:center; margin-top:20px;">
+
+<div>
+
+<h2 style="font-size:40px; color:#3b82f6;">
+Programmer une solution informatique
+</h2>
+
 </div>
 
-<section class="projectsCenter">
+</div>
+
+
+<!-- liste AC -->
+
+<div class="projectsCenter">
+
 <div class="projectsList">
-<div class="projectRow" data-item="0"><span>Projet 1 — Script Python</span><span class="arrow">&gt;</span></div>
-<div class="projectRow" data-item="1"><span>Projet 2 — Automatisation</span><span class="arrow">&gt;</span></div>
-<div class="projectRow" data-item="2"><span>Projet 3 — Développement Web</span><span class="arrow">&gt;</span></div>
-<div class="projectRow" data-item="3"><span>Projet 4 — HTML/CSS Portfolio</span><span class="arrow">&gt;</span></div>
-<div class="projectRow" data-item="4"><span>Projet 5 — Debug & tests</span><span class="arrow">&gt;</span></div>
-<div class="projectRow" data-item="5"><span>Projet 6 — Documentation code</span><span class="arrow">&gt;</span></div>
+
+
+<div class="projectRow">
+<span>
+AC33.01 — Élaborer les spécifications techniques et le cahier des charges d’une application informatique
+</span>
+<span class="arrow">></span>
 </div>
-</section>
+
+
+<div class="projectRow">
+<span>
+AC33.02 — Mettre en place un environnement de travail collaboratif
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC33.03 — Participer à la formation des utilisateurs
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC33.04 — Déployer et maintenir une solution informatique
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC33.05 — S’informer sur les évolutions et les nouveautés technologiques
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC33.06 — Sécuriser l'environnement numérique d'une application
+</span>
+<span class="arrow">></span>
+</div>
+
+
+</div>
+</div>
+
+
 </main>
 
-<div class="modal" id="modal">
-<div class="dialog">
-<div class="dialogTop">
-<div><h3 id="mTitle"></h3><p id="mDesc"></p></div>
-<button class="closeBtn" id="closeModal">Fermer ✕</button>
-</div>
-<div class="dialogGrid">
-<div class="preview"><img id="mImg"></div>
-<div class="details">
-<div class="chips" id="mChips"></div>
-<ul id="mBullets"></ul>
-<div class="dlRow" id="mDownloads"></div>
-</div>
-</div>
-</div>
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+
+<span>Portfolio BUT R&amp;T</span>
+
+<span>Site étudiant — contenu à but pédagogique.</span>
+
+<span>
+<a href="./mentions-legales.html">Mentions légales</a> 
+
+</span>
+
 </div>
 
-<script>
-window.PAGE_ITEMS = [
-{title:"Script Python",desc:"Développement de scripts d’automatisation.",img:"./assets/images/prog-1.jpg",tags:["Python"],bullets:["Scripts","Automatisation"],downloads:[]},
-{title:"Automatisation",desc:"Automatisation de tâches informatiques.",img:"./assets/images/prog-2.jpg",tags:["Automation"],bullets:["Scripts","Processus"],downloads:[]},
-{title:"Développement Web",desc:"Création de pages web.",img:"./assets/images/prog-3.jpg",tags:["Web"],bullets:["HTML","CSS"],downloads:[]},
-{title:"Portfolio",desc:"Développement du portfolio.",img:"./assets/images/prog-4.jpg",tags:["Portfolio"],bullets:["Design","UI"],downloads:[]},
-{title:"Debug & tests",desc:"Correction et validation du code.",img:"./assets/images/prog-5.jpg",tags:["Tests"],bullets:["Debug","Validation"],downloads:[]},
-{title:"Documentation",desc:"Rédaction technique du code.",img:"./assets/images/prog-6.jpg",tags:["Doc"],bullets:["Documentation","Clarté"],downloads:[]}
-];
-</script>
+</footer>
+
+
 </body>
 </html>

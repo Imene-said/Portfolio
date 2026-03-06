@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Duplication d’un site web sous Docker — Imene SAID ERRAHMANI</title>
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body class="page">
+  <div class="glow"></div>
+  <div class="gridlines"></div>
+  <canvas id="particles"></canvas>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div>
+            <h1>Imene SAID ERRAHMANI</h1>
+            <p>Portfolio BUT R&T — Alternance</p>
+          </div>
+        </div>
+
+        <nav aria-label="Navigation">
+          <a class="navlink" href="./index.html">Accueil</a>
+          <a class="navlink" href="./cv.html">About</a>
+          <a class="navlink active" href="./pro.html">Projets professionnels</a>
+          <a class="navlink" href="./cours.html">Apprentissage</a>
+          <a class="navlink" href="./faq.html">FAQ</a>
+          <a class="navlink" href="./contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding:36px 0 70px;">
+
+    <!-- Bouton retour -->
+    <div style="margin-bottom:24px;">
+      <button class="btnIcon warn" type="button" onclick="history.back()">
+        <span class="ico">←</span> Retour
+      </button>
+    </div>
+
+    <!-- Titre -->
+    <div class="sectionHeader" style="justify-content:center; text-align:center; margin-bottom:34px;">
+      <div style="max-width:920px;">
+        <h2 style="
+          margin:0 0 12px;
+          font-size:42px;
+          background:linear-gradient(90deg,#1E7BFF,#00D4FF);
+          -webkit-background-clip:text;
+          -webkit-text-fill-color:transparent;
+        ">
+          Duplication d’un site web sous Docker
+        </h2>
+
+        <p style="margin:0; color:var(--muted); font-size:15px; line-height:1.7;">
+          Reproduction d’un site existant dans un nouvel environnement technique,
+          avec adaptation de la structure, isolation des services, reconfiguration
+          des conteneurs Docker et mise en place d’une architecture réutilisable
+          pour de futures duplications.
+        </p>
+      </div>
+    </div>
+
+    <!-- 1. Contexte -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner">
+        <h3 style="margin-top:0; color:#3b82f6;">1. Contexte du projet</h3>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Ce projet s’inscrit dans un besoin concret de l’entreprise : réutiliser un site web
+          existant comme base de travail pour créer un nouveau site nommé <strong>Metiss’Lab</strong>.
+          L’objectif n’était pas simplement de copier des fichiers, mais de mettre en place une
+          méthode propre, reproductible et maintenable pour dupliquer un site complet tout en
+          l’intégrant dans une infrastructure déjà en production.  
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Le site d’origine fonctionnait déjà avec plusieurs composants : un front-end, une API,
+          une base de données MySQL, un accès d’administration via phpMyAdmin et un système de
+          reverse proxy. Le nouveau site devait reprendre la structure de départ, mais être capable
+          de fonctionner avec ses propres données, son propre nom de domaine et ses propres ports,
+          sans interférer avec les autres projets hébergés sur la même machine.  
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Objectif -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner">
+        <h3 style="margin-top:0; color:#3b82f6;">2. Objectif technique</h3>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          L’objectif principal était donc de créer une <strong>duplication fonctionnelle et indépendante</strong>
+          d’un site existant, en conservant l’architecture générale tout en adaptant les éléments
+          nécessaires à un nouveau projet. Cette duplication devait permettre :
+        </p>
+
+        <ul style="line-height:1.9; color:var(--muted); padding-left:20px;">
+          <li>de conserver le fonctionnement du site d’origine ;</li>
+          <li>de créer une nouvelle version sous un autre nom ;</li>
+          <li>de séparer les bases de données pour éviter tout conflit ;</li>
+          <li>de modifier les noms de domaines, ports et identifiants techniques ;</li>
+          <li>de préparer une méthode réutilisable pour d’autres duplications futures.</li>
+        </ul>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          En pratique, il s’agissait autant d’un projet de duplication applicative que d’un travail
+          d’<strong>ingénierie d’infrastructure</strong>, car chaque composant devait être reconfiguré
+          avec précision pour fonctionner dans un écosystème partagé.  
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. Architecture avec image -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner" style="display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center;">
+        <div>
+          <h3 style="margin-top:0; color:#3b82f6;">3. Architecture du projet</h3>
+
+          <p style="line-height:1.8; color:var(--muted);">
+            L’architecture reposait sur plusieurs briques techniques articulées autour de Docker.
+            Le projet comprenait :
+          </p>
+
+          <ul style="line-height:1.9; color:var(--muted); padding-left:20px;">
+            <li>un conteneur front-end ;</li>
+            <li>un conteneur API ;</li>
+            <li>une base de données MySQL ;</li>
+            <li>un accès phpMyAdmin ;</li>
+            <li>un reverse proxy avec Nginx Proxy Manager.</li>
+          </ul>
+
+          <p style="line-height:1.8; color:var(--muted);">
+            Tous ces services devaient cohabiter sur la même machine et la même adresse IP locale,
+            aux côtés d’autres projets déjà déployés. Cela imposait une vigilance particulière sur
+            les noms de conteneurs, les ports exposés, les noms de domaines et les liens entre
+            services.  
+          </p>
+        </div>
+
+        <div>
+          <img src="./assets/images/siteweb-architecture.jpg" alt="Architecture du projet Docker"
+               style="width:100%; border-radius:18px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03);">
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Duplication des fichiers -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner">
+        <h3 style="margin-top:0; color:#3b82f6;">4. Duplication des fichiers et préparation de l’environnement</h3>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          La première étape a consisté à se connecter en SSH au serveur afin de créer une nouvelle
+          arborescence de travail pour le site dupliqué. Un dossier dédié a été créé pour le nouveau
+          projet, puis seuls les éléments réellement nécessaires ont été copiés depuis le site original :
+        </p>
+
+        <ul style="line-height:1.9; color:var(--muted); padding-left:20px;">
+          <li>le dossier <strong>lerelais-api</strong> pour la partie back-end ;</li>
+          <li>le dossier <strong>lerelais-front</strong> pour la partie front-end ;</li>
+          <li>le fichier <strong>docker-compose.yml</strong> décrivant les services.</li>
+        </ul>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Les fichiers générés automatiquement ou les dossiers inutiles au déploiement n’ont pas été repris.
+          Ce choix permettait de repartir sur une base propre et de limiter les risques de conflit avec
+          les données ou configurations du projet d’origine.  [oai_citation:5‡Rapport de stage Imène SAID ERRAHMANI.docx](sediment://file_00000000752071fd9b31da30258f9eec)
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. Docker Compose avec image -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner" style="display:grid; grid-template-columns:.95fr 1.05fr; gap:28px; align-items:center;">
+        <div>
+          <img src="./assets/images/siteweb-docker-compose.jpg" alt="Configuration Docker Compose"
+               style="width:100%; border-radius:18px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03);">
+        </div>
+
+        <div>
+          <h3 style="margin-top:0; color:#3b82f6;">5. Adaptation du fichier Docker Compose</h3>
+
+          <p style="line-height:1.8; color:var(--muted);">
+            Le cœur du projet a été l’adaptation du fichier <strong>docker-compose.yml</strong>.
+            Ce fichier décrit les différents services à lancer, leurs dépendances, les variables
+            d’environnement, les ports et les volumes.
+          </p>
+
+          <p style="line-height:1.8; color:var(--muted);">
+            Plusieurs modifications ont été nécessaires :
+          </p>
+
+          <ul style="line-height:1.9; color:var(--muted); padding-left:20px;">
+            <li>renommer les services et les conteneurs ;</li>
+            <li>changer les variables de nom de domaine ;</li>
+            <li>adapter le nom de la base de données ;</li>
+            <li>réaffecter les ports exposés ;</li>
+            <li>corriger les dépendances entre services.</li>
+          </ul>
+
+          <p style="line-height:1.8; color:var(--muted);">
+            Cette étape était indispensable pour éviter qu’un conteneur du nouveau projet
+            interfère avec ceux du projet d’origine, notamment dans un contexte où plusieurs
+            sites partageaient déjà la même IP.  
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Base de données -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner">
+        <h3 style="margin-top:0; color:#3b82f6;">6. Duplication et adaptation de la base de données</h3>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Pour que le nouveau site dispose de ses propres données, il a été nécessaire de dupliquer
+          la base de données existante. Une nouvelle base a été créée, puis le contenu de la base
+          d’origine y a été importé grâce à un export / import MySQL.
+        </p>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Cette approche a permis de conserver exactement la même structure fonctionnelle que le site
+          original, tout en isolant complètement les données du nouveau projet. Ainsi, toute modification
+          faite sur le site dupliqué n’avait aucun impact sur le site source.
+        </p>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Le lien de connexion à la base a ensuite été ajusté dans l’API afin de pointer vers la nouvelle
+          base créée pour le projet. Ce point était essentiel pour garantir l’indépendance de l’application.  
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. Front-end -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner">
+        <h3 style="margin-top:0; color:#3b82f6;">7. Modification du front-end et des fichiers applicatifs</h3>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Au niveau du front-end, plusieurs fichiers ont dû être modifiés afin que le nouveau site
+          soit techniquement distinct du site source. Cela concernait notamment :
+        </p>
+
+        <ul style="line-height:1.9; color:var(--muted); padding-left:20px;">
+          <li>le nom du site dans l’onglet navigateur ;</li>
+          <li>les fichiers HTML, CSS et JavaScript générés ;</li>
+          <li>l’identifiant principal utilisé par le JavaScript ;</li>
+          <li>les noms de domaines appelés dans le code.</li>
+        </ul>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          L’objectif était d’éviter que les deux sites partagent des ressources ambiguës, par exemple
+          au niveau du chargement des fichiers ou du rendu de la page après rechargement. Sans cette
+          adaptation, il existait un risque que le navigateur ou l’environnement aille chercher le
+          contenu du mauvais site.  
+        </p>
+      </div>
+    </section>
+
+    <!-- 8. Proxy et DNS avec image -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner" style="display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center;">
+        <div>
+          <h3 style="margin-top:0; color:#3b82f6;">8. Mise en place du reverse proxy et intégration réseau</h3>
+
+          <p style="line-height:1.8; color:var(--muted);">
+            Une fois les conteneurs prêts, il a fallu permettre un accès propre au site via son
+            nom de domaine. Pour cela, <strong>Nginx Proxy Manager</strong> a été utilisé comme
+            reverse proxy.
+          </p>
+
+          <p style="line-height:1.8; color:var(--muted);">
+            Son rôle était d’associer chaque nom de domaine au bon service en fonction du port
+            correspondant. Cela permettait à plusieurs sites de coexister sur une même machine
+            tout en étant accessibles par des noms différents.
+          </p>
+
+          <p style="line-height:1.8; color:var(--muted);">
+            En complément, une redirection DNS a également été configurée dans <strong>pfSense</strong>
+            afin que les noms de domaines pointent correctement vers l’adresse IP locale du serveur.
+            Cette étape était indispensable pour rendre la solution réellement opérationnelle. 
+          </p>
+        </div>
+
+        <div>
+          <img src="./assets/images/siteweb-proxy.jpg" alt="Nginx Proxy Manager"
+               style="width:100%; border-radius:18px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03);">
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Déploiement -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner">
+        <h3 style="margin-top:0; color:#3b82f6;">9. Déploiement et tests</h3>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Une fois l’ensemble des fichiers et configurations adaptés, les conteneurs ont été lancés
+          avec une commande de build et de démarrage Docker Compose. Cette étape a permis de recréer
+          l’ensemble de l’environnement applicatif dans sa nouvelle version.
+        </p>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Des tests ont ensuite été réalisés pour vérifier :
+        </p>
+
+        <ul style="line-height:1.9; color:var(--muted); padding-left:20px;">
+          <li>le démarrage correct des conteneurs ;</li>
+          <li>l’accessibilité du site via son nom de domaine ;</li>
+          <li>la connexion correcte à la base de données ;</li>
+          <li>la séparation fonctionnelle entre le site d’origine et le site dupliqué.</li>
+        </ul>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Une fois ces vérifications effectuées, le site dupliqué était pleinement opérationnel
+          et pouvait être utilisé comme nouvelle base de travail pour le projet Metiss’Lab.  
+        </p>
+      </div>
+    </section>
+
+    <!-- 10. Résultats -->
+    <section class="glass reveal" style="margin-bottom:26px;">
+      <div class="inner">
+        <h3 style="margin-top:0; color:#3b82f6;">10. Résultats et compétences mobilisées</h3>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Ce projet a permis de concevoir une méthode de duplication fiable d’un site web existant
+          dans un environnement conteneurisé. La solution obtenue est à la fois réutilisable,
+          maintenable et adaptée à un contexte de cohabitation entre plusieurs projets sur une
+          même infrastructure.
+        </p>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Il m’a permis de développer et consolider des compétences en :
+        </p>
+
+        <ul style="line-height:1.9; color:var(--muted); padding-left:20px;">
+          <li>administration Linux ;</li>
+          <li>déploiement Docker et Docker Compose ;</li>
+          <li>gestion de bases de données MySQL ;</li>
+          <li>configuration réseau et reverse proxy ;</li>
+          <li>lecture et adaptation de fichiers de configuration ;</li>
+          <li>raisonnement d’architecture applicative.</li>
+        </ul>
+
+        <p style="line-height:1.8; color:var(--muted);">
+          Plus globalement, ce projet m’a permis de comprendre comment déployer une application
+          web complète dans un environnement réaliste, en tenant compte à la fois des contraintes
+          logicielles, réseau et organisationnelles. 
+        </p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="siteFooter">
+    <div class="container footerLine">
+      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+      <span>Portfolio BUT R&amp;T</span>
+      <span>Site étudiant — contenu à but pédagogique.</span>
+      <span>
+        <a href="./mentions-legales.html">Mentions légales</a> 
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

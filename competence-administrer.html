@@ -1,106 +1,131 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Compétence — Administrer</title>
 
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script defer src="./assets/js/main.js"></script>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Administrer — Compétence</title>
+
+<link rel="stylesheet" href="./assets/css/style.css">
+<script defer src="./assets/js/main.js"></script>
 </head>
 
 <body class="page">
-  <div class="glow"></div>
-  <div class="gridlines"></div>
-  <canvas id="particles"></canvas>
 
-  <header>
-    <div class="container">
-      <div class="topbar">
-        <div class="brand">
-          <div>
-            <h1>Administrer</h1>
-            <p>6 projets — systèmes & services</p>
-          </div>
-        </div>
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
 
-        <nav aria-label="Navigation">
-          <a class="navlink" href="./index.html">Accueil</a>
-          <a class="navlink" href="./cv.html">About</a>
-          <a class="navlink" href="./pro.html">Projets professionnels</a>
-          <a class="navlink active" href="./cours.html">Apprentissage</a>
-          <a class="navlink" href="./faq.html">FAQ</a>
-          <a class="navlink" href="./contact.html">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+<header>
+<div class="container">
+<div class="topbar">
 
-  <main class="container" style="padding: 18px 0 36px;">
+<div class="brand">
+<div>
+<h1>Imene SAID ERRAHMANI</h1>
+<p>Portfolio BUT R&T — Alternance</p>
+</div>
+</div>
 
-    <div class="backTop">
-      <a class="backBtn" href="./cours.html">← Retour</a>
-    </div>
+<nav aria-label="Navigation">
+<a class="navlink" href="./index.html">Accueil</a>
+<a class="navlink" href="./cv.html">About</a>
+<a class="navlink" href="./pro.html">Projets professionnels</a>
+<a class="navlink active" href="./cours.html">Apprentissage</a>
+<a class="navlink" href="./faq.html">FAQ</a>
+<a class="navlink" href="./contact.html">Contact</a>
+</nav>
 
-    <div class="sectionHeader" style="justify-content:center; text-align:center;">
-      <div style="width:100%;">
-        <h2 style="font-size:34px; margin-bottom:8px;">Administrer — Projets & Preuves</h2>
-        <p style="color: var(--muted);">Clique sur un projet pour voir le détail.</p>
-      </div>
-    </div>
+</div>
+</div>
+</header>
 
-    <section class="projectsCenter">
-      <div class="projectsList">
-        <div class="projectRow" data-item="0" tabindex="0"><span>Projet 1 — Installation Windows Server</span><span class="arrow">&gt;</span></div>
-        <div class="projectRow" data-item="1" tabindex="0"><span>Projet 2 — Active Directory & GPO</span><span class="arrow">&gt;</span></div>
-        <div class="projectRow" data-item="2" tabindex="0"><span>Projet 3 — Gestion des utilisateurs</span><span class="arrow">&gt;</span></div>
-        <div class="projectRow" data-item="3" tabindex="0"><span>Projet 4 — Services DNS & DHCP</span><span class="arrow">&gt;</span></div>
-        <div class="projectRow" data-item="4" tabindex="0"><span>Projet 5 — Administration Linux</span><span class="arrow">&gt;</span></div>
-        <div class="projectRow" data-item="5" tabindex="0"><span>Projet 6 — Documentation & maintenance</span><span class="arrow">&gt;</span></div>
-      </div>
-    </section>
 
-  </main>
+<!-- TITRE -->
+<div class="adminHeader">
 
-  <footer class="siteFooter">
-    <div class="container footerLine">
-      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
-      <span>Portfolio BUT R&amp;T</span>
-      <span>Site étudiant — contenu pédagogique.</span>
-    </div>
-  </footer>
-
-  <!-- MODAL -->
-  <div class="modal" id="modal">
-    <div class="dialog">
-      <div class="dialogTop">
-        <div>
-          <h3 id="mTitle"></h3>
-          <p id="mDesc"></p>
-        </div>
-        <button class="closeBtn" id="closeModal">Fermer ✕</button>
-      </div>
-      <div class="dialogGrid">
-        <div class="preview"><img id="mImg" alt="preuve"></div>
-        <div class="details">
-          <h4>Détails</h4>
-          <div class="chips" id="mChips"></div>
-          <ul id="mBullets"></ul>
-          <div class="dlRow" id="mDownloads"></div>
-        </div>
-      </div>
-    </div>
+  <button class="btnIcon warn" onclick="history.back()">
+  <span class="ico">←</span>
+  Retour
+  </button>
+  
+  <h2 class="adminTitle">
+  Administrer les réseaux et l’infrastructure
+  </h2>
+  
   </div>
+<!-- LISTE DES AC -->
+<div class="projectsCenter">
 
-  <script>
-    window.PAGE_ITEMS = [
-      { title:"Installation Windows Server", desc:"Déploiement et configuration initiale.", img:"./assets/images/admin-1.jpg", tags:["Windows Server"], bullets:["Installation","Configuration","Tests"], downloads:[] },
-      { title:"Active Directory & GPO", desc:"Mise en place d’un domaine et stratégies.", img:"./assets/images/admin-2.jpg", tags:["AD","GPO"], bullets:["Domaine","Stratégies","Organisation"], downloads:[] },
-      { title:"Gestion des utilisateurs", desc:"Création et gestion des comptes.", img:"./assets/images/admin-3.jpg", tags:["AD"], bullets:["Comptes","Groupes","Droits"], downloads:[] },
-      { title:"Services DNS & DHCP", desc:"Configuration des services réseau.", img:"./assets/images/admin-4.jpg", tags:["DNS","DHCP"], bullets:["Zones DNS","Baux DHCP"], downloads:[] },
-      { title:"Administration Linux", desc:"Gestion système et réseau Linux.", img:"./assets/images/admin-5.jpg", tags:["Linux"], bullets:["Commandes","Réseau","Services"], downloads:[] },
-      { title:"Documentation & maintenance", desc:"Suivi et maintenance des systèmes.", img:"./assets/images/admin-6.jpg", tags:["Maintenance"], bullets:["Documentation","Mises à jour"], downloads:[] }
-    ];
-  </script>
+<div class="projectsList">
+
+<!-- AC1 -->
+<div class="projectRow">
+<span>
+AC31.01 — Concevoir un projet de réseau informatique d’une entreprise en intégrant la haute disponibilité, la QoS, la sécurité et la supervision
+</span>
+<span class="arrow">></span>
+</div>
+
+<!-- AC2 -->
+<div class="projectRow">
+<span>
+AC31.02 — Réaliser la documentation technique du projet
+</span>
+<span class="arrow">></span>
+</div>
+
+<!-- AC3 -->
+<div class="projectRow">
+<span>
+AC31.03 — Réaliser une maquette de démonstration du projet
+</span>
+<span class="arrow">></span>
+</div>
+
+<!-- AC4 -->
+<div class="projectRow">
+<span>
+AC31.04 — Défendre et argumenter un projet technique
+</span>
+<span class="arrow">></span>
+</div>
+
+<!-- AC5 -->
+<div class="projectRow">
+<span>
+AC31.05 — Communiquer avec les acteurs du projet
+</span>
+<span class="arrow">></span>
+</div>
+
+<!-- AC6 -->
+<div class="projectRow">
+<span>
+AC31.06 — Gérer le projet et les différentes étapes de mise en œuvre en respectant les délais
+</span>
+<span class="arrow">></span>
+</div>
+
+</div>
+</div>
+
+</main>
+<p></p>
+<p></p>
+
+
+
+<footer class="siteFooter">
+<div class="container footerLine">
+<span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+<span>Portfolio BUT R&amp;T</span>
+<span>Site étudiant — contenu à but pédagogique.</span>
+<span>
+<a href="./mentions-legales.html">Mentions légales</a> 
+</span>
+</div>
+</footer>
+
 </body>
 </html>

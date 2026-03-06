@@ -1,187 +1,143 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Compétence — Surveiller</title>
 
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script defer src="./assets/js/main.js"></script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Surveiller — Compétence</title>
+
+<link rel="stylesheet" href="./assets/css/style.css">
+<script defer src="./assets/js/main.js"></script>
+
 </head>
 
 <body class="page">
-  <div class="glow"></div>
-  <div class="gridlines"></div>
-  <canvas id="particles"></canvas>
 
-  <header>
-    <div class="container">
-      <div class="topbar">
-        <div class="brand">
-          <div>
-            <h1>Surveiller</h1>
-            <p>6 projets — supervision & diagnostic réseau</p>
-          </div>
-        </div>
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
 
-        <nav aria-label="Navigation">
-          <a class="navlink" href="./index.html">Accueil</a>
-          <a class="navlink" href="./cv.html">About</a>
-          <a class="navlink" href="./pro.html">Projets professionnels</a>
-          <a class="navlink active" href="./cours.html">Apprentissage</a>
-          <a class="navlink" href="./faq.html">FAQ</a>
-          <a class="navlink" href="./contact.html">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+<header>
+<div class="container">
 
-  <main class="container" style="padding: 18px 0 36px;">
+<div class="topbar">
 
-    <!-- Bouton retour discret -->
-    <div class="backTop">
-      <a class="backBtn" href="./cours.html">← Retour</a>
-    </div>
+<div class="brand">
+<div>
+<h1>Imene SAID ERRAHMANI</h1>
+<p>Portfolio BUT R&T — Alternance</p>
+</div>
+</div>
 
-    <!-- Titre centré -->
-    <div class="sectionHeader" style="justify-content:center; text-align:center;">
-      <div style="width:100%;">
-        <h2 style="font-size:34px; margin-bottom:8px;">Surveiller — Projets & Preuves</h2>
-        <p style="color: var(--muted);">
-          Clique sur un projet pour afficher les détails et preuves.
-        </p>
-      </div>
-    </div>
+<nav aria-label="Navigation">
 
-    <!-- Liste centrée style FAQ -->
-    <section class="projectsCenter">
-      <div class="projectsList">
+<a class="navlink" href="./index.html">Accueil</a>
+<a class="navlink" href="./cv.html">About</a>
+<a class="navlink" href="./pro.html">Projets professionnels</a>
+<a class="navlink active" href="./cours.html">Apprentissage</a>
+<a class="navlink" href="./faq.html">FAQ</a>
+<a class="navlink" href="./contact.html">Contact</a>
 
-        <div class="projectRow" role="button" tabindex="0" data-item="0">
-          <span>Projet 1 — Supervision réseau</span>
-          <span class="arrow">&gt;</span>
-        </div>
+</nav>
 
-        <div class="projectRow" role="button" tabindex="0" data-item="1">
-          <span>Projet 2 — Analyse Wireshark</span>
-          <span class="arrow">&gt;</span>
-        </div>
+</div>
+</div>
+</header>
 
-        <div class="projectRow" role="button" tabindex="0" data-item="2">
-          <span>Projet 3 — Diagnostic d’incidents réseau</span>
-          <span class="arrow">&gt;</span>
-        </div>
 
-        <div class="projectRow" role="button" tabindex="0" data-item="3">
-          <span>Projet 4 — Monitoring des performances</span>
-          <span class="arrow">&gt;</span>
-        </div>
+<main class="container">
 
-        <div class="projectRow" role="button" tabindex="0" data-item="4">
-          <span>Projet 5 — Analyse des logs & alertes</span>
-          <span class="arrow">&gt;</span>
-        </div>
+<!-- bouton retour -->
 
-        <div class="projectRow" role="button" tabindex="0" data-item="5">
-          <span>Projet 6 — Optimisation & disponibilité réseau</span>
-          <span class="arrow">&gt;</span>
-        </div>
+<div class="pageActions">
 
-      </div>
-    </section>
+<button class="btnIcon warn" onclick="history.back()">
+<span class="ico">←</span>
+Retour
+</button>
 
-  </main>
+</div>
 
-  <footer class="siteFooter">
-    <div class="container footerLine">
-      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
-      <span>Portfolio BUT R&amp;T</span>
-      <span>Site étudiant — contenu à but pédagogique.</span>
-      <span>
-        <a href="./mentions-legales.html">Mentions légales</a> •
-        <a href="./contact.html">Contact</a>
-      </span>
-    </div>
-  </footer>
 
-  <!-- MODAL -->
-  <div class="modal" id="modal" role="dialog" aria-modal="true">
-    <div class="dialog">
-      <div class="dialogTop">
-        <div>
-          <h3 id="mTitle">Titre</h3>
-          <p id="mDesc">Description</p>
-        </div>
-        <button class="closeBtn" id="closeModal">Fermer ✕</button>
-      </div>
+<!-- titre -->
 
-      <div class="dialogGrid">
-        <div class="preview">
-          <img id="mImg" alt="Preuve projet">
-        </div>
+<div class="sectionHeader" style="justify-content:center; text-align:center; margin-top:20px;">
 
-        <div class="details">
-          <h4>Détails</h4>
-          <div class="chips" id="mChips"></div>
-          <ul id="mBullets"></ul>
-          <div class="dlRow" id="mDownloads"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div>
 
-  <script>
-    window.PAGE_ITEMS = [
-      {
-        title: "Supervision réseau",
-        desc: "Mise en place d’outils de supervision et analyse du trafic.",
-        img: "./assets/images/surv-1.jpg",
-        tags: ["Supervision", "Réseau"],
-        bullets: ["Surveillance trafic", "Disponibilité", "Alertes"],
-        downloads: []
-      },
-      {
-        title: "Analyse Wireshark",
-        desc: "Capture et analyse de paquets réseau.",
-        img: "./assets/images/surv-2.jpg",
-        tags: ["Wireshark"],
-        bullets: ["Analyse paquets", "Diagnostic", "Protocoles"],
-        downloads: []
-      },
-      {
-        title: "Diagnostic incidents",
-        desc: "Identification et résolution d’incidents réseau.",
-        img: "./assets/images/surv-3.jpg",
-        tags: ["Diagnostic"],
-        bullets: ["Pannes réseau", "Analyse", "Correction"],
-        downloads: []
-      },
-      {
-        title: "Monitoring performance",
-        desc: "Mesure des performances et optimisation.",
-        img: "./assets/images/surv-4.jpg",
-        tags: ["Monitoring"],
-        bullets: ["Performance", "Optimisation", "Analyse"],
-        downloads: []
-      },
-      {
-        title: "Logs & alertes",
-        desc: "Analyse des journaux systèmes et alertes.",
-        img: "./assets/images/surv-5.jpg",
-        tags: ["Logs"],
-        bullets: ["Analyse logs", "Alertes", "Sécurité"],
-        downloads: []
-      },
-      {
-        title: "Optimisation réseau",
-        desc: "Amélioration de la disponibilité et des performances réseau.",
-        img: "./assets/images/surv-6.jpg",
-        tags: ["Optimisation"],
-        bullets: ["Disponibilité", "Qualité de service", "Amélioration"],
-        downloads: []
-      }
-    ];
-  </script>
+<h2 style="font-size:40px; color:#3b82f6;">
+Surveiller le système d’information
+</h2>
+
+</div>
+
+</div>
+
+
+<!-- liste AC -->
+
+<div class="projectsCenter">
+
+<div class="projectsList">
+
+
+<div class="projectRow">
+<span>
+AC35.01 Cyber — Surveiller l’activité du système d’information
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC35.02 Cyber — Appliquer une méthodologie de tests de pénétration
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC35.03 Cyber — Réagir face à un incident de sécurité
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC35.04 Cyber — Administrer les outils de surveillance du système d’information
+</span>
+<span class="arrow">></span>
+</div>
+
+
+</div>
+</div>
+
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+
+<span>Portfolio BUT R&amp;T</span>
+
+<span>Site étudiant — contenu à but pédagogique.</span>
+
+<span>
+<a href="./mentions-legales.html">Mentions légales</a>
+</span>
+
+</div>
+
+</footer>
 
 </body>
 </html>

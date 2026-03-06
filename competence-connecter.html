@@ -1,219 +1,153 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Compétence — Connecter</title>
 
-  <!-- TON CSS GLOBAL -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!-- TON JS (modal + particles + reveal) -->
-  <script defer src="./assets/js/main.js"></script>
+<title>Connecter — Compétence</title>
+
+<link rel="stylesheet" href="./assets/css/style.css">
+<script defer src="./assets/js/main.js"></script>
+
 </head>
 
 <body class="page">
-  <div class="glow"></div>
-  <div class="gridlines"></div>
-  <canvas id="particles"></canvas>
 
-  <!-- HEADER IDENTIQUE AU RESTE DU SITE -->
-  <header>
-    <div class="container">
-      <div class="topbar">
-        <div class="brand">
-          <div>
-            <h1>Connecter</h1>
-          </div>
-        </div>
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
 
-        <nav aria-label="Navigation">
-          <a class="navlink" href="./index.html">Accueil</a>
-          <a class="navlink" href="./cv.html">About</a>
-          <a class="navlink" href="./pro.html">Projets professionnels</a>
-          <a class="navlink active" href="./cours.html">Apprentissage</a>
-          <a class="navlink" href="./faq.html">FAQ</a>
-          <a class="navlink" href="./contact.html">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+<header>
+<div class="container">
 
-  <!-- CONTENU PRINCIPAL CENTRÉ -->
-  <main class="container" style="padding: 18px 0 36px;">
+<div class="topbar">
 
-    <!-- BOUTON RETOUR (PETIT EN HAUT À GAUCHE) -->
-    <div class="backTop">
-      <a class="backBtn" href="./cours.html">← Retour</a>
-    </div>
+<div class="brand">
+<div>
+<h1>Imene SAID ERRAHMANI</h1>
+<p>Portfolio BUT R&T — Alternance</p>
+</div>
+</div>
 
-    <!-- TITRE CENTRÉ COMME FAQ -->
-    <div class="sectionHeader" style="justify-content:center; text-align:center; margin-top:10px;">
-      <div style="width:100%;">
-        <h2 style="font-size:34px; margin-bottom:8px;">
-          Connecter 
-        </h2>
-        <p style="color: var(--muted);">
-        </p>
-      </div>
-    </div>
+<nav aria-label="Navigation">
 
-    <!-- LISTE CENTRÉE (STYLE FAQ SANS ACCORDÉON) -->
-    <section class="projectsCenter">
-      <div class="projectsList">
+<a class="navlink" href="./index.html">Accueil</a>
+<a class="navlink" href="./cv.html">About</a>
+<a class="navlink" href="./pro.html">Projets professionnels</a>
+<a class="navlink active" href="./cours.html">Apprentissage</a>
+<a class="navlink" href="./faq.html">FAQ</a>
+<a class="navlink" href="./contact.html">Contact</a>
 
-        <div class="projectRow" role="button" tabindex="0" data-item="0">
-          <span>Projet 1 — Apprentissage critique réseau</span>
-          <span class="arrow">&gt;</span>
-        </div>
+</nav>
 
-        <div class="projectRow" role="button" tabindex="0" data-item="1">
-          <span>Projet 2 — Analyse du besoin et contexte</span>
-          <span class="arrow">&gt;</span>
-        </div>
+</div>
+</div>
+</header>
 
-        <div class="projectRow" role="button" tabindex="0" data-item="2">
-          <span>Projet 3 — Architecture réseau (VLAN, IP)</span>
-          <span class="arrow">&gt;</span>
-        </div>
 
-        <div class="projectRow" role="button" tabindex="0" data-item="3">
-          <span>Projet 4 — Configuration équipements réseau</span>
-          <span class="arrow">&gt;</span>
-        </div>
+<main class="container">
 
-        <div class="projectRow" role="button" tabindex="0" data-item="4">
-          <span>Projet 5 — Tests & validation (ping, diagnostic)</span>
-          <span class="arrow">&gt;</span>
-        </div>
+<!-- bouton retour -->
 
-        <div class="projectRow" role="button" tabindex="0" data-item="5">
-          <span>Projet 6 — Auto-évaluation & bilan</span>
-          <span class="arrow">&gt;</span>
-        </div>
+<div class="pageActions">
 
-      </div>
-    </section>
+<button class="btnIcon warn" onclick="history.back()">
+<span class="ico">←</span>
+Retour
+</button>
 
-  </main>
+</div>
 
-  <!-- FOOTER IDENTIQUE -->
-  <footer class="siteFooter">
-    <div class="container footerLine">
-      <span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
-      <span>Portfolio BUT R&amp;T</span>
-      <span>Site étudiant — contenu à but pédagogique.</span>
-      <span>
-        <a href="./mentions-legales.html">Mentions légales</a> • 
-        <a href="./contact.html">Contact</a>
-      </span>
-    </div>
-  </footer>
 
-  <!-- MODAL (UTILISÉE PAR TON main.js — NE PAS SUPPRIMER) -->
-  <div class="modal" id="modal" role="dialog" aria-modal="true">
-    <div class="dialog" role="document">
-      <div class="dialogTop">
-        <div>
-          <h3 id="mTitle">Titre du projet</h3>
-          <p id="mDesc">Description du projet</p>
-        </div>
-        <button class="closeBtn" id="closeModal">Fermer ✕</button>
-      </div>
+<!-- titre -->
 
-      <div class="dialogGrid">
-        <div class="preview">
-          <img id="mImg" alt="Preuve du projet"/>
-        </div>
+<div class="sectionHeader" style="justify-content:center; text-align:center; margin-top:20px;">
 
-        <div class="details">
-          <h4>Détails du projet</h4>
-          <div class="chips" id="mChips"></div>
-          <ul id="mBullets"></ul>
-          <div class="dlRow" id="mDownloads"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div>
 
-  <!-- DONNÉES DES PROJETS (COMPATIBLE AVEC TON main.js) -->
-  <script>
-    window.PAGE_ITEMS = [
-      {
-        title: "Projet 1 — Apprentissage critique réseau",
-        desc: "Mise en place d’une infrastructure réseau et analyse technique.",
-        img: "./assets/images/connecter-1.jpg",
-        tags: ["Réseau", "Analyse"],
-        bullets: [
-          "Analyse du besoin",
-          "Conception de l’architecture réseau",
-          "Configuration des équipements",
-          "Validation du fonctionnement"
-        ],
-        downloads: []
-      },
-      {
-        title: "Projet 2 — Analyse du besoin et contexte",
-        desc: "Étude du contexte technique et des contraintes du projet.",
-        img: "./assets/images/connecter-2.jpg",
-        tags: ["Contexte"],
-        bullets: [
-          "Identification des besoins",
-          "Analyse des contraintes",
-          "Choix des solutions techniques"
-        ],
-        downloads: []
-      },
-      {
-        title: "Projet 3 — Architecture réseau",
-        desc: "Conception d’une architecture réseau avec VLAN et adressage IP.",
-        img: "./assets/images/connecter-3.jpg",
-        tags: ["VLAN", "IP"],
-        bullets: [
-          "Schéma réseau",
-          "Plan d’adressage IP",
-          "Segmentation VLAN"
-        ],
-        downloads: []
-      },
-      {
-        title: "Projet 4 — Configuration équipements réseau",
-        desc: "Configuration des switchs, routeurs et services réseau.",
-        img: "./assets/images/connecter-4.jpg",
-        tags: ["Configuration", "Cisco"],
-        bullets: [
-          "Configuration switch",
-          "Configuration routeur",
-          "Mise en place des services réseau"
-        ],
-        downloads: []
-      },
-      {
-        title: "Projet 5 — Tests & validation",
-        desc: "Tests de connectivité et validation des performances réseau.",
-        img: "./assets/images/connecter-5.jpg",
-        tags: ["Tests"],
-        bullets: [
-          "Tests ping",
-          "Diagnostic réseau",
-          "Validation des performances"
-        ],
-        downloads: []
-      },
-      {
-        title: "Projet 6 — Auto-évaluation & bilan",
-        desc: "Bilan des compétences acquises et axes d’amélioration.",
-        img: "./assets/images/connecter-6.jpg",
-        tags: ["Bilan"],
-        bullets: [
-          "Compétences techniques acquises",
-          "Difficultés rencontrées",
-          "Améliorations futures"
-        ],
-        downloads: []
-      }
-    ];
-  </script>
+<h2 style="font-size:40px; color:#3b82f6;">
+Connecter les systèmes et les réseaux
+</h2>
+
+</div>
+
+</div>
+
+
+<!-- liste AC -->
+
+<div class="projectsCenter">
+
+<div class="projectsList">
+
+
+<div class="projectRow">
+<span>
+AC32.01 — Déployer un système de communication pour l’entreprise
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC32.02 — Déployer un réseau d’accès sans fil pour le réseau d’entreprise en intégrant les enjeux de sécurité
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC32.03 — Déployer un réseau d’accès fixe ou mobile pour un opérateur de télécommunications en intégrant la sécurité
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC32.04 — Permettre aux collaborateurs de se connecter de manière sécurisée au système d’information de l’entreprise
+</span>
+<span class="arrow">></span>
+</div>
+
+
+<div class="projectRow">
+<span>
+AC32.05 — Collaborer en mode projet en français et en anglais
+</span>
+<span class="arrow">></span>
+</div>
+
+
+</div>
+</div>
+
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
+
+<span>Portfolio BUT R&amp;T</span>
+
+<span>Site étudiant — contenu à but pédagogique.</span>
+
+<span>
+<a href="./mentions-legales.html">Mentions légales</a> 
+
+</span>
+
+</div>
+
+</footer>
+
 
 </body>
 </html>
