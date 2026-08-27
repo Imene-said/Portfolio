@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Déployer un réseau d'accès sans fil sécurisé</title>
+<title>Déployer un système de communication pour l'entreprise</title>
 
 <link rel="stylesheet" href="../assets/css/style.css">
 <script defer src="../assets/js/main.js"></script>
@@ -13,7 +13,7 @@
 <style>
 
 /* =========================
-   PAGE COMPÉTENCE
+   PAGE SYSTÈME DE COMMUNICATION
 ========================= */
 
 .ac31-content {
@@ -48,6 +48,11 @@
     opacity: 0.9;
 }
 
+
+/* =========================
+   GRILLE
+========================= */
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -79,6 +84,7 @@
 
 .project-card:hover {
     transform: translateY(-4px);
+
     border-color: rgba(59,130,246,0.45);
 
     box-shadow:
@@ -108,6 +114,7 @@
 
 .project-card h3::before {
     content: "";
+
     width: 7px;
     height: 7px;
 
@@ -128,11 +135,93 @@
     opacity: 0.85;
 }
 
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
 .tech-card {
     grid-column: span 2;
 }
 
-.tech-list {
+.argument-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -140,7 +229,7 @@
     margin-top: 20px;
 }
 
-.tech {
+.argument {
     padding: 8px 14px;
 
     border-radius: 999px;
@@ -155,13 +244,18 @@
     border: 1px solid rgba(59,130,246,0.25);
 }
 
-.security {
+.argument.important {
     color: #67e8f9;
 
     background: rgba(34,211,238,0.08);
 
     border-color: rgba(34,211,238,0.22);
 }
+
+
+/* =========================
+   CONCLUSION
+========================= */
 
 .skills-box {
     margin-top: 25px;
@@ -187,9 +281,16 @@
 
 .skills-box p {
     margin: 0;
+
     line-height: 1.8;
+
     opacity: 0.9;
 }
+
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 800px) {
 
@@ -197,13 +298,15 @@
         grid-template-columns: 1fr;
     }
 
+    .demo-image-box,
     .tech-card {
         grid-column: span 1;
     }
 
     .project-card,
     .project-intro,
-    .skills-box {
+    .skills-box,
+    .demo-image-box {
         padding: 23px;
     }
 
@@ -286,11 +389,11 @@ style="justify-content:center;text-align:center;margin-top:20px;"
 <div>
 
 <h2 style="font-size:40px;color:#3b82f6;">
-Déployer un réseau d'accès sans fil
+Déployer un système de communication pour l'entreprise
 </h2>
 
 <p style="opacity:0.7;margin-top:10px;">
-Réseau d'entreprise • Wi-Fi • Sécurité • Déploiement
+Préparer • Déployer • Configurer • Vérifier
 </p>
 
 </div>
@@ -310,29 +413,29 @@ La compétence
 </div>
 
 <h3>
-Déployer un réseau d'accès sans fil pour une entreprise
+Déployer un système de communication pour l'entreprise
 </h3>
 
 <p>
-Pour cette compétence, j’ai travaillé sur la mise en place
-d’un réseau Wi-Fi destiné à un environnement professionnel.
-L’objectif était de permettre aux utilisateurs d’accéder
-au réseau de l’entreprise sans fil, tout en gardant une
-infrastructure organisée et sécurisée.
+Dans le cadre de mon alternance, j’ai participé à des projets
+nécessitant le déploiement et la mise en service de systèmes
+de communication au sein de l’entreprise.
 </p>
 
 <p style="margin-top:12px;">
-Ce projet m’a permis de comprendre qu’un réseau Wi-Fi
-professionnel ne consiste pas seulement à installer une
-borne d’accès. Il faut aussi réfléchir à sa configuration,
-à son intégration dans le réseau existant et surtout
-aux problèmes de sécurité.
+Ces déploiements demandaient une préparation importante en amont,
+notamment au niveau du réseau, des équipements et des différentes
+configurations. L’objectif était que tout soit prêt avant
+l’intervention afin de pouvoir mettre en service la solution
+dans les délais prévus.
 </p>
 
 </div>
 
 
 <div class="project-grid">
+
+
 
 
 <!-- CONTEXTE -->
@@ -344,44 +447,114 @@ aux problèmes de sécurité.
 <h3>Le contexte</h3>
 
 <p>
-Dans une entreprise, les utilisateurs doivent pouvoir
-se connecter au réseau facilement, que ce soit avec
-un ordinateur, un téléphone ou un autre équipement.
+Au cours de mon alternance, j’ai participé à des déploiements
+réalisés directement sur différents sites de l’entreprise.
+Ces interventions étaient généralement prévues à des dates
+précises et devaient être préparées à l’avance.
 </p>
 
 <p style="margin-top:12px;">
-Le réseau sans fil doit donc offrir une bonne couverture
-et permettre aux utilisateurs d'accéder aux ressources
-nécessaires, tout en évitant qu'une personne extérieure
-puisse accéder librement au réseau de l'entreprise.
+Le bon fonctionnement du système dépendait donc de plusieurs
+éléments : le réseau, les équipements, les configurations et
+les actions réalisées par les différentes équipes.
 </p>
 
 </div>
 
 
-<!-- OBJECTIFS -->
+<!-- OBJECTIF -->
 
 <div class="project-card reveal">
 
 <span class="card-number">02</span>
 
-<h3>Les objectifs</h3>
+<h3>L’objectif</h3>
 
 <p>
-L’objectif principal était de mettre en place un accès
-Wi-Fi adapté à un environnement professionnel.
+L’objectif était de permettre la mise en service du système
+de communication dans les meilleures conditions et dans les
+délais prévus.
 </p>
 
 <p style="margin-top:12px;">
-Je devais notamment réfléchir à la configuration des
-points d’accès, à l’organisation du réseau et à la
-manière de gérer les utilisateurs qui se connectent.
+Pour cela, il était nécessaire de préparer les différents
+éléments avant l’intervention afin d’éviter de découvrir
+un problème une fois sur place.
+</p>
+
+</div>
+
+
+<!-- PREPARATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>La préparation du déploiement</h3>
+
+<p>
+Avant le déploiement, je devais vérifier que les éléments
+nécessaires étaient disponibles et que les différentes
+actions prévues avaient bien été réalisées.
 </p>
 
 <p style="margin-top:12px;">
-La sécurité était également un élément important du projet,
-car un réseau sans fil mal configuré peut facilement
-devenir un point d’entrée vers le réseau de l’entreprise.
+Cela pouvait notamment concerner l’adressage réseau,
+les configurations, les ouvertures nécessaires sur les
+équipements de sécurité ou encore la disponibilité du matériel.
+</p>
+
+<p style="margin-top:12px;">
+Cette préparation permettait de limiter les imprévus et
+d’arriver sur site avec une installation déjà correctement
+préparée.
+</p>
+
+</div>
+
+
+<!-- DEPLOIEMENT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>Le déploiement</h3>
+
+<p>
+Une fois les prérequis vérifiés, le système pouvait être
+déployé sur site. L’installation devait respecter les
+éléments définis lors de la préparation.
+</p>
+
+<p style="margin-top:12px;">
+Après la mise en place, je pouvais vérifier que les équipements
+étaient correctement connectés et que le système communiquait
+avec l’infrastructure de l’entreprise.
+</p>
+
+</div>
+
+
+<!-- CONFIGURATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>La configuration et les vérifications</h3>
+
+<p>
+Une partie importante du déploiement concernait la configuration
+des équipements et la vérification de leur fonctionnement.
+</p>
+
+<p style="margin-top:12px;">
+Je devais notamment contrôler les paramètres réseau et m’assurer
+que les communications nécessaires étaient possibles.
+En cas de problème, il fallait identifier l’origine de celui-ci
+afin de pouvoir le corriger rapidement.
 </p>
 
 </div>
@@ -391,85 +564,73 @@ devenir un point d’entrée vers le réseau de l’entreprise.
 
 <div class="project-card tech-card reveal">
 
-<span class="card-number">03</span>
+<span class="card-number">06</span>
 
-<h3>Les technologies utilisées</h3>
+<h3>Les éléments techniques</h3>
 
 <p>
-Pour réaliser ce projet, j’ai utilisé différentes notions
-liées aux réseaux sans fil et à la sécurité des réseaux
-d’entreprise.
+La réalisation de ces déploiements m’a permis de mobiliser
+plusieurs connaissances liées aux réseaux et aux systèmes
+de communication de l’entreprise.
 </p>
 
-<div class="tech-list">
+<div class="argument-list">
 
-<span class="tech">Wi-Fi</span>
-<span class="tech">Point d'accès</span>
-<span class="tech">SSID</span>
-<span class="tech">VLAN</span>
-<span class="tech">DHCP</span>
-<span class="tech security">WPA2 / WPA3</span>
-<span class="tech security">Authentification</span>
-<span class="tech security">Sécurisation Wi-Fi</span>
-
-</div>
+<span class="argument">Réseau IP</span>
+<span class="argument">Adressage IP</span>
+<span class="argument">Équipements réseau</span>
+<span class="argument">Switch</span>
+<span class="argument">Pare-feu</span>
+<span class="argument important">Configuration</span>
+<span class="argument important">Tests de connectivité</span>
 
 </div>
 
+</div>
 
-<!-- REALISATION -->
+
+<!-- DIFFICULTES -->
 
 <div class="project-card reveal">
 
-<span class="card-number">04</span>
+<span class="card-number">07</span>
 
-<h3>Ce que j’ai réalisé</h3>
+<h3>Les difficultés rencontrées</h3>
 
 <p>
-J’ai commencé par réfléchir à l’organisation du réseau
-et à la manière dont les points d’accès allaient être
-intégrés à l’infrastructure.
+La principale difficulté était de gérer les différents
+prérequis avant la date de déploiement. Certaines actions
+dépendaient d’autres équipes ou de prestataires et pouvaient
+donc prendre du temps.
 </p>
 
 <p style="margin-top:12px;">
-J’ai ensuite travaillé sur la configuration du réseau
-sans fil, notamment le nom du réseau, les paramètres
-d’accès et la communication avec le reste de l’infrastructure.
-</p>
-
-<p style="margin-top:12px;">
-Enfin, j’ai effectué des tests de connexion afin de
-vérifier que les utilisateurs pouvaient accéder au
-réseau dans de bonnes conditions.
+Il fallait être attentif à l’avancement de chaque élément
+et anticiper les problèmes suffisamment tôt pour éviter
+qu’un blocage entraîne le report de l’intervention.
 </p>
 
 </div>
 
 
-<!-- SECURITE -->
+<!-- ORGANISATION -->
 
 <div class="project-card reveal">
 
-<span class="card-number">05</span>
+<span class="card-number">08</span>
 
-<h3>La sécurité</h3>
+<h3>Le suivi du déploiement</h3>
 
 <p>
-La sécurité est une partie importante de cette compétence.
-Un réseau Wi-Fi professionnel doit empêcher les personnes
-non autorisées d'accéder aux ressources de l'entreprise.
+Le suivi était important pour avoir une vision globale de
+l’avancement du projet. Je devais vérifier les éléments déjà
+réalisés et identifier ceux qui restaient à préparer.
 </p>
 
 <p style="margin-top:12px;">
-J’ai donc pris en compte les mécanismes d’authentification
-et de chiffrement permettant de protéger les communications
-sans fil.
-</p>
-
-<p style="margin-top:12px;">
-La séparation des réseaux, notamment avec les VLAN, permet
-également de limiter les accès et de mieux contrôler
-la circulation des utilisateurs sur l’infrastructure.
+Cette organisation permettait de mieux coordonner les différentes
+personnes impliquées et de s’assurer que le déploiement pouvait
+avoir lieu à la date prévue.
 </p>
 
 </div>
@@ -478,25 +639,31 @@ la circulation des utilisateurs sur l’infrastructure.
 </div>
 
 
-<!-- ACQUIS -->
+<!-- BILAN -->
 
 <div class="skills-box reveal">
 
-<h3>Ce que je retiens de ce projet</h3>
+<h3>Ce que je retiens de cette compétence</h3>
 
 <p>
-Ce projet m’a permis de comprendre les particularités
-d’un réseau sans fil en entreprise. J’ai notamment compris
-qu’un bon déploiement doit prendre en compte à la fois
-la qualité de l’accès, l’organisation du réseau et la sécurité.
+Cette expérience m’a permis de comprendre qu’un déploiement
+réseau ne se limite pas à installer et configurer des équipements.
+Une grande partie du travail consiste à préparer correctement
+l’intervention avant de se rendre sur site.
 </p>
 
 <p style="margin-top:12px;">
-J’ai également appris à ne pas considérer le Wi-Fi comme
-un simple moyen de connexion. Dans un environnement
-professionnel, il faut réfléchir aux utilisateurs, aux
-droits d’accès et aux risques de sécurité avant de mettre
-le réseau en production.
+J’ai appris à être plus rigoureuse dans la vérification des
+prérequis, à suivre l’avancement des différentes actions et
+à anticiper les problèmes qui pourraient empêcher la mise
+en service.
+</p>
+
+<p style="margin-top:12px;">
+Je retiens surtout l’importance de la préparation : lorsque
+les différents éléments sont prêts en amont, l’intervention
+sur site est beaucoup plus simple et le risque de devoir
+repousser le déploiement est fortement réduit.
 </p>
 
 </div>

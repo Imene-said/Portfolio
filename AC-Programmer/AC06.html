@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Sécuriser l'environnement numérique d'une application</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+    max-height: 500px;
+
+    display: block;
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tech {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.tech.security {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   BILAN
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Sécuriser l'environnement numérique d'une application
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Développement sécurisé • Authentification • Protection des données
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Sécuriser une application dès sa conception
+</h3>
+
+<p>
+Dans le cadre de la SAÉ 4.01, j'ai travaillé sur la sécurisation
+d'une application web développée en PHP. L'objectif était de
+protéger l'accès à l'application et aux données tout en limitant
+les risques liés aux différentes attaques pouvant viser une
+page de connexion.
+</p>
+
+<p style="margin-top:12px;">
+Ce projet m'a permis de comprendre que la sécurité doit être
+prise en compte directement lors du développement d'une
+application et non uniquement après sa mise en fonctionnement.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>
+Sécurisation de l'application
+</h3>
+
+<p>
+Cet espace peut présenter une capture d'écran de la page
+de connexion, du code PHP ou d'un schéma présentant les
+différents mécanismes de sécurité mis en place.
+</p>
+
+</div>
+
+
+<!-- =========================
+     REMPLACER L'IMAGE ICI
+========================= -->
+
+<img
+    src="../assets/images/securite-application.png"
+    alt="Sécurisation d'une application web"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Exemple de mécanisme de sécurité intégré à l'application
+</p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Dans le cadre de la SAÉ 4.01, j'ai participé au développement
+d'une application web nécessitant une authentification.
+La page de connexion représentait donc un point important
+à sécuriser.
+</p>
+
+<p style="margin-top:12px;">
+L'objectif était de protéger les comptes utilisateurs et
+d'empêcher qu'une personne malveillante puisse accéder
+facilement à l'application ou aux données associées.
+</p>
+
+</div>
+
+
+<!-- OBJECTIFS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>Les objectifs de sécurité</h3>
+
+<p>
+L'objectif principal était de limiter les risques liés à
+l'authentification et à la gestion des sessions utilisateurs.
+</p>
+
+<p style="margin-top:12px;">
+Il fallait notamment empêcher les attaques par force brute,
+protéger les formulaires contre certaines attaques et éviter
+que les mots de passe soient stockés directement dans la base
+de données.
+</p>
+
+</div>
+
+
+<!-- MECANISMES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>Les mécanismes mis en place</h3>
+
+<p>
+J'ai intégré plusieurs mécanismes de sécurité directement
+dans le code PHP afin de renforcer la protection de
+l'application.
+</p>
+
+<div class="tech-list">
+
+<span class="tech security">Token CSRF</span>
+<span class="tech security">Sessions PHP</span>
+<span class="tech security">Password Hash</span>
+<span class="tech security">Password Verify</span>
+<span class="tech security">Protection des cookies</span>
+<span class="tech security">Limitation des tentatives</span>
+
+</div>
+
+</div>
+
+
+<!-- AUTHENTIFICATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>La protection de l'authentification</h3>
+
+<p>
+Pour protéger les mots de passe, je n'ai pas utilisé de
+stockage en clair. Les mots de passe sont enregistrés sous
+forme de valeurs hachées et vérifiés lors de la connexion
+grâce aux fonctions adaptées de PHP.
+</p>
+
+<p style="margin-top:12px;">
+J'ai également mis en place une limitation du nombre de
+tentatives de connexion afin de réduire le risque d'une
+attaque par force brute.
+</p>
+
+</div>
+
+
+<!-- CSRF ET SESSIONS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>La gestion des sessions</h3>
+
+<p>
+Une attention particulière a également été portée à la
+gestion des sessions et des formulaires.
+</p>
+
+<p style="margin-top:12px;">
+L'utilisation de tokens CSRF permet de vérifier qu'une
+requête provenant d'un formulaire est bien légitime.
+J'ai également travaillé sur la gestion des variables de
+session et des paramètres des cookies afin de limiter les
+risques liés au vol de session.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté a été de comprendre comment les
+différents mécanismes de sécurité fonctionnent ensemble.
+Il ne suffisait pas d'ajouter une seule protection : il
+fallait également vérifier que la gestion des sessions,
+des tokens et des cookies restait cohérente.
+</p>
+
+<p style="margin-top:12px;">
+Cette partie du projet m'a demandé de nombreuses recherches
+afin de comprendre les bonnes pratiques de sécurité et de
+les appliquer correctement dans le code.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Ce projet m'a permis de comprendre que la sécurité d'une
+application doit être prise en compte dès sa conception.
+Une application fonctionnelle n'est pas forcément une
+application sécurisée.
+</p>
+
+<p style="margin-top:12px;">
+J'ai appris à protéger différents éléments d'une application
+web, notamment l'authentification, les sessions, les formulaires
+et les mots de passe. J'ai également compris l'importance
+d'adopter une démarche de « Security by Design ».
+</p>
+
+<p style="margin-top:12px;">
+À l'avenir, je souhaiterais intégrer davantage de tests de
+sécurité tout au long du développement, notamment avec des
+outils d'analyse automatisée permettant de détecter plus
+rapidement certaines vulnérabilités.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

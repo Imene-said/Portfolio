@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>S'informer sur les évolutions et les nouveautés technologiques</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+    max-height: 500px;
+
+    display: block;
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tech {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.tech.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   BILAN
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+S'informer sur les évolutions et les nouveautés technologiques
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Veille technologique • Cloud • Cybersécurité • Actualité
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Développer ma veille technologique
+</h3>
+
+<p>
+Dans le cadre de ma formation en BUT Réseaux et Télécommunications,
+je me suis intéressée aux évolutions technologiques dans les domaines
+du cloud, des réseaux et de la cybersécurité.
+</p>
+
+<p style="margin-top:12px;">
+Cette veille m'a notamment permis de découvrir et d'utiliser
+des services comme DigitalOcean et de suivre l'actualité
+de la cybersécurité à travers des événements professionnels
+comme le Forum InCyber (FIC).
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>
+Veille technologique et cybersécurité
+</h3>
+
+<p>
+Cet espace peut être utilisé pour présenter une capture d'écran
+de DigitalOcean, du FIC ou d'un support utilisé pour suivre
+l'évolution des technologies.
+</p>
+
+</div>
+
+
+<!-- =========================
+     REMPLACER L'IMAGE ICI
+========================= -->
+
+<img
+    src="../assets/images/veille-technologique.png"
+    alt="Veille technologique sur le cloud et la cybersécurité"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Exemple de support utilisé pour ma veille technologique
+</p>
+
+</div>
+
+
+<!-- DIGITAL OCEAN -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Découverte de DigitalOcean</h3>
+
+<p>
+Je me suis intéressée à DigitalOcean afin de découvrir
+le fonctionnement des infrastructures cloud et des serveurs
+virtuels accessibles à distance.
+</p>
+
+<p style="margin-top:12px;">
+Cette découverte m'a permis de mieux comprendre comment une
+entreprise peut déployer des services informatiques dans le cloud
+sans avoir nécessairement toute l'infrastructure physique
+directement sur ses locaux.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">Cloud</span>
+<span class="tech">Serveur virtuel</span>
+<span class="tech">VPS</span>
+<span class="tech important">Infrastructure</span>
+
+</div>
+
+</div>
+
+
+<!-- FIC -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>Suivi du Forum InCyber</h3>
+
+<p>
+Je me suis également intéressée au Forum InCyber, un événement
+consacré à la cybersécurité et aux enjeux liés à la protection
+des systèmes d'information.
+</p>
+
+<p style="margin-top:12px;">
+Le FIC me permet de découvrir les nouvelles menaces, les
+technologies de sécurité et les problématiques auxquelles
+les entreprises peuvent être confrontées.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">Cybersécurité</span>
+<span class="tech">Sécurité réseau</span>
+<span class="tech">Menaces</span>
+<span class="tech important">Protection SI</span>
+
+</div>
+
+</div>
+
+
+<!-- POURQUOI -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>Pourquoi faire cette veille ?</h3>
+
+<p>
+Le domaine des réseaux et de la cybersécurité évolue rapidement.
+De nouvelles technologies apparaissent régulièrement et les
+menaces informatiques évoluent elles aussi.
+</p>
+
+<p style="margin-top:12px;">
+Il est donc important pour moi de rester informée afin de mieux
+comprendre les outils utilisés aujourd'hui et de pouvoir
+m'adapter aux besoins d'un environnement professionnel.
+</p>
+
+</div>
+
+
+<!-- COMMENT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>Comment je m'informe</h3>
+
+<p>
+Pour effectuer cette veille, je consulte différentes ressources
+en fonction des sujets qui m'intéressent. Je peux notamment
+me renseigner sur les solutions cloud, suivre l'actualité
+de la cybersécurité ou consulter des ressources techniques.
+</p>
+
+<p style="margin-top:12px;">
+Je m'intéresse également aux événements professionnels comme
+le FIC afin de découvrir les tendances du secteur et les
+problématiques rencontrées directement par les professionnels.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté est de réussir à sélectionner les
+informations réellement utiles parmi la quantité importante
+de contenus disponibles sur Internet.
+</p>
+
+<p style="margin-top:12px;">
+Certains sujets techniques sont également complexes lorsqu'on
+les découvre pour la première fois. Il est donc nécessaire
+de prendre le temps de comparer les informations et de
+s'appuyer sur des sources fiables.
+</p>
+
+</div>
+
+
+<!-- APPORT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Ce que cette veille m'apporte</h3>
+
+<p>
+Cette démarche me permet de développer ma curiosité et mon
+autonomie. Elle me pousse également à chercher par moi-même
+des informations lorsque je rencontre une technologie ou
+un concept que je ne connais pas.
+</p>
+
+<p style="margin-top:12px;">
+Elle m'aide également à mieux comprendre les évolutions
+du secteur des réseaux, du cloud et de la cybersécurité.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Cette expérience m'a montré qu'un professionnel des réseaux
+ne peut pas uniquement se baser sur les connaissances acquises
+pendant sa formation. Les technologies évoluent constamment
+et il est nécessaire de continuer à apprendre.
+</p>
+
+<p style="margin-top:12px;">
+La découverte de DigitalOcean m'a permis de mieux comprendre
+les possibilités offertes par le cloud et les serveurs virtuels.
+Le suivi du FIC m'a quant à lui permis de mieux prendre en compte
+les enjeux actuels de la cybersécurité.
+</p>
+
+<p style="margin-top:12px;">
+À l'avenir, je souhaite continuer à structurer ma veille afin
+de suivre régulièrement les nouveautés liées aux réseaux,
+au cloud et à la sécurité informatique.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

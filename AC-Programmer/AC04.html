@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Déployer et maintenir une solution informatique</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   ELEMENTS DU DEPLOIEMENT
+========================= */
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tech {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.tech.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Déployer et maintenir une solution informatique
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Préparer • Déployer • Tester • Maintenir
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Déployer et maintenir une solution informatique
+</h3>
+
+<p>
+Dans le cadre de mon alternance, j’ai participé au déploiement
+de solutions informatiques et réseau sur différents sites de
+l’entreprise. Mon travail consistait notamment à préparer les
+éléments nécessaires avant les interventions, effectuer les
+configurations demandées et vérifier le bon fonctionnement
+des solutions mises en place.
+</p>
+
+<p style="margin-top:12px;">
+Les interventions étant planifiées à des dates précises, il
+était important d’anticiper les différentes actions afin que
+tout soit prêt avant l’intervention sur site et d’éviter
+un éventuel report.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Exemple de déploiement</h3>
+
+<p>
+Cette partie peut présenter une capture d’écran d’une
+configuration réseau, d’un équipement, d’un schéma
+d’infrastructure ou d’un outil de suivi utilisé lors
+d’un déploiement.
+</p>
+
+</div>
+
+
+<!-- =========================
+     REMPLACER L'IMAGE ICI
+========================= -->
+
+<img
+    src="../assets/images/deploiement-solution.png"
+    alt="Déploiement d'une solution informatique"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Exemple d’un élément utilisé lors d’un déploiement
+</p>
+
+</div>
+
+
+<!-- CE QUE J'AI FAIT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Ce que j’ai fait</h3>
+
+<p>
+Dans le cadre de mon alternance, j’ai participé à la préparation
+et au déploiement de solutions informatiques et réseau sur site.
+Je pouvais intervenir sur différentes étapes, depuis la
+préparation des demandes jusqu’aux vérifications après
+la mise en place.
+</p>
+
+<p style="margin-top:12px;">
+Je devais notamment m’assurer que les configurations,
+les équipements et les actions nécessaires étaient prêts
+avant l’intervention.
+</p>
+
+</div>
+
+
+<!-- POURQUOI -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>Pourquoi</h3>
+
+<p>
+L’objectif était de garantir que les équipements et les services
+soient opérationnels dans les délais prévus.
+</p>
+
+<p style="margin-top:12px;">
+Les interventions étant programmées à l’avance, une préparation
+incomplète pouvait entraîner un blocage sur place et obliger
+les équipes à reporter l’intervention.
+</p>
+
+</div>
+
+
+<!-- PREPARATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>La préparation du déploiement</h3>
+
+<p>
+Avant une intervention, je vérifiais les différents éléments
+nécessaires à sa réalisation. Cela pouvait concerner les
+configurations réseau, les équipements à installer, les
+demandes techniques ou encore les actions à effectuer
+au niveau des pare-feu.
+</p>
+
+<p style="margin-top:12px;">
+Cette préparation permettait d’identifier les éventuels
+blocages suffisamment tôt et de les résoudre avant
+le déplacement sur site.
+</p>
+
+</div>
+
+
+<!-- REALISATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>La mise en place</h3>
+
+<p>
+Une fois les prérequis validés, je participais à la mise en place
+des éléments prévus. Cela pouvait inclure la configuration
+d’équipements réseau, la vérification des paramètres ou
+l’accompagnement d’un prestataire lors de son intervention.
+</p>
+
+<p style="margin-top:12px;">
+Après la mise en place, je réalisais les vérifications nécessaires
+afin de m’assurer que la solution fonctionnait conformément
+à ce qui avait été prévu.
+</p>
+
+</div>
+
+
+<!-- MAINTENANCE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>La maintenance</h3>
+
+<p>
+Le travail ne s’arrêtait pas après le déploiement. Lorsque
+des problèmes apparaissaient ou qu’une modification était
+nécessaire, je participais à leur identification et à leur
+résolution.
+</p>
+
+<p style="margin-top:12px;">
+La maintenance pouvait également nécessiter de vérifier
+une configuration, de suivre une demande auprès d’une autre
+équipe ou de faire intervenir un prestataire.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté était de gérer plusieurs éléments
+en parallèle avec des délais différents. Certaines actions
+dépendaient également d’autres équipes ou de prestataires.
+</p>
+
+<p style="margin-top:12px;">
+Il fallait donc anticiper les problèmes, suivre les demandes
+en cours et relancer les différents interlocuteurs lorsque
+cela était nécessaire afin de respecter la date d’intervention.
+</p>
+
+</div>
+
+
+<!-- OUTILS -->
+
+<div class="project-card tech-card reveal">
+
+<span class="card-number">07</span>
+
+<h3>Les éléments pris en compte</h3>
+
+<p>
+Pour assurer un déploiement efficace, je devais prendre en
+compte plusieurs éléments techniques et organisationnels.
+</p>
+
+<div class="tech-list">
+
+<span class="tech important">Configuration réseau</span>
+<span class="tech">Équipements réseau</span>
+<span class="tech">Pare-feu</span>
+<span class="tech">Tests de connectivité</span>
+<span class="tech">Suivi des demandes</span>
+<span class="tech">Prestataires</span>
+<span class="tech">Interventions sur site</span>
+<span class="tech important">Respect des délais</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Cette expérience m’a permis de comprendre qu’un déploiement
+ne se limite pas à installer et configurer un équipement.
+Une grande partie du travail consiste à préparer l’intervention,
+vérifier les prérequis, tester la solution et assurer son suivi
+après sa mise en place.
+</p>
+
+<p style="margin-top:12px;">
+J’ai appris à être plus rigoureuse dans mes vérifications
+et à anticiper les problèmes afin d’éviter qu’ils apparaissent
+au moment de l’intervention.
+</p>
+
+<p style="margin-top:12px;">
+Avec davantage d’expérience, je mettrais en place une checklist
+de déploiement systématique afin de vérifier avant chaque
+intervention que tous les éléments nécessaires sont prêts :
+configurations, équipements, demandes techniques, accès,
+sécurité et tests.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

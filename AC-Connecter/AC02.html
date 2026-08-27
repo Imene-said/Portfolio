@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Déployer un réseau d'accès sans fil sécurisé</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+.tech-card {
+    grid-column: span 2;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tech {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.security {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Déployer un réseau d'accès sans fil
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Réseau d'entreprise • Wi-Fi • Sécurité • Déploiement
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Déployer un réseau d'accès sans fil pour une entreprise
+</h3>
+
+<p>
+Pour cette compétence, j’ai travaillé sur la mise en place
+d’un réseau Wi-Fi destiné à un environnement professionnel.
+L’objectif était de permettre aux utilisateurs d’accéder
+au réseau de l’entreprise sans fil, tout en gardant une
+infrastructure organisée et sécurisée.
+</p>
+
+<p style="margin-top:12px;">
+Ce projet m’a permis de comprendre qu’un réseau Wi-Fi
+professionnel ne consiste pas seulement à installer une
+borne d’accès. Il faut aussi réfléchir à sa configuration,
+à son intégration dans le réseau existant et surtout
+aux problèmes de sécurité.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Dans une entreprise, les utilisateurs doivent pouvoir
+se connecter au réseau facilement, que ce soit avec
+un ordinateur, un téléphone ou un autre équipement.
+</p>
+
+<p style="margin-top:12px;">
+Le réseau sans fil doit donc offrir une bonne couverture
+et permettre aux utilisateurs d'accéder aux ressources
+nécessaires, tout en évitant qu'une personne extérieure
+puisse accéder librement au réseau de l'entreprise.
+</p>
+
+</div>
+
+
+<!-- OBJECTIFS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>Les objectifs</h3>
+
+<p>
+L’objectif principal était de mettre en place un accès
+Wi-Fi adapté à un environnement professionnel.
+</p>
+
+<p style="margin-top:12px;">
+Je devais notamment réfléchir à la configuration des
+points d’accès, à l’organisation du réseau et à la
+manière de gérer les utilisateurs qui se connectent.
+</p>
+
+<p style="margin-top:12px;">
+La sécurité était également un élément important du projet,
+car un réseau sans fil mal configuré peut facilement
+devenir un point d’entrée vers le réseau de l’entreprise.
+</p>
+
+</div>
+
+
+<!-- TECHNOLOGIES -->
+
+<div class="project-card tech-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>Les technologies utilisées</h3>
+
+<p>
+Pour réaliser ce projet, j’ai utilisé différentes notions
+liées aux réseaux sans fil et à la sécurité des réseaux
+d’entreprise.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">Wi-Fi</span>
+<span class="tech">Point d'accès</span>
+<span class="tech">SSID</span>
+<span class="tech">VLAN</span>
+<span class="tech">DHCP</span>
+<span class="tech security">WPA2 / WPA3</span>
+<span class="tech security">Authentification</span>
+<span class="tech security">Sécurisation Wi-Fi</span>
+
+</div>
+
+</div>
+
+
+<!-- REALISATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>Ce que j’ai réalisé</h3>
+
+<p>
+J’ai commencé par réfléchir à l’organisation du réseau
+et à la manière dont les points d’accès allaient être
+intégrés à l’infrastructure.
+</p>
+
+<p style="margin-top:12px;">
+J’ai ensuite travaillé sur la configuration du réseau
+sans fil, notamment le nom du réseau, les paramètres
+d’accès et la communication avec le reste de l’infrastructure.
+</p>
+
+<p style="margin-top:12px;">
+Enfin, j’ai effectué des tests de connexion afin de
+vérifier que les utilisateurs pouvaient accéder au
+réseau dans de bonnes conditions.
+</p>
+
+</div>
+
+
+<!-- SECURITE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>La sécurité</h3>
+
+<p>
+La sécurité est une partie importante de cette compétence.
+Un réseau Wi-Fi professionnel doit empêcher les personnes
+non autorisées d'accéder aux ressources de l'entreprise.
+</p>
+
+<p style="margin-top:12px;">
+J’ai donc pris en compte les mécanismes d’authentification
+et de chiffrement permettant de protéger les communications
+sans fil.
+</p>
+
+<p style="margin-top:12px;">
+La séparation des réseaux, notamment avec les VLAN, permet
+également de limiter les accès et de mieux contrôler
+la circulation des utilisateurs sur l’infrastructure.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- ACQUIS -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de ce projet</h3>
+
+<p>
+Ce projet m’a permis de comprendre les particularités
+d’un réseau sans fil en entreprise. J’ai notamment compris
+qu’un bon déploiement doit prendre en compte à la fois
+la qualité de l’accès, l’organisation du réseau et la sécurité.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également appris à ne pas considérer le Wi-Fi comme
+un simple moyen de connexion. Dans un environnement
+professionnel, il faut réfléchir aux utilisateurs, aux
+droits d’accès et aux risques de sécurité avant de mettre
+le réseau en production.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

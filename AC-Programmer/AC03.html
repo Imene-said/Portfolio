@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Participer à la formation des utilisateurs</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   OUTILS / SUPPORTS
+========================= */
+
+.support-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.support {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.support.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Participer à la formation des utilisateurs
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Expliquer • Accompagner • Documenter • Rendre autonome
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Participer à la formation des utilisateurs
+</h3>
+
+<p>
+Dans le cadre de mon alternance, j’ai été amenée à accompagner
+les utilisateurs dans l’utilisation de différents outils et
+services informatiques. Une partie de cet accompagnement passait
+par la création et la transmission de procédures adaptées aux
+besoins des utilisateurs.
+</p>
+
+<p style="margin-top:12px;">
+L’objectif était de permettre aux utilisateurs de réaliser
+certaines manipulations de manière autonome, sans avoir besoin
+de solliciter systématiquement le support informatique.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Exemple de procédure utilisateur</h3>
+
+<p>
+Cette partie peut présenter une capture d’écran d’une procédure
+que j’ai réalisée ou d’un support permettant d’expliquer une
+manipulation aux utilisateurs.
+</p>
+
+</div>
+
+
+<!-- =========================
+     REMPLACER L'IMAGE ICI
+========================= -->
+
+<img
+    src="../assets/images/procedure-utilisateur.png"
+    alt="Procédure destinée aux utilisateurs"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Exemple de support ou de procédure destinée aux utilisateurs
+</p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Au cours de mon alternance, j’ai constaté que certaines
+manipulations informatiques pouvaient être difficiles à réaliser
+pour des utilisateurs qui ne possédaient pas forcément de
+connaissances techniques.
+</p>
+
+<p style="margin-top:12px;">
+Pour faciliter leur utilisation des outils informatiques,
+il était donc nécessaire de proposer des explications simples
+et des procédures permettant de suivre les différentes étapes.
+</p>
+
+</div>
+
+
+<!-- OBJECTIF -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>L’objectif</h3>
+
+<p>
+L’objectif était de rendre les utilisateurs plus autonomes
+dans certaines tâches courantes et de limiter les demandes
+répétitives adressées au support informatique.
+</p>
+
+<p style="margin-top:12px;">
+Les procédures devaient être suffisamment claires pour qu’un
+utilisateur puisse comprendre la manipulation et la reproduire
+sans avoir besoin d’une assistance permanente.
+</p>
+
+</div>
+
+
+<!-- PROCEDURES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>La création des procédures</h3>
+
+<p>
+Pour réaliser une procédure, je commençais par effectuer
+moi-même la manipulation afin de vérifier que les différentes
+étapes fonctionnaient correctement.
+</p>
+
+<p style="margin-top:12px;">
+Je détaillais ensuite les actions dans un ordre logique,
+avec des explications simples et, lorsque cela était utile,
+des captures d’écran permettant de repérer plus facilement
+les éléments à sélectionner.
+</p>
+
+</div>
+
+
+<!-- ADAPTATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>L’adaptation aux utilisateurs</h3>
+
+<p>
+Une procédure destinée aux utilisateurs ne doit pas être
+rédigée comme une documentation technique destinée à un
+administrateur réseau.
+</p>
+
+<p style="margin-top:12px;">
+J’ai donc appris à adapter mon vocabulaire et mes explications
+au niveau de la personne qui allait utiliser la procédure.
+L’objectif était d’aller à l’essentiel tout en donnant
+suffisamment d’informations pour éviter les erreurs.
+</p>
+
+</div>
+
+
+<!-- ACCOMPAGNEMENT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>L’accompagnement</h3>
+
+<p>
+La procédure pouvait également servir de support lors d’un
+échange avec un utilisateur. Je pouvais expliquer directement
+la manipulation, puis lui laisser le document afin qu’il
+puisse refaire l’opération seul par la suite.
+</p>
+
+<p style="margin-top:12px;">
+Cette méthode permettait de vérifier que l’utilisateur avait
+bien compris la procédure et de répondre aux éventuelles
+questions rencontrées pendant la manipulation.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté était de trouver le bon niveau
+d’explication. Une procédure trop technique pouvait être
+difficile à comprendre pour un utilisateur, tandis qu’une
+procédure trop courte pouvait manquer d’informations.
+</p>
+
+<p style="margin-top:12px;">
+Il fallait également penser aux différentes situations
+pouvant être rencontrées par les utilisateurs et vérifier
+que les étapes indiquées correspondaient bien à leur
+environnement de travail.
+</p>
+
+</div>
+
+
+<!-- SUPPORTS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">07</span>
+
+<h3>Les supports utilisés</h3>
+
+<p>
+Pour faciliter la compréhension, plusieurs types de supports
+pouvaient être utilisés selon la situation. L’objectif était
+toujours de rendre l’information rapidement compréhensible
+et facilement accessible.
+</p>
+
+<div class="support-list">
+
+<span class="support important">Procédures</span>
+<span class="support important">Captures d’écran</span>
+<span class="support">Guides utilisateurs</span>
+<span class="support">Documentation</span>
+<span class="support">Explications orales</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Cette expérience m’a permis de comprendre que le rôle d’un
+technicien informatique ne consiste pas uniquement à résoudre
+des problèmes techniques. Il faut également être capable
+d’expliquer une solution et d’accompagner les utilisateurs.
+</p>
+
+<p style="margin-top:12px;">
+La création de procédures m’a appris à vulgariser des
+informations techniques et à adapter mon discours à des
+personnes qui n’ont pas forcément les mêmes connaissances
+informatiques que moi.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également compris qu’une bonne documentation permet
+de faire gagner du temps au support informatique tout en
+rendant les utilisateurs plus autonomes dans leur travail
+quotidien.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

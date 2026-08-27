@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Élaborer les spécifications techniques et le cahier des charges</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.tech-card {
+    grid-column: span 2;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tech {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.tech.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card,
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Élaborer les spécifications techniques et le cahier des charges
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Analyser • Spécifier • Structurer • Préparer
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+AC 33.01
+</div>
+
+<h3>
+Élaborer les spécifications techniques et le cahier des charges d'une application informatique
+</h3>
+
+<p>
+Dans le cadre de la SAÉ 3.02, j’ai participé au développement
+d’une application de recherche de fichiers basée sur une
+architecture client/serveur.
+</p>
+
+<p style="margin-top:12px;">
+Avant de commencer la programmation, nous avons dû réfléchir
+au fonctionnement de l’application, aux besoins auxquels elle
+devait répondre et à la manière dont le client et le serveur
+allaient communiquer.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Présentation de l'application</h3>
+
+<p>
+Cette image peut présenter l’architecture client/serveur,
+l’interface de l’application ou un schéma réalisé pendant
+la conception du projet.
+</p>
+
+</div>
+
+
+<!-- =========================
+     REMPLACER L'IMAGE ICI
+========================= -->
+
+<img
+    src="../assets/images/sae302-specifications.png"
+    alt="Architecture et conception de l'application de recherche de fichiers"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Architecture et conception de l’application
+</p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Pour ce projet, nous devions créer une application capable
+de rechercher des informations dans différents types de
+fichiers, notamment des fichiers PDF, Excel, HTML et TXT.
+</p>
+
+<p style="margin-top:12px;">
+L’application était composée d’un client permettant à
+l’utilisateur d’effectuer ses recherches et d’un serveur
+chargé de traiter les fichiers et de retourner les résultats.
+</p>
+
+</div>
+
+
+<!-- OBJECTIF -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>Les objectifs</h3>
+
+<p>
+L’objectif était de définir clairement les fonctionnalités
+que nous voulions intégrer à l’application avant de commencer
+le développement.
+</p>
+
+<p style="margin-top:12px;">
+Nous devions notamment permettre une recherche simple,
+mais également des recherches plus précises avec plusieurs
+critères et des expressions régulières.
+</p>
+
+</div>
+
+
+<!-- SPECIFICATIONS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>Les spécifications techniques</h3>
+
+<p>
+J’ai participé à la définition du fonctionnement technique
+de l’application. Nous avons notamment réfléchi aux échanges
+entre le client et le serveur et aux informations qui devaient
+être transmises dans les requêtes.
+</p>
+
+<p style="margin-top:12px;">
+Nous avons également défini la manière dont les résultats
+de recherche devaient être traités et retournés à l’utilisateur.
+Cela nous a permis d’avoir une base commune avant de commencer
+le développement.
+</p>
+
+</div>
+
+
+<!-- CAHIER DES CHARGES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>Le cahier des charges</h3>
+
+<p>
+Le cahier des charges nous a permis de regrouper les besoins
+et les fonctionnalités attendues pour l’application.
+</p>
+
+<p style="margin-top:12px;">
+Nous avons notamment identifié les types de fichiers que
+l’application devait pouvoir traiter ainsi que les différentes
+possibilités de recherche proposées à l’utilisateur.
+</p>
+
+<p style="margin-top:12px;">
+Cette préparation nous a également permis d’avoir une vision
+plus claire du projet et de mieux organiser le travail à réaliser.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté était de prévoir le comportement
+de l’application avec des fichiers ayant des structures
+très différentes.
+</p>
+
+<p style="margin-top:12px;">
+Un fichier TXT ne se traite pas de la même manière qu’un
+PDF ou qu’un fichier Excel. Il fallait donc anticiper ces
+différences dès la conception afin d’éviter des problèmes
+pendant le développement.
+</p>
+
+</div>
+
+
+<!-- ORGANISATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>L'organisation de l'application</h3>
+
+<p>
+Nous avons également réfléchi à la manière d’organiser les
+différents fichiers et les différentes parties du programme.
+</p>
+
+<p style="margin-top:12px;">
+L’objectif était de conserver une structure claire avec
+une séparation entre le client, le serveur et les traitements
+nécessaires pour chaque type de fichier.
+</p>
+
+<p style="margin-top:12px;">
+Cette organisation devait permettre de rendre le projet plus
+facile à comprendre et à faire évoluer.
+</p>
+
+</div>
+
+
+<!-- TECHNOLOGIES -->
+
+<div class="project-card tech-card reveal">
+
+<span class="card-number">07</span>
+
+<h3>Les technologies et notions utilisées</h3>
+
+<p>
+Pour ce projet, j’ai utilisé principalement Python ainsi
+que plusieurs notions liées au développement d’applications
+et à l’architecture client/serveur.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">Python</span>
+<span class="tech">Client / Serveur</span>
+<span class="tech">Requêtes</span>
+<span class="tech">Architecture logicielle</span>
+<span class="tech">PDF</span>
+<span class="tech">XLSX / Excel</span>
+<span class="tech">HTML</span>
+<span class="tech">TXT</span>
+<span class="tech important">Expressions régulières</span>
+<span class="tech important">Cahier des charges</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Ce projet m’a permis de comprendre qu’un développement
+informatique ne commence pas directement par l’écriture
+du code. Il est important de commencer par analyser le
+besoin et de définir précisément ce que l’application doit faire.
+</p>
+
+<p style="margin-top:12px;">
+La phase de spécification m’a également permis de mieux
+comprendre l’intérêt d’une architecture client/serveur
+et l’importance de définir les échanges entre les différentes
+parties d’une application avant son développement.
+</p>
+
+<p style="margin-top:12px;">
+J’ai surtout compris qu’un cahier des charges suffisamment
+précis permet d’éviter de nombreuses erreurs pendant la
+réalisation. Cette expérience m’a appris à prendre davantage
+le temps d’analyser un problème avant de chercher directement
+à le résoudre avec du code.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

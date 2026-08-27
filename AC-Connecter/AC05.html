@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Collaborer en mode projet en français et en anglais</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+    min-height: 300px;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background: rgba(0,0,0,0.15);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   LANGUES / OUTILS
+========================= */
+
+.argument-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.argument {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.argument.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Collaborer en mode projet en français et en anglais
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Collaborer • Communiquer • Répartir • Présenter
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Collaborer en mode projet en français et en anglais
+</h3>
+
+<p>
+Dans le cadre de ma première année de BUT Réseaux et Télécommunications,
+j’ai participé au projet « Pépinière Multi-Sites ». Ce projet a été
+réalisé en groupe et nous a demandé de travailler ensemble afin de
+concevoir une infrastructure réseau répondant aux besoins d’une
+entreprise.
+</p>
+
+<p style="margin-top:12px;">
+Le travail en équipe nous a permis de répartir les différentes
+tâches, de partager nos connaissances et de mettre en commun nos
+réalisations. Une partie du projet nécessitait également d'utiliser
+l'anglais pour communiquer et présenter certains éléments techniques.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Présentation du projet</h3>
+
+<p>
+Cet espace peut être utilisé pour présenter une capture de la
+maquette réseau, du travail réalisé en groupe ou d'un support
+utilisé lors de la présentation du projet.
+</p>
+
+</div>
+
+
+<img
+    src="../assets/images/pepiniere-projet.png"
+    alt="Projet Pépinière Multi-Sites"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Aperçu du projet Pépinière Multi-Sites
+</p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Le projet Pépinière Multi-Sites avait pour objectif de concevoir
+une infrastructure permettant de relier plusieurs sites d'une
+même entreprise.
+</p>
+
+<p style="margin-top:12px;">
+Nous avons travaillé en groupe afin de réaliser les différentes
+parties du projet. Chacun devait participer à la réalisation
+technique, mais également être capable de présenter et d'expliquer
+son travail aux autres membres du groupe.
+</p>
+
+</div>
+
+
+<!-- ORGANISATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>Le travail en équipe</h3>
+
+<p>
+Pour avancer efficacement, nous avons dû organiser notre travail
+et nous répartir les différentes tâches du projet.
+</p>
+
+<p style="margin-top:12px;">
+Nous échangions régulièrement afin de faire le point sur
+l'avancement de chacun et de vérifier que les différentes
+parties pouvaient fonctionner ensemble. Cette organisation
+nous a permis d'éviter de travailler chacun de notre côté
+sans prendre en compte le travail des autres.
+</p>
+
+</div>
+
+
+<!-- COMMUNICATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>La communication</h3>
+
+<p>
+La communication était essentielle pour réussir le projet.
+Nous devions être capables d'expliquer nos choix techniques,
+de demander de l'aide lorsque nous rencontrions un problème
+et de partager les informations utiles avec le reste du groupe.
+</p>
+
+<p style="margin-top:12px;">
+Les échanges nous ont également permis de comparer nos solutions
+et de trouver ensemble les corrections nécessaires lorsque
+la configuration ne fonctionnait pas comme prévu.
+</p>
+
+</div>
+
+
+<!-- ANGLAIS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>L'utilisation de l'anglais</h3>
+
+<p>
+Une partie du projet nous a amenés à utiliser l'anglais,
+notamment pour comprendre certaines ressources techniques
+et pour présenter des éléments liés au projet.
+</p>
+
+<p style="margin-top:12px;">
+L'anglais étant très présent dans le domaine des réseaux et
+de l'informatique, cette expérience m'a permis de me familiariser
+avec le vocabulaire technique et de mieux comprendre des
+documents qui n'étaient pas disponibles en français.
+</p>
+
+<div class="argument-list">
+
+<span class="argument">Vocabulaire réseau</span>
+<span class="argument">Documentation technique</span>
+<span class="argument important">Présentation en anglais</span>
+<span class="argument important">Communication technique</span>
+
+</div>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté du travail en groupe était de réussir
+à coordonner les différentes parties du projet. Une modification
+réalisée par une personne pouvait parfois avoir des conséquences
+sur le travail d'un autre membre.
+</p>
+
+<p style="margin-top:12px;">
+L'utilisation de l'anglais pouvait également rendre certaines
+explications ou documentations plus difficiles à comprendre.
+Il fallait donc prendre le temps de rechercher le vocabulaire
+technique et de vérifier notre compréhension.
+</p>
+
+</div>
+
+
+<!-- RESULTAT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Le résultat</h3>
+
+<p>
+Grâce au travail collectif, nous avons réussi à construire
+une solution cohérente en regroupant les différentes parties
+réalisées par les membres du groupe.
+</p>
+
+<p style="margin-top:12px;">
+Le projet nous a également permis de développer notre capacité
+à travailler ensemble, à communiquer sur des sujets techniques
+et à présenter notre travail de manière structurée.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Ce projet m'a appris que la réussite d'un projet technique
+dépend autant du travail individuel que de la capacité à
+collaborer avec les autres.
+</p>
+
+<p style="margin-top:12px;">
+J'ai appris à mieux répartir les tâches, à communiquer sur
+l'avancement de mon travail et à prendre en compte les
+contraintes rencontrées par les autres membres du groupe.
+</p>
+
+<p style="margin-top:12px;">
+L'utilisation de l'anglais m'a également permis de gagner
+en autonomie face aux documentations techniques. Dans le
+domaine des réseaux, une grande partie des ressources et du
+vocabulaire étant en anglais, cette compétence est importante
+pour continuer à progresser.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Déployer un réseau d'accès fixe ou mobile pour un opérateur de télécommunication</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE / MAQUETTE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+    min-height: 300px;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background: rgba(0,0,0,0.15);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.tech-card {
+    grid-column: span 2;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tech {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.security {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card,
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Déployer un réseau d'accès fixe ou mobile
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Interconnexion • VPN • Sécurité • Réseau d'entreprise
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Permettre aux collaborateurs de se connecter de manière sécurisée au système d'information de l'entreprise
+</h3>
+
+<p>
+Dans le cadre du projet de SAÉ 3.03 « Pépinière Multi-Sites »,
+j'ai configuré une liaison réseau sécurisée permettant de relier
+le site principal d'une entreprise à une succursale à travers
+un réseau public simulant Internet.
+</p>
+
+<p style="margin-top:12px;">
+L'objectif était de permettre aux collaborateurs du site distant
+d'accéder aux ressources du siège tout en protégeant les données
+échangées entre les deux sites.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Maquette réseau</h3>
+
+<p>
+Cette image présente la maquette réalisée dans le cadre du projet,
+avec l'interconnexion des différents équipements et le tunnel
+sécurisé entre les deux sites.
+</p>
+
+</div>
+
+
+<!-- =========================
+     REMPLACER L'IMAGE ICI
+========================= -->
+
+<img
+    src="../assets/images/vpn-gre-ipsec.png"
+    alt="Maquette réseau avec tunnel GRE over IPsec"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Maquette de l'interconnexion sécurisée des deux sites
+</p>
+
+</div>
+
+
+<!-- CE QUE J'AI FAIT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Ce que j'ai fait</h3>
+
+<p>
+J'ai configuré une liaison réseau sécurisée, basée sur un
+tunnel GRE over IPsec, afin de relier le site principal d'une
+entreprise à sa succursale à travers un réseau public.
+</p>
+
+<p style="margin-top:12px;">
+Cette configuration permet aux deux réseaux de communiquer
+entre eux comme s'ils étaient directement interconnectés,
+tout en sécurisant les échanges qui transitent par le réseau
+public.
+</p>
+
+</div>
+
+
+<!-- POURQUOI -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>Pourquoi ce projet ?</h3>
+
+<p>
+L'objectif était de permettre aux employés travaillant sur le
+site distant d'accéder aux serveurs, aux fichiers et aux outils
+du siège social comme s'ils se trouvaient sur place.
+</p>
+
+<p style="margin-top:12px;">
+La sécurité était essentielle, car les informations circulaient
+à travers un réseau public. Il fallait donc empêcher une personne
+extérieure d'intercepter ou de lire les données échangées.
+</p>
+
+</div>
+
+
+<!-- CONFIGURATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>La mise en place</h3>
+
+<p>
+Sur les routeurs Cisco des deux sites, j'ai mis en place un
+tunnel GRE permettant d'encapsuler le trafic entre les réseaux.
+</p>
+
+<p style="margin-top:12px;">
+J'ai ensuite utilisé IPsec afin de chiffrer les communications
+et de protéger les données lors de leur passage sur le réseau
+public.
+</p>
+
+<p style="margin-top:12px;">
+J'ai également configuré des règles de filtrage afin de contrôler
+les flux autorisés entre les différents réseaux.
+</p>
+
+</div>
+
+
+<!-- SECURITE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>La sécurisation</h3>
+
+<p>
+La sécurisation de la liaison reposait principalement sur
+IPsec, qui permet de chiffrer les données transportées entre
+les deux sites.
+</p>
+
+<p style="margin-top:12px;">
+J'ai également utilisé des listes de contrôle d'accès, ou ACL,
+afin de limiter les communications autorisées et de contrôler
+les flux réseau.
+</p>
+
+<p style="margin-top:12px;">
+L'objectif était de garantir que seuls les flux nécessaires
+puissent traverser l'infrastructure.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté a été que cette technologie était
+nouvelle pour nous. Nous n'avions encore jamais configuré
+de tunnel GRE avec une sécurisation IPsec en cours.
+</p>
+
+<p style="margin-top:12px;">
+Il a donc fallu effectuer des recherches en autonomie afin
+de comprendre la syntaxe des commandes, leur ordre de configuration
+et le fonctionnement des différents mécanismes.
+</p>
+
+<p style="margin-top:12px;">
+Les tests nous ont également permis d'identifier les erreurs
+de configuration et de vérifier progressivement la communication
+entre les deux sites.
+</p>
+
+</div>
+
+
+<!-- TECHNOLOGIES -->
+
+<div class="project-card tech-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Les technologies utilisées</h3>
+
+<p>
+Ce projet m'a permis de mettre en pratique plusieurs notions
+de réseau et de sécurité afin de réaliser une interconnexion
+sécurisée entre deux sites.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">Cisco</span>
+<span class="tech">Routage</span>
+<span class="tech">GRE</span>
+<span class="tech security">IPsec</span>
+<span class="tech security">VPN</span>
+<span class="tech security">ACL</span>
+<span class="tech">Adressage IP</span>
+<span class="tech">Encapsulation</span>
+
+</div>
+
+</div>
+
+
+<!-- APPRENTISSAGE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">07</span>
+
+<h3>Ce que j'en ai appris</h3>
+
+<p>
+J'ai appris que l'interconnexion de sites distants demande
+une double vigilance : il ne suffit pas de permettre la
+communication entre les réseaux, il faut également protéger
+les données qui circulent entre eux.
+</p>
+
+<p style="margin-top:12px;">
+Ce projet m'a aussi appris à rechercher et à comprendre une
+technologie que je ne maîtrisais pas encore afin de pouvoir
+l'intégrer dans une architecture réseau fonctionnelle.
+</p>
+
+</div>
+
+
+<!-- AMELIORATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">08</span>
+
+<h3>Ce que je ferais autrement</h3>
+
+<p>
+En situation réelle en entreprise, je chercherais à renforcer
+l'authentification utilisée entre les équipements afin d'éviter
+de dépendre uniquement d'une clé pré-partagée.
+</p>
+
+<p style="margin-top:12px;">
+Je pourrais notamment envisager l'utilisation de certificats
+numériques avec une infrastructure de gestion de certificats,
+par exemple à travers Active Directory Certificate Services,
+afin d'améliorer la gestion et la sécurité de l'authentification.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de ce projet</h3>
+
+<p>
+Ce projet m'a permis de comprendre comment deux sites d'une
+même entreprise peuvent communiquer de manière sécurisée
+à travers un réseau public.
+</p>
+
+<p style="margin-top:12px;">
+J'ai également appris à associer différentes technologies
+réseau, comme GRE, IPsec et les ACL, afin de répondre à un
+besoin concret d'interconnexion et de sécurité.
+</p>
+
+<p style="margin-top:12px;">
+Enfin, cette expérience m'a permis de développer mon autonomie
+dans la recherche de solutions techniques lorsque je rencontre
+une technologie que je ne connais pas encore.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

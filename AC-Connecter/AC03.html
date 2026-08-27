@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Déployer un réseau d'accès fixe ou mobile</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.tech-card {
+    grid-column: span 2;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tech {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.security {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card,
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Déployer un réseau d'accès fixe ou mobile
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Opérateur télécom • Déploiement • Coordination • Sécurité
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- =========================
+     INTRODUCTION
+========================= -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Déployer un réseau d'accès fixe ou mobile pour un opérateur de télécommunication en intégrant la sécurité
+</h3>
+
+<p>
+Dans le cadre de mon alternance au sein d’un opérateur de
+télécommunication, j’ai participé à des projets liés au
+déploiement et à la mise en service d’infrastructures réseau
+sur différents sites.
+</p>
+
+<p style="margin-top:12px;">
+Ces opérations nécessitaient une préparation importante en amont,
+car les interventions étaient réalisées à des dates définies.
+Il fallait donc s’assurer que les différents éléments techniques,
+les configurations, les demandes auprès des équipes nationales
+et les actions des prestataires soient prêts avant l’intervention
+sur site.
+</p>
+
+<p style="margin-top:12px;">
+La sécurité était également prise en compte afin que les équipements
+déployés puissent être intégrés à l’infrastructure de l’opérateur
+tout en respectant les règles de sécurité en vigueur.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- =========================
+     IMAGE
+========================= -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Exemple de déploiement</h3>
+
+<p>
+Cet espace peut présenter une photographie du site, un schéma
+d’architecture réseau ou une capture permettant d’illustrer
+une opération de déploiement réalisée pendant mon alternance.
+</p>
+
+</div>
+
+
+<img
+    src="../assets/images/deploiement-reseau.png"
+    alt="Exemple de déploiement d'un réseau d'accès"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Illustration d'une infrastructure réseau d'accès
+</p>
+
+</div>
+
+
+<!-- =========================
+     CONTEXTE
+========================= -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Lors de mon alternance, j’ai été amenée à participer à des
+opérations de déploiement sur des sites de télécommunication.
+Ces opérations pouvaient nécessiter l’intervention de plusieurs
+équipes et de différents prestataires.
+</p>
+
+<p style="margin-top:12px;">
+Une intervention sur site était planifiée à l’avance. Il était
+donc essentiel que les différentes étapes soient préparées avant
+la date prévue afin d’éviter un déplacement inutile ou un report
+de l’intervention.
+</p>
+
+<p style="margin-top:12px;">
+Mon rôle consistait notamment à suivre les différentes demandes
+et à m’assurer que les éléments nécessaires au déploiement étaient
+disponibles au bon moment.
+</p>
+
+</div>
+
+
+<!-- =========================
+     OBJECTIFS
+========================= -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>Les objectifs</h3>
+
+<p>
+L’objectif était de permettre la mise en service ou l’évolution
+d’un accès réseau sur le site concerné dans les délais prévus.
+</p>
+
+<p style="margin-top:12px;">
+Pour cela, il fallait préparer les différents éléments techniques,
+vérifier les configurations nécessaires et coordonner les actions
+avec les équipes concernées.
+</p>
+
+<p style="margin-top:12px;">
+Un autre objectif important était de garantir que le déploiement
+respecte les contraintes de sécurité de l’opérateur, notamment
+au niveau des équipements, des flux réseau et des accès
+à l’infrastructure.
+</p>
+
+</div>
+
+
+<!-- =========================
+     TECHNOLOGIES
+========================= -->
+
+<div class="project-card tech-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>Les technologies utilisées</h3>
+
+<p>
+Pour participer aux opérations de déploiement, j’ai mobilisé
+différentes notions liées aux réseaux d’accès, à l’infrastructure
+réseau et à la sécurité.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">Réseau d'accès</span>
+<span class="tech">Fibre optique</span>
+<span class="tech">Adressage IP</span>
+<span class="tech">VLAN</span>
+<span class="tech">Routage</span>
+<span class="tech">Équipements réseau</span>
+<span class="tech security">Pare-feu</span>
+<span class="tech security">Sécurité réseau</span>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     REALISATION
+========================= -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>Ce que j’ai réalisé</h3>
+
+<p>
+J’ai participé à la préparation de plusieurs opérations de
+déploiement en suivant les différentes actions nécessaires
+avant l’intervention sur site.
+</p>
+
+<p style="margin-top:12px;">
+Cela pouvait notamment impliquer des demandes auprès des équipes
+nationales, la réservation de ressources réseau, des vérifications
+de configuration ou encore des actions concernant les pare-feu.
+</p>
+
+<p style="margin-top:12px;">
+Je devais également suivre les interventions réalisées par les
+prestataires et vérifier que les différentes étapes étaient
+réalisées dans les délais.
+</p>
+
+<p style="margin-top:12px;">
+Une fois les actions réalisées, des vérifications et des tests
+permettaient de s’assurer que le réseau fonctionnait correctement
+et que l’accès pouvait être mis en service.
+</p>
+
+</div>
+
+
+<!-- =========================
+     SECURITE
+========================= -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>La sécurité</h3>
+
+<p>
+La sécurité devait être prise en compte dès la préparation
+du déploiement. Les nouveaux équipements et les nouveaux accès
+devaient être intégrés à l’infrastructure de l’opérateur sans
+compromettre la sécurité du réseau existant.
+</p>
+
+<p style="margin-top:12px;">
+J’ai notamment été amenée à suivre des demandes liées aux
+pare-feu et aux règles permettant d’autoriser ou de contrôler
+certains flux réseau.
+</p>
+
+<p style="margin-top:12px;">
+Cette partie m’a permis de comprendre qu’un déploiement réseau
+ne consiste pas uniquement à rendre un équipement fonctionnel.
+Il faut également contrôler les communications autorisées
+et respecter les règles de sécurité définies par l’entreprise.
+</p>
+
+</div>
+
+
+<!-- =========================
+     COORDINATION
+========================= -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>La coordination du déploiement</h3>
+
+<p>
+Les opérations de déploiement nécessitaient de coordonner
+plusieurs acteurs. Certaines actions dépendaient des équipes
+nationales tandis que d’autres pouvaient être réalisées par
+des prestataires ou directement sur le site concerné.
+</p>
+
+<p style="margin-top:12px;">
+Je devais donc suivre l’avancement des différentes demandes,
+identifier les éléments encore manquants et relancer les
+interlocuteurs lorsque cela était nécessaire.
+</p>
+
+<p style="margin-top:12px;">
+Cette coordination permettait de limiter les risques de retard
+et de s’assurer que l’intervention pouvait avoir lieu à la date
+prévue.
+</p>
+
+</div>
+
+
+<!-- =========================
+     DIFFICULTES
+========================= -->
+
+<div class="project-card reveal">
+
+<span class="card-number">07</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté était de gérer plusieurs demandes
+en parallèle avec des délais différents. Certaines actions
+dépendaient également d’autres équipes ou de prestataires.
+</p>
+
+<p style="margin-top:12px;">
+Il fallait donc rester attentif à l’avancement de chaque
+demande et anticiper les éventuels blocages suffisamment tôt
+pour pouvoir trouver une solution avant la date d’intervention.
+</p>
+
+<p style="margin-top:12px;">
+Cette organisation était particulièrement importante lorsque
+le déplacement sur site ne pouvait pas facilement être reporté.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     ACQUIS
+========================= -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Cette expérience m’a permis de mieux comprendre les contraintes
+liées au déploiement d’un réseau d’accès dans le contexte d’un
+opérateur de télécommunication.
+</p>
+
+<p style="margin-top:12px;">
+J’ai particulièrement compris l’importance de la préparation
+en amont. Une intervention sur site dépend souvent de plusieurs
+équipes et de plusieurs actions qui doivent être réalisées dans
+un ordre précis. Si un seul élément n’est pas prêt, l’intervention
+peut être retardée ou reportée.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également développé ma capacité à suivre une opération
+dans son ensemble, depuis la préparation des demandes jusqu’aux
+vérifications réalisées après le déploiement.
+</p>
+
+<p style="margin-top:12px;">
+Enfin, cette expérience m’a permis de mieux intégrer la sécurité
+dans mes réflexions techniques, notamment concernant les pare-feu
+et le contrôle des flux réseau.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
