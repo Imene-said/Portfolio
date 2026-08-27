@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Défendre et argumenter un projet</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE DÉFENDRE UN PROJET
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   ARGUMENTS
+========================= */
+
+.argument-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.argument {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.argument.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   ÉTAPES
+========================= */
+
+.steps-box {
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.06),
+            rgba(255,255,255,0.02)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+}
+
+.steps-box h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    min-width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.12);
+
+    border: 1px solid rgba(59,130,246,0.25);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.step p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .steps-box,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Défendre et argumenter un projet
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Présenter • Justifier • Argumenter • Répondre
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Défendre et argumenter un projet
+</h3>
+
+<p>
+Dans le cadre de ce projet, j’ai dû présenter le travail réalisé
+et expliquer les choix que nous avions faits. L’objectif était
+de montrer que nous avions compris notre projet et que nous étions
+capables d’expliquer pourquoi certaines solutions avaient été retenues.
+</p>
+
+<p style="margin-top:12px;">
+Cette étape m’a demandé de préparer ma présentation, de sélectionner
+les informations importantes et surtout de savoir répondre aux
+questions qui pouvaient être posées sur notre travail.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Support de présentation</h3>
+
+<p>
+Cette image peut présenter une diapositive, un schéma ou une partie
+du support utilisé pour défendre le projet.
+</p>
+
+</div>
+
+
+<!-- =========================
+     REMPLACER L'IMAGE ICI
+========================= -->
+
+<img
+    src="../assets/images/presentation-projet.png"
+    alt="Support de présentation du projet"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Aperçu du support utilisé lors de la présentation
+</p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Après avoir réalisé le projet, il était nécessaire de pouvoir
+présenter le travail effectué et d’expliquer les différentes
+étapes de notre démarche.
+</p>
+
+<p style="margin-top:12px;">
+La présentation devait permettre de donner une vision globale
+du projet tout en montrant les aspects techniques les plus
+importants.
+</p>
+
+</div>
+
+
+<!-- PREPARATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>La préparation</h3>
+
+<p>
+Pour préparer la présentation, j’ai commencé par reprendre
+les différentes étapes du projet afin de bien maîtriser
+ce que j’allais expliquer.
+</p>
+
+<p style="margin-top:12px;">
+J’ai ensuite sélectionné les informations les plus importantes
+pour éviter de surcharger la présentation et garder un discours
+simple et compréhensible.
+</p>
+
+</div>
+
+
+<!-- ARGUMENTATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>Argumenter mes choix</h3>
+
+<p>
+Une partie importante de la présentation consistait à expliquer
+les choix réalisés pendant le projet. Je devais être capable
+de dire pourquoi une solution avait été choisie plutôt qu’une autre.
+</p>
+
+<p style="margin-top:12px;">
+Pour cela, je me suis appuyée sur les contraintes du projet,
+les besoins identifiés et les résultats obtenus pendant les tests.
+</p>
+
+<div class="argument-list">
+
+<span class="argument">Choix techniques</span>
+<span class="argument">Contraintes</span>
+<span class="argument">Besoins</span>
+<span class="argument important">Justification</span>
+<span class="argument important">Résultats</span>
+
+</div>
+
+</div>
+
+
+<!-- PRESENTATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>La présentation orale</h3>
+
+<p>
+Lors de la présentation, j’ai dû expliquer le projet de manière
+claire et structurée. L’objectif était de permettre à une personne
+qui ne connaissait pas le projet de comprendre rapidement notre démarche.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également fait attention à ne pas simplement lire les
+informations présentes sur le support, mais à les expliquer
+avec mes propres mots.
+</p>
+
+</div>
+
+
+<!-- QUESTIONS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>Répondre aux questions</h3>
+
+<p>
+La défense du projet ne se limitait pas à la présentation.
+Il fallait également être capable de répondre aux questions
+et de revenir sur certains choix lorsque cela était nécessaire.
+</p>
+
+<p style="margin-top:12px;">
+Ces échanges m’ont permis de vérifier que je maîtrisais réellement
+le sujet et pas seulement le contenu de ma présentation.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté a été de réussir à expliquer des éléments
+techniques de manière suffisamment simple pour qu’ils soient
+compréhensibles à l’oral.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également dû apprendre à être plus à l’aise face aux questions
+et à construire rapidement une réponse lorsque je n’avais pas
+préparé exactement la question posée.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Cette expérience m’a permis de comprendre qu’un projet ne se limite
+pas à sa réalisation technique. Il faut également être capable
+d’expliquer ce que l’on a fait et surtout de justifier ses choix.
+</p>
+
+<p style="margin-top:12px;">
+J’ai progressé dans ma manière de présenter mes idées et de
+m’exprimer à l’oral. J’ai également appris à mieux structurer
+mes arguments et à répondre aux questions sans perdre le fil
+de ma présentation.
+</p>
+
+
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

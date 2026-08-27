@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Réaliser une maquette de démonstration de projet</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE MAQUETTE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE DE LA MAQUETTE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.tech-card {
+    grid-column: span 2;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tech {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+
+/* =========================
+   ETAPES
+========================= */
+
+.steps-box {
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.06),
+            rgba(255,255,255,0.02)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+}
+
+.steps-box h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    min-width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.12);
+
+    border: 1px solid rgba(59,130,246,0.25);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.step p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card,
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .steps-box,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Réaliser une maquette de démonstration
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Concevoir • Mettre en place • Tester • Démontrer
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Réaliser une maquette de démonstration de projet
+</h3>
+
+<p>
+Dans le cadre de ce projet, j’ai réalisé une maquette afin de
+représenter concrètement la solution que nous avions imaginée.
+L’objectif était de pouvoir présenter le fonctionnement du projet
+et de montrer les différentes étapes de sa mise en œuvre.
+</p>
+
+<p style="margin-top:12px;">
+La maquette m’a permis de passer de la théorie à quelque chose
+de plus concret. Elle sert notamment à vérifier le fonctionnement
+de la solution avant de la mettre en place dans un environnement réel.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Vue de la maquette</h3>
+
+<p>
+Cette image présente la maquette réalisée pour représenter
+le fonctionnement du projet.
+</p>
+
+</div>
+
+<!-- =========================
+     REMPLACER L'IMAGE ICI
+========================= -->
+
+<img
+    src="../assets/images/maquette-projet.png"
+    alt="Maquette de démonstration du projet"
+    class="demo-image"
+>
+
+<p class="image-caption">
+Aperçu de la maquette réalisée
+</p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Avant de réaliser la maquette, il était nécessaire de comprendre
+le besoin et de déterminer ce que je voulais réellement démontrer.
+</p>
+
+<p style="margin-top:12px;">
+La maquette devait donc représenter les principaux éléments du
+projet tout en restant suffisamment simple pour pouvoir expliquer
+facilement son fonctionnement.
+</p>
+
+</div>
+
+
+<!-- OBJECTIF -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>L’objectif</h3>
+
+<p>
+L’objectif principal était de disposer d’une représentation
+concrète du projet afin de pouvoir tester son fonctionnement
+et présenter la solution de manière plus claire.
+</p>
+
+<p style="margin-top:12px;">
+Cela permettait également d’identifier plus facilement les
+éventuels problèmes avant de passer à une réalisation plus complète.
+</p>
+
+</div>
+
+
+<!-- REALISATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>La réalisation</h3>
+
+<p>
+J’ai commencé par identifier les différents éléments nécessaires
+à la maquette. J’ai ensuite organisé ces éléments afin de
+reproduire le fonctionnement général du projet.
+</p>
+
+<p style="margin-top:12px;">
+Une fois la maquette construite, j’ai réalisé plusieurs essais
+pour vérifier que chaque partie fonctionnait comme prévu.
+</p>
+
+</div>
+
+
+<!-- DEMONSTRATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>La démonstration</h3>
+
+<p>
+La maquette avait également pour objectif de servir de support
+lors de la présentation du projet.
+</p>
+
+<p style="margin-top:12px;">
+Elle permet de montrer concrètement le fonctionnement de la
+solution plutôt que de se limiter à des explications théoriques.
+Cela rend la présentation plus claire et permet de mieux
+visualiser les différentes étapes.
+</p>
+
+</div>
+
+
+<!-- TESTS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>Les tests</h3>
+
+<p>
+Après avoir réalisé la maquette, j’ai effectué plusieurs tests
+pour vérifier que les différents éléments communiquaient
+correctement et que le fonctionnement correspondait à ce qui
+avait été prévu.
+</p>
+
+<p style="margin-top:12px;">
+Ces tests m’ont également permis de repérer certains points
+à améliorer et de modifier la maquette lorsque cela était nécessaire.
+</p>
+
+</div>
+
+
+<!-- TECHNOLOGIES -->
+
+<div class="project-card tech-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Les outils et technologies</h3>
+
+<p>
+La réalisation de la maquette m’a permis de mobiliser plusieurs
+notions et outils étudiés pendant ma formation. Ils ont été
+utilisés pour représenter et tester le fonctionnement du projet.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">Maquette réseau</span>
+<span class="tech">Configuration réseau</span>
+<span class="tech">Adressage IP</span>
+<span class="tech">Équipements réseau</span>
+<span class="tech">Tests</span>
+<span class="tech">Simulation</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- ETAPES -->
+
+<div class="steps-box reveal">
+
+<h3>Les étapes de réalisation</h3>
+
+
+<div class="step">
+
+<span class="step-number">1</span>
+
+<p>
+J’ai commencé par analyser le projet afin d’identifier
+les éléments qui devaient apparaître dans la maquette.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">2</span>
+
+<p>
+J’ai ensuite préparé l’organisation de la maquette et
+défini la manière dont les différents éléments allaient
+fonctionner ensemble.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">3</span>
+
+<p>
+J’ai mis en place les différents équipements et réalisé
+les configurations nécessaires.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">4</span>
+
+<p>
+J’ai effectué des tests pour vérifier le fonctionnement
+de la maquette et corriger les problèmes rencontrés.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">5</span>
+
+<p>
+Enfin, j’ai utilisé la maquette comme support pour
+présenter et démontrer le fonctionnement du projet.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal" style="margin-top:25px;">
+
+<span class="card-number">07</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté a été de réussir à représenter
+le projet de manière suffisamment réaliste tout en gardant
+une maquette compréhensible.
+</p>
+
+<p style="margin-top:12px;">
+Les différents tests m’ont également demandé de vérifier
+chaque élément séparément afin de trouver l’origine des
+problèmes lorsque le résultat obtenu n’était pas celui attendu.
+</p>
+
+</div>
+
+
+<!-- ACQUIS -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+La réalisation de cette maquette m’a permis de mieux comprendre
+l’intérêt de tester une solution avant de la mettre en œuvre
+complètement.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également appris à présenter un projet de manière plus
+concrète. La maquette permet de rendre les explications plus
+faciles à suivre et de montrer directement le fonctionnement
+de la solution.
+</p>
+
+<p style="margin-top:12px;">
+Cette expérience m’a aussi permis de gagner en autonomie dans
+la réalisation des configurations et dans la recherche de
+solutions lorsque les tests ne donnaient pas le résultat attendu.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

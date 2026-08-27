@@ -5,12 +5,210 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>AC31.01 — Administrer</title>
+<title>AC31.01 — Concevoir un projet réseau</title>
 
 <link rel="stylesheet" href="../assets/css/style.css">
 <script defer src="../assets/js/main.js"></script>
 
+<style>
+
+/* =========================
+   PAGE AC31.01
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+.tech-card {
+    grid-column: span 2;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tech {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body class="page">
 
@@ -20,16 +218,23 @@
 
 
 <header>
+
 <div class="container">
 
 <div class="topbar">
 
 <div class="brand">
+
 <div>
+
 <h1>Imene SAID ERRAHMANI</h1>
+
 <p>Portfolio BUT R&T — Alternance</p>
+
 </div>
+
 </div>
+
 
 <nav>
 
@@ -43,23 +248,32 @@
 </nav>
 
 </div>
+
 </div>
+
 </header>
 
 
 <main class="container">
 
+
 <div class="pageActions">
 
 <button class="btnIcon warn" onclick="history.back()">
+
 <span class="ico">←</span>
+
 Retour
+
 </button>
 
 </div>
 
 
-<div class="sectionHeader" style="justify-content:center;text-align:center;margin-top:20px;">
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
 
 <div>
 
@@ -67,32 +281,198 @@ Retour
 AC31.01 — Concevoir un projet réseau
 </h2>
 
-</div>
-
-</div>
-
-
-<div class="glass reveal">
-
-<div class="inner">
-
-<p>
-
-Description du projet réalisé pour valider cette compétence.
-
-Explique ici :
-
-• le contexte  
-• les objectifs  
-• les technologies utilisées  
-• ce que tu as réalisé  
-
+<p style="opacity:0.7;margin-top:10px;">
+Comprendre le besoin • Concevoir • Configurer • Tester
 </p>
 
 </div>
 
 </div>
 
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>Concevoir un projet réseau</h3>
+
+<p>
+Pour cette compétence, j’ai travaillé sur un projet qui m’a permis
+de passer de la théorie à quelque chose de plus concret.
+L’idée était de partir d’un besoin et de réfléchir à la manière
+dont je pouvais construire un réseau adapté.
+</p>
+
+<p style="margin-top:12px;">
+J’ai donc dû réfléchir à l’organisation du réseau, aux équipements
+à utiliser et à la façon dont ils allaient communiquer entre eux.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Au départ, j’avais une situation avec plusieurs équipements
+qui devaient pouvoir communiquer correctement sur le réseau.
+Il fallait donc trouver une organisation logique et éviter
+de simplement configurer les équipements sans avoir réfléchi
+à l’architecture au préalable.
+</p>
+
+<p style="margin-top:12px;">
+La première étape a donc été de comprendre le besoin et de
+déterminer comment le réseau devait être organisé.
+</p>
+
+</div>
+
+
+<!-- OBJECTIFS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>Ce que je devais faire</h3>
+
+<p>
+Mon objectif était surtout de construire une architecture
+qui fonctionne et qui reste cohérente.
+Je devais notamment gérer l’adressage IP et organiser
+les différents réseaux.
+</p>
+
+<p style="margin-top:12px;">
+Je devais aussi m’assurer que les équipements puissent
+communiquer entre eux et que la solution puisse être
+modifiée ou améliorée par la suite.
+</p>
+
+</div>
+
+
+<!-- TECHNOLOGIES -->
+
+<div class="project-card tech-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>Les technologies utilisées</h3>
+
+<p>
+Pour réaliser ce projet, j’ai utilisé plusieurs notions
+que j’ai vues pendant ma formation en réseau.
+Elles m’ont permis de construire l’architecture et de
+mettre en place les différentes communications.
+</p>
+
+<div class="tech-list">
+
+<span class="tech">IPv4</span>
+<span class="tech">Adressage IP</span>
+<span class="tech">VLAN</span>
+<span class="tech">Routage</span>
+<span class="tech">Switch</span>
+<span class="tech">Routeur</span>
+<span class="tech">Simulation réseau</span>
+
+</div>
+
+</div>
+
+
+<!-- REALISATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>Ce que j’ai réalisé</h3>
+
+<p>
+J’ai commencé par regarder les besoins du projet pour savoir
+quels équipements et quelles configurations étaient nécessaires.
+Ensuite, j’ai construit progressivement l’architecture réseau.
+</p>
+
+<p style="margin-top:12px;">
+Une fois la configuration réalisée, j’ai effectué plusieurs tests
+pour vérifier que les machines communiquaient correctement.
+Quand je rencontrais un problème, je revenais sur ma configuration
+pour essayer d’en trouver l’origine.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La partie la plus importante pour moi a été de comprendre
+pourquoi certaines communications ne fonctionnaient pas
+du premier coup.
+</p>
+
+<p style="margin-top:12px;">
+Cela m’a obligé à vérifier étape par étape ma configuration,
+notamment l’adressage et le fonctionnement des différents
+équipements. Cette démarche m’a permis de mieux comprendre
+le fonctionnement réel d’un réseau.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- ACQUIS -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de ce projet</h3>
+
+<p>
+Ce projet m’a surtout appris qu’avant de configurer un réseau,
+il faut prendre le temps de réfléchir à son architecture.
+J’ai également gagné en autonomie dans la recherche d’erreurs
+et dans la résolution des problèmes de configuration.
+</p>
+
+<p style="margin-top:12px;">
+Aujourd’hui, je suis plus à l’aise pour analyser un besoin,
+proposer une organisation réseau et vérifier ensuite si
+la solution fonctionne réellement.
+</p>
+
+</div>
+
+
+</div>
 
 </main>
 
@@ -101,12 +481,18 @@ Explique ici :
 
 <div class="container footerLine">
 
-<span><strong>© 2026 Imene SAID ERRAHMANI</strong></span>
-<span>Portfolio BUT R&T</span>
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
 
 </div>
 
 </footer>
+
 
 </body>
 </html>

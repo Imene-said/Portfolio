@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Communiquer avec les acteurs du projet</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMMUNICATION PROJET
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TYPES D'ACTEURS
+========================= */
+
+.argument-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.argument {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.argument.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   ETAPES
+========================= */
+
+.steps-box {
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.06),
+            rgba(255,255,255,0.02)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+}
+
+.steps-box h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    min-width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.12);
+
+    border: 1px solid rgba(59,130,246,0.25);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.step p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .steps-box,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Communiquer avec les acteurs du projet
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Échanger • Coordonner • Anticiper • Respecter les délais
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Communiquer avec les acteurs du projet
+</h3>
+
+<p>
+Dans le cadre de mon alternance, j’ai été amenée à travailler
+avec différents interlocuteurs pour préparer des interventions
+réseau réalisées directement sur site.
+</p>
+
+<p style="margin-top:12px;">
+Ces interventions étaient planifiées à des dates précises.
+Il était donc important que tout soit préparé en amont :
+les demandes, les configurations, le matériel et les différentes
+actions à réaliser devaient être anticipés afin que l’intervention
+puisse se dérouler comme prévu et éviter de devoir repousser
+la date prévue.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+
+
+
+
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Pendant mon alternance, certaines interventions réseau étaient
+prévues sur site à des dates définies à l’avance. Ces interventions
+pouvaient concerner différentes actions techniques et nécessitaient
+la coordination de plusieurs personnes.
+</p>
+
+<p style="margin-top:12px;">
+Le principal enjeu était donc de faire en sorte que tout soit prêt
+avant le déplacement sur site. Une information manquante ou une
+action non réalisée pouvait entraîner un retard et parfois obliger
+à reporter l’intervention.
+</p>
+
+</div>
+
+
+<!-- PREPARATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>La préparation</h3>
+
+<p>
+Avant chaque intervention, je devais m’assurer que les différentes
+actions nécessaires avaient bien été identifiées et prises en compte.
+Cela demandait de communiquer avec les personnes concernées et de
+vérifier l’avancement des demandes.
+</p>
+
+<p style="margin-top:12px;">
+Je devais notamment anticiper les éléments qui pouvaient prendre
+du temps afin de ne pas les découvrir au dernier moment.
+Cette préparation permettait d’arriver sur site avec une situation
+déjà bien cadrée.
+</p>
+
+</div>
+
+
+<!-- ACTEURS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>Les différents acteurs</h3>
+
+<p>
+Pour préparer les interventions, je pouvais être amenée à échanger
+avec plusieurs interlocuteurs. Chacun avait un rôle différent dans
+la réalisation du projet, ce qui nécessitait de bien identifier
+qui contacter en fonction de la demande.
+</p>
+
+<div class="argument-list">
+
+<span class="argument">Équipe nationale</span>
+<span class="argument">Équipe réseau</span>
+<span class="argument">Équipe sécurité</span>
+<span class="argument important">Prestataires</span>
+<span class="argument important">Équipes sur site</span>
+
+</div>
+
+</div>
+
+
+<!-- DEMANDES TECHNIQUES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>Les demandes techniques</h3>
+
+<p>
+Une partie du travail consistait à faire avancer les différentes
+demandes nécessaires avant l’intervention. Cela pouvait par exemple
+concerner une réservation de HCP, une modification ou une vérification
+sur un pare-feu, ou encore une action devant être réalisée par
+un prestataire.
+</p>
+
+<p style="margin-top:12px;">
+L’objectif était de ne pas attendre le jour de l’intervention
+pour découvrir qu’une demande n’avait pas été traitée. Je devais
+donc suivre les différentes actions et m’assurer qu’elles étaient
+réalisées dans les délais.
+</p>
+
+</div>
+
+
+<!-- PRESTATAIRES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>Les échanges avec les prestataires</h3>
+
+<p>
+Les prestataires avaient également un rôle important lorsqu’une
+intervention nécessitait leur présence ou leur intervention.
+Il fallait alors leur transmettre les informations nécessaires
+et s’assurer qu’ils avaient bien connaissance de la date prévue.
+</p>
+
+<p style="margin-top:12px;">
+Je devais également suivre l’avancement et vérifier que les actions
+prévues étaient bien réalisées avant l’intervention. Cette
+coordination permettait d’éviter les blocages une fois sur site.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté était de gérer plusieurs demandes en
+parallèle avec des délais parfois différents. Certaines actions
+dépendaient également d’autres personnes ou d’autres équipes.
+</p>
+
+<p style="margin-top:12px;">
+Il fallait donc rester attentif à l’avancement de chaque demande,
+relancer lorsque cela était nécessaire et surtout anticiper les
+problèmes suffisamment tôt pour pouvoir trouver une solution avant
+la date prévue.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- ETAPES -->
+
+<div class="steps-box reveal">
+
+<h3>Comment je gérais la préparation des interventions</h3>
+
+
+<div class="step">
+
+<span class="step-number">1</span>
+
+<p>
+Je commençais par prendre connaissance de la date prévue de
+l’intervention et des différentes actions qui devaient être
+réalisées avant celle-ci.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">2</span>
+
+<p>
+J’identifiais les personnes ou les équipes à contacter en fonction
+de chaque demande : équipe nationale, équipe technique, sécurité
+ou prestataire.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">3</span>
+
+<p>
+Je transmettais les informations nécessaires et je suivais
+l’avancement des différentes demandes afin de savoir ce qui
+avait déjà été réalisé et ce qui restait à faire.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">4</span>
+
+<p>
+Lorsque certaines actions prenaient du retard, je relançais
+les interlocuteurs concernés afin d’éviter que cela ait un impact
+sur la date prévue de l’intervention.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">5</span>
+
+<p>
+Enfin, avant l’intervention, je vérifiais que les éléments
+importants étaient prêts afin que l’équipe puisse intervenir
+sur site dans les meilleures conditions.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Cette expérience m’a permis de comprendre que la réussite d’une
+intervention ne dépend pas uniquement de ce qui est réalisé
+sur le terrain. Une grande partie du travail se fait en amont,
+notamment grâce à la communication et au suivi des différentes
+actions.
+</p>
+
+<p style="margin-top:12px;">
+J’ai appris à mieux anticiper les délais, à identifier les
+personnes à contacter et à suivre plusieurs demandes en même
+temps. J’ai également compris l’importance des relances lorsqu’une
+action est nécessaire pour pouvoir respecter une date d’intervention.
+</p>
+
+<p style="margin-top:12px;">
+Aujourd’hui, je fais davantage attention à préparer les choses
+à l’avance et à ne pas attendre le dernier moment. Cette
+organisation permet de limiter les imprévus et surtout d’éviter
+de devoir repousser une intervention simplement parce qu’un
+élément n’a pas été préparé à temps.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

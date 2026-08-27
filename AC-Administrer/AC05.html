@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Communiquer avec les acteurs du projet</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMMUNICATION PROJET
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TYPES D'ACTEURS
+========================= */
+
+.argument-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.argument {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.argument.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   ETAPES
+========================= */
+
+.steps-box {
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.06),
+            rgba(255,255,255,0.02)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+}
+
+.steps-box h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    min-width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.12);
+
+    border: 1px solid rgba(59,130,246,0.25);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.step p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .steps-box,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Communiquer avec les acteurs du projet
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Échanger • Coordonner • Suivre • Transmettre
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Communiquer avec les acteurs du projet
+</h3>
+
+<p>
+Dans le cadre de mon alternance, j’ai été amenée à échanger
+avec différents acteurs afin de faire avancer les demandes
+et les projets sur lesquels je travaillais.
+</p>
+
+<p style="margin-top:12px;">
+Ces échanges pouvaient se faire avec des personnes du niveau
+national, avec des équipes techniques ou encore avec des
+prestataires externes. Selon les situations, je devais
+expliquer une demande, récupérer des informations, suivre
+une intervention ou transmettre les éléments nécessaires
+à la résolution d’un problème.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Un exemple de suivi</h3>
+
+<p>
+Cet espace peut être utilisé pour présenter une capture d’écran
+d’un outil de suivi, d’une demande technique ou d’un support
+utilisé lors des échanges avec les différents interlocuteurs.
+</p>
+
+</div>
+
+
+<!-- =========================
+     REMPLACER L'IMAGE ICI
+========================= -->
+
+<img
+    src="../assets/images/communication-projet.png"
+    alt="Exemple de communication et de suivi de projet"
+    class="demo-image"
+>
+
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>Le contexte</h3>
+
+<p>
+Pendant mon alternance, certaines tâches nécessitaient de
+communiquer avec des personnes qui ne faisaient pas directement
+partie de mon équipe.
+</p>
+
+<p style="margin-top:12px;">
+Par exemple, pour certaines demandes réseau, je pouvais avoir
+besoin de contacter des personnes du niveau national afin
+d’obtenir une réservation de HCP ou de faire avancer une demande
+liée à l’infrastructure.
+</p>
+
+</div>
+
+
+<!-- PREPARATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>La préparation</h3>
+
+<p>
+Avant de contacter un interlocuteur, je devais d’abord
+comprendre précisément la demande et rassembler les informations
+nécessaires.
+</p>
+
+<p style="margin-top:12px;">
+Cela me permettait d’expliquer clairement la situation et
+d’éviter des échanges supplémentaires simplement parce qu’une
+information importante n’avait pas été transmise dès le départ.
+</p>
+
+</div>
+
+
+<!-- ACTEURS -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>Les différents acteurs</h3>
+
+<p>
+Au cours de mon alternance, j’ai été amenée à échanger avec
+plusieurs types d’interlocuteurs. La manière de communiquer
+pouvait varier en fonction de leur rôle et de la nature de
+la demande.
+</p>
+
+<div class="argument-list">
+
+<span class="argument">Équipe nationale</span>
+<span class="argument">Équipe réseau</span>
+<span class="argument">Équipe sécurité</span>
+<span class="argument important">Prestataires</span>
+<span class="argument important">Support technique</span>
+
+</div>
+
+</div>
+
+
+<!-- DEMANDES TECHNIQUES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>Les demandes techniques</h3>
+
+<p>
+Une partie de mes échanges concernait des demandes techniques.
+Par exemple, je pouvais avoir besoin de faire avancer une
+réservation de HCP, de demander une intervention ou encore
+d’échanger concernant la configuration d’un pare-feu.
+</p>
+
+<p style="margin-top:12px;">
+Dans ces situations, je devais transmettre les informations
+nécessaires et suivre la demande jusqu’à ce qu’elle soit
+traitée ou qu’une réponse puisse être apportée.
+</p>
+
+</div>
+
+
+<!-- PRESTATAIRES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>Les échanges avec les prestataires</h3>
+
+<p>
+J’ai également été amenée à communiquer avec des prestataires
+externes lorsqu’une intervention ou une action nécessitait
+leur participation.
+</p>
+
+<p style="margin-top:12px;">
+Il fallait alors expliquer le besoin, transmettre les éléments
+techniques utiles et suivre l’avancement de l’intervention.
+Ces échanges m’ont appris à être précise tout en restant
+compréhensible pour une personne qui n’avait pas forcément
+le même contexte que moi.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>Les difficultés rencontrées</h3>
+
+<p>
+La principale difficulté était parfois de communiquer avec
+des personnes qui avaient des rôles ou des niveaux techniques
+différents.
+</p>
+
+<p style="margin-top:12px;">
+Je devais donc adapter mes explications selon mon interlocuteur,
+tout en restant suffisamment précise sur les éléments techniques.
+J’ai aussi appris à relancer une demande lorsque cela était
+nécessaire sans perdre le suivi de l’intervention.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- ETAPES -->
+
+<div class="steps-box reveal">
+
+<h3>Comment je gérais mes échanges</h3>
+
+
+<div class="step">
+
+<span class="step-number">1</span>
+
+<p>
+Je commençais par identifier clairement le besoin et les
+informations dont je disposais avant de contacter l’interlocuteur.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">2</span>
+
+<p>
+Je préparais les éléments nécessaires afin de présenter la
+demande de manière claire et précise.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">3</span>
+
+<p>
+Je contactais la personne ou l’équipe concernée en adaptant
+mon explication à son rôle et à son niveau de connaissance.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">4</span>
+
+<p>
+Je suivais ensuite l’avancement de la demande et je relançais
+si une action ou une réponse était encore nécessaire.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<span class="step-number">5</span>
+
+<p>
+Enfin, je transmettais les informations obtenues aux personnes
+concernées afin que la demande puisse continuer à avancer.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Cette expérience m’a permis de comprendre que la communication
+est une partie importante du travail dans le domaine des réseaux.
+Même lorsqu’une tâche est principalement technique, elle nécessite
+souvent de travailler avec plusieurs personnes pour pouvoir être
+réalisée correctement.
+</p>
+
+<p style="margin-top:12px;">
+Mon alternance m’a permis de devenir plus à l’aise dans mes échanges
+professionnels. J’ai appris à formuler une demande, à expliquer
+un problème, à récupérer les informations dont j’avais besoin
+et à assurer le suivi jusqu’à sa résolution.
+</p>
+
+<p style="margin-top:12px;">
+Je retiens surtout qu’une bonne communication permet de gagner
+du temps et d’éviter les incompréhensions. Aujourd’hui, je fais
+davantage attention à adapter mon discours à la personne avec
+qui je travaille et à transmettre les informations de manière
+claire et structurée.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
