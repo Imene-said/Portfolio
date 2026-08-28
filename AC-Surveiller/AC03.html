@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Réagir face à un incident de sécurité</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================
+   CARTES
+========================= */
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   OUTILS
+========================= */
+
+.tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tool {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.tool.security {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   BILAN
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Réagir face à un incident de sécurité
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Détection • Réaction • Sauvegarde • Restauration • Continuité
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+AC 35.03
+</div>
+
+<h3>
+Réagir face à un incident de sécurité
+</h3>
+
+<p>
+Dans le cadre d’un projet d’architecture et de gouvernance
+pour une PME, j’ai travaillé sur la mise en place de
+procédures permettant de réagir face à un incident de
+sécurité majeur, notamment dans le cas d’une attaque par
+rançongiciel.
+</p>
+
+<p style="margin-top:12px;">
+L’objectif était d’anticiper une situation de crise afin
+de limiter les pertes de données, réduire le temps
+d’interruption et permettre à l’entreprise de reprendre
+son activité dans les meilleures conditions.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>
+Stratégie de sauvegarde et de restauration
+</h3>
+
+<p>
+Cette image peut présenter l’architecture de sauvegarde,
+le fonctionnement de Proxmox Backup Server ou encore
+le schéma de restauration utilisé dans le projet.
+</p>
+
+</div>
+
+
+<img
+    src="../assets/images/incident-securite.png"
+    alt="Architecture de sauvegarde et de restauration"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Exemple de stratégie de sauvegarde et de restauration
+</p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>
+Le contexte
+</h3>
+
+<p>
+Dans le cadre du projet, nous avons étudié les conséquences
+qu’une cyberattaque pourrait avoir sur une petite entreprise.
+</p>
+
+<p style="margin-top:12px;">
+Une attaque par ransomware peut rendre les fichiers et les
+serveurs indisponibles. Il est donc nécessaire de prévoir
+à l’avance les actions à effectuer afin de limiter l’impact
+sur l’activité.
+</p>
+
+</div>
+
+
+<!-- OBJECTIF -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>
+L’objectif
+</h3>
+
+<p>
+L’objectif était de garantir la continuité de l’activité
+même en cas d’incident majeur.
+</p>
+
+<p style="margin-top:12px;">
+Nous avons donc réfléchi à une stratégie permettant de
+protéger les sauvegardes, de restaurer les systèmes et
+de disposer de procédures claires pour guider les
+personnes chargées de gérer la crise.
+</p>
+
+</div>
+
+
+<!-- SAUVEGARDE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>
+La stratégie de sauvegarde
+</h3>
+
+<p>
+J’ai travaillé sur la mise en place d’une stratégie de
+sauvegarde basée sur la règle 3-2-1-1-0 afin de limiter
+le risque de perte définitive des données.
+</p>
+
+<p style="margin-top:12px;">
+L’utilisation de <strong>Proxmox Backup Server</strong>
+permet de centraliser et de gérer les sauvegardes des
+machines virtuelles et des systèmes de l’infrastructure.
+</p>
+
+<div class="tools-list">
+
+<span class="tool">Proxmox</span>
+<span class="tool">Backup Server</span>
+<span class="tool security">3-2-1-1-0</span>
+<span class="tool security">Sauvegarde</span>
+
+</div>
+
+</div>
+
+
+<!-- IMMUTABILITE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>
+La protection des sauvegardes
+</h3>
+
+<p>
+Une sauvegarde ne suffit pas si un attaquant peut également
+la supprimer ou la chiffrer. J’ai donc pris en compte la
+nécessité de conserver une copie protégée et immuable.
+</p>
+
+<p style="margin-top:12px;">
+L’utilisation d’un stockage externalisé avec un mécanisme
+d’immutabilité permet de protéger les sauvegardes contre
+une suppression ou une modification malveillante.
+</p>
+
+</div>
+
+
+<!-- PROCEDURES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>
+Les procédures d’urgence
+</h3>
+
+<p>
+J’ai également travaillé sur la formalisation des
+procédures à suivre en cas d’incident afin de ne pas
+dépendre uniquement des connaissances d’une personne.
+</p>
+
+<p style="margin-top:12px;">
+Les différentes étapes doivent être clairement indiquées :
+identifier l’incident, isoler les systèmes concernés,
+protéger les sauvegardes, vérifier leur intégrité puis
+restaurer progressivement les services.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>
+Les difficultés rencontrées
+</h3>
+
+<p>
+La principale difficulté était de s’assurer que les
+sauvegardes disponibles seraient réellement utilisables
+après une attaque.
+</p>
+
+<p style="margin-top:12px;">
+Une sauvegarde qui n’a jamais été testée peut être
+incomplète ou inutilisable au moment où l’entreprise
+en a le plus besoin. Il est donc nécessaire de vérifier
+régulièrement les restaurations.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>
+Ce que je retiens de cette compétence
+</h3>
+
+<p>
+Cette expérience m’a permis de comprendre que réagir face
+à un incident de sécurité demande autant de préparation
+que de compétences techniques.
+</p>
+
+<p style="margin-top:12px;">
+La sauvegarde, la restauration et les procédures d’urgence
+doivent être préparées avant qu’un incident ne se produise.
+Cela permet de gagner du temps et d’éviter de prendre des
+décisions dans l’urgence.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également compris l’importance de tester régulièrement
+les sauvegardes et les procédures de restauration afin
+d’être certain qu’elles fonctionneront réellement lors
+d’une situation de crise.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

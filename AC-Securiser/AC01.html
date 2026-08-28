@@ -1,0 +1,282 @@
+<!-- =========================
+     INTRODUCTION
+========================= -->
+
+<div class="glass reveal project-intro">
+
+    <div class="label">
+        La compétence
+    </div>
+
+    <h3>
+        Sécuriser une infrastructure réseau
+    </h3>
+
+    <p>
+        Dans le cadre de la SAÉ 3.03 « Pépinière Multi-Sites », j’ai
+        participé à la mise en place d’une infrastructure réseau
+        pour une entreprise en développement. Une partie importante
+        du projet consistait à prendre en compte la sécurité et la
+        continuité de service afin de protéger les échanges entre
+        les différents sites.
+    </p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+    <div class="demo-image-header">
+
+        <h3>
+            Architecture réseau sécurisée
+        </h3>
+
+        <p>
+            Schéma de l’infrastructure mise en place dans le cadre
+            de la SAÉ 3.03, avec l’interconnexion sécurisée des
+            différents sites.
+        </p>
+
+    </div>
+
+    <img
+        src="../assets/images/sae303-reseau.png"
+        alt="Architecture réseau sécurisée de la SAÉ 3.03"
+        class="demo-image"
+    >
+
+    <p class="image-caption">
+        Exemple de l’architecture réseau réalisée
+    </p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">01</span>
+
+    <h3>
+        Le contexte
+    </h3>
+
+    <p>
+        Dans le cadre de la SAÉ 3.03 « Pépinière Multi-Sites »,
+        nous devions concevoir une infrastructure réseau pour
+        une entreprise en pleine expansion avec plusieurs sites.
+    </p>
+
+    <p style="margin-top:12px;">
+        Le réseau devait permettre aux collaborateurs de
+        communiquer entre les différents sites tout en assurant
+        la sécurité des échanges et la disponibilité des services.
+    </p>
+
+</div>
+
+
+<!-- OBJECTIFS -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">02</span>
+
+    <h3>
+        Les objectifs
+    </h3>
+
+    <p>
+        L’objectif était de construire une infrastructure capable
+        de répondre aux besoins de l’entreprise tout en limitant
+        les risques liés aux communications sur un réseau public.
+    </p>
+
+    <p style="margin-top:12px;">
+        Il fallait également prévoir des solutions permettant
+        de maintenir le réseau disponible en cas de panne d’un
+        équipement critique.
+    </p>
+
+</div>
+
+
+<!-- SECURISATION -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">03</span>
+
+    <h3>
+        La sécurisation des communications
+    </h3>
+
+    <p>
+        Pour sécuriser les échanges entre les deux sites, nous
+        avons mis en place un tunnel <strong>GRE over IPsec</strong>.
+        GRE permettait d’encapsuler le trafic tandis qu’IPsec
+        assurait le chiffrement des données circulant à travers
+        le réseau public.
+    </p>
+
+    <p style="margin-top:12px;">
+        Cette solution permettait aux deux réseaux de communiquer
+        de manière sécurisée tout en simulant une connexion entre
+        deux sites d’une même entreprise.
+    </p>
+
+</div>
+
+
+<!-- FILTRAGE -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">04</span>
+
+    <h3>
+        Le contrôle des accès
+    </h3>
+
+    <p>
+        Nous avons également utilisé des <strong>ACL</strong>
+        (Access Control Lists) afin de contrôler les flux réseau.
+        Elles permettaient de définir quelles communications
+        étaient autorisées ou bloquées.
+    </p>
+
+    <p style="margin-top:12px;">
+        L’objectif était de limiter les accès inutiles tout en
+        permettant aux utilisateurs d’accéder aux services dont
+        ils avaient besoin.
+    </p>
+
+</div>
+
+
+<!-- DISPONIBILITE -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">05</span>
+
+    <h3>
+        La continuité de service
+    </h3>
+
+    <p>
+        La sécurité ne concernait pas uniquement la protection
+        contre les attaques. Nous devions également réfléchir
+        à la disponibilité du réseau en cas de panne.
+    </p>
+
+    <p style="margin-top:12px;">
+        Nous avons donc utilisé <strong>HSRP</strong> afin de
+        mettre en place une solution de redondance entre plusieurs
+        équipements. En cas de défaillance d’un équipement,
+        un autre pouvait prendre le relais.
+    </p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">06</span>
+
+    <h3>
+        Les difficultés rencontrées
+    </h3>
+
+    <p>
+        La principale difficulté a été de comprendre et de
+        configurer plusieurs mécanismes que nous n’avions pas
+        encore beaucoup utilisés, notamment le fonctionnement
+        d’un tunnel GRE associé à IPsec.
+    </p>
+
+    <p style="margin-top:12px;">
+        Il fallait également être attentif à la configuration
+        des ACL afin de ne pas bloquer les communications
+        nécessaires au fonctionnement de l’infrastructure.
+    </p>
+
+</div>
+
+
+<!-- TECHNOLOGIES -->
+
+<div class="project-card tech-card reveal">
+
+    <span class="card-number">07</span>
+
+    <h3>
+        Les technologies utilisées
+    </h3>
+
+    <p>
+        Plusieurs technologies réseau ont été utilisées pour
+        construire et sécuriser l’infrastructure.
+    </p>
+
+    <div class="tech-list">
+
+        <span class="tech">Cisco</span>
+        <span class="tech">GRE</span>
+        <span class="tech security">IPsec</span>
+        <span class="tech security">ACL</span>
+        <span class="tech">HSRP</span>
+        <span class="tech">Routage</span>
+        <span class="tech">Commutation</span>
+        <span class="tech security">Sécurité réseau</span>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+    <h3>
+        Ce que je retiens de ce projet
+    </h3>
+
+    <p>
+        Ce projet m’a permis de comprendre qu’une infrastructure
+        réseau doit être pensée à la fois pour être
+        <strong>sécurisée et disponible</strong>. Il ne suffit pas
+        de protéger les communications : il faut également
+        anticiper les pannes et prévoir des mécanismes permettant
+        au réseau de continuer à fonctionner.
+    </p>
+
+    <p style="margin-top:12px;">
+        J’ai notamment développé mes connaissances sur les
+        tunnels VPN, le chiffrement IPsec, les listes de contrôle
+        d’accès et la redondance avec HSRP. Cette SAÉ m’a également
+        permis de mieux comprendre les contraintes d’une
+        infrastructure multi-sites en entreprise.
+    </p>
+
+    <p style="margin-top:12px;">
+        En situation réelle, je commencerais par réaliser une
+        analyse des risques plus structurée afin d’identifier
+        les services critiques, de prioriser les protections
+        et de prévoir les solutions de secours adaptées.
+    </p>
+
+</div>

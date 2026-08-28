@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Appliquer une méthodologie de tests de pénétration</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================
+   CARTES
+========================= */
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   OUTILS
+========================= */
+
+.tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tool {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.tool.security {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   BILAN
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Appliquer une méthodologie de tests de pénétration
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Reconnaissance • Analyse • Tests • Vulnérabilités • Sécurité
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Appliquer une méthodologie de tests de pénétration
+</h3>
+
+<p>
+Dans le cadre d’un exercice de cybersécurité de type Warbox,
+j’ai réalisé un test de pénétration sur l’infrastructure
+d’une entreprise fictive afin d’identifier différentes
+vulnérabilités.
+</p>
+
+<p style="margin-top:12px;">
+J’ai utilisé une machine sous Kali Linux ainsi que plusieurs
+outils permettant d’analyser les services et les applications
+exposés.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>
+Environnement de test
+</h3>
+
+<p>
+Cette image peut présenter une capture de mon environnement
+Kali Linux, d’un scan Nmap ou des différents outils utilisés
+pendant le test de pénétration.
+</p>
+
+</div>
+
+<img
+    src="../assets/images/pentest-warbox.png"
+    alt="Environnement de test de pénétration sous Kali Linux"
+    class="demo-image"
+>
+
+<p class="image-caption">
+Exemple de réalisation lors du test de pénétration
+</p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>
+Le contexte
+</h3>
+
+<p>
+Le projet consistait à analyser une infrastructure fictive
+afin de rechercher des failles de sécurité pouvant être
+exploitées par un attaquant.
+</p>
+
+<p style="margin-top:12px;">
+L’objectif était de reproduire différentes étapes d’un
+test d’intrusion dans un environnement contrôlé et de
+comprendre les risques liés aux mauvaises configurations
+des services.
+</p>
+
+</div>
+
+
+<!-- OBJECTIF -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>
+L’objectif
+</h3>
+
+<p>
+L’objectif était de se placer dans la situation d’un
+attaquant afin d’identifier les points faibles de
+l’infrastructure.
+</p>
+
+<p style="margin-top:12px;">
+Cette démarche permet ensuite de comprendre les risques
+pour le système d’information et de proposer des mesures
+permettant de corriger les vulnérabilités découvertes.
+</p>
+
+</div>
+
+
+<!-- RECONNAISSANCE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>
+La reconnaissance
+</h3>
+
+<p>
+J’ai commencé par une phase de reconnaissance afin
+d’identifier les machines accessibles et les services
+présents sur l’infrastructure.
+</p>
+
+<p style="margin-top:12px;">
+J’ai notamment utilisé Nmap pour analyser les ports
+ouverts et déterminer les services disponibles sur
+les différentes machines.
+</p>
+
+<div class="tools-list">
+
+<span class="tool">Kali Linux</span>
+<span class="tool">Nmap</span>
+<span class="tool security">Analyse réseau</span>
+
+</div>
+
+</div>
+
+
+<!-- ANALYSE WEB -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>
+L’analyse des services
+</h3>
+
+<p>
+Après avoir identifié les services disponibles, j’ai
+analysé leur configuration afin de rechercher d’éventuelles
+failles de sécurité.
+</p>
+
+<p style="margin-top:12px;">
+Pour la partie web, j’ai utilisé WPScan afin d’analyser
+l’installation WordPress et de rechercher des informations
+ou des fichiers accessibles publiquement.
+</p>
+
+<div class="tools-list">
+
+<span class="tool">WPScan</span>
+<span class="tool">WordPress</span>
+<span class="tool security">Audit web</span>
+
+</div>
+
+</div>
+
+
+<!-- FTP -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>
+Les tests sur les services
+</h3>
+
+<p>
+J’ai également vérifié la configuration du service FTP
+afin de déterminer si une connexion anonyme était possible.
+</p>
+
+<p style="margin-top:12px;">
+Cette vérification m’a permis d’identifier une mauvaise
+configuration donnant accès à un fichier qui n’aurait pas
+dû être accessible.
+</p>
+
+<p style="margin-top:12px;">
+Cette situation montre l’importance de correctement
+sécuriser chaque service exposé sur une infrastructure.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>
+Les difficultés rencontrées
+</h3>
+
+<p>
+La principale difficulté a été d’analyser correctement
+les nombreux résultats obtenus lors des différents scans.
+</p>
+
+<p style="margin-top:12px;">
+Les outils de pentest peuvent générer beaucoup
+d’informations. Il faut donc vérifier chaque résultat
+afin de déterminer s’il correspond réellement à une
+vulnérabilité.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également dû comprendre le fonctionnement des
+différents services avant de pouvoir identifier leur
+niveau de risque.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>
+Ce que je retiens de ce projet
+</h3>
+
+<p>
+Cette expérience m’a permis de comprendre qu’un test de
+pénétration doit être réalisé de manière méthodique.
+Il ne suffit pas d’utiliser des outils automatisés :
+il faut savoir interpréter les résultats, vérifier les
+vulnérabilités et comprendre leur impact sur le système
+d’information.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également compris qu’une infrastructure peut être
+compromise à cause d’un service mal configuré, même
+lorsque l’application principale semble correctement
+sécurisée.
+</p>
+
+<p style="margin-top:12px;">
+Ce projet m’a ainsi permis de développer ma capacité
+d’analyse et de mieux comprendre la démarche utilisée
+lors d’un audit de sécurité.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

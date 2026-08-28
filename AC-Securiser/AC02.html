@@ -1,0 +1,315 @@
+<!-- =========================
+     INTRODUCTION
+========================= -->
+
+<div class="glass reveal project-intro">
+
+    <div class="label">
+        La compétence
+    </div>
+
+    <h3>
+        Sécuriser une infrastructure réseau
+    </h3>
+
+    <p>
+        Dans le cadre de mes projets en réseau et en cybersécurité,
+        j’ai travaillé sur la mise en place et la sécurisation d’une
+        infrastructure multi-sites à l’aide d’un pare-feu Stormshield.
+        L’objectif était de permettre aux différents réseaux de
+        communiquer entre eux tout en contrôlant et en sécurisant
+        les flux.
+    </p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+    <div class="demo-image-header">
+
+        <h3>
+            Architecture sécurisée avec Stormshield
+        </h3>
+
+        <p>
+            Schéma de l’infrastructure présentant l’interconnexion
+            des sites, le tunnel GRE et les mécanismes de sécurité
+            mis en place sur le pare-feu.
+        </p>
+
+    </div>
+
+    <img
+        src="../assets/images/stormshield-gre.png"
+        alt="Architecture réseau avec pare-feu Stormshield et tunnel GRE"
+        class="demo-image"
+    >
+
+    <p class="image-caption">
+        Architecture réseau sécurisée et interconnexion des sites
+    </p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">01</span>
+
+    <h3>
+        Le contexte
+    </h3>
+
+    <p>
+        Dans le cadre de ce projet, nous devions mettre en place
+        une infrastructure permettant de relier plusieurs réseaux
+        tout en prenant en compte les problématiques de sécurité.
+    </p>
+
+    <p style="margin-top:12px;">
+        Le trafic devait notamment pouvoir circuler entre les
+        différents sites à travers un réseau public, ce qui
+        nécessitait de sécuriser les communications et de contrôler
+        les accès.
+    </p>
+
+</div>
+
+
+<!-- OBJECTIFS -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">02</span>
+
+    <h3>
+        Les objectifs
+    </h3>
+
+    <p>
+        L’objectif principal était de permettre aux utilisateurs
+        des différents sites de communiquer avec les ressources
+        nécessaires tout en protégeant les échanges.
+    </p>
+
+    <p style="margin-top:12px;">
+        Il fallait également mettre en place des règles de filtrage
+        afin de contrôler les communications et empêcher les flux
+        qui ne correspondaient pas aux besoins de l’entreprise.
+    </p>
+
+</div>
+
+
+<!-- STORMSHIELD -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">03</span>
+
+    <h3>
+        La mise en place du pare-feu Stormshield
+    </h3>
+
+    <p>
+        J’ai travaillé avec un pare-feu <strong>Stormshield</strong>
+        afin de sécuriser les communications entre les différents
+        réseaux. Le pare-feu permettait de contrôler les flux
+        entrants et sortants et d’appliquer les règles de sécurité
+        définies pour l’infrastructure.
+    </p>
+
+    <p style="margin-top:12px;">
+        J’ai notamment dû comprendre le fonctionnement des interfaces,
+        des règles de filtrage et du routage afin de permettre
+        uniquement les communications nécessaires.
+    </p>
+
+</div>
+
+
+<!-- TUNNEL GRE -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">04</span>
+
+    <h3>
+        Le tunnel GRE
+    </h3>
+
+    <p>
+        Pour permettre la communication entre les différents sites,
+        nous avons mis en place un <strong>tunnel GRE</strong>.
+        Celui-ci permettait d’encapsuler le trafic afin de faire
+        circuler les données entre les réseaux distants.
+    </p>
+
+    <p style="margin-top:12px;">
+        Le tunnel devait être correctement configuré sur les
+        équipements afin que les réseaux puissent communiquer
+        sans perturber le reste de l’infrastructure.
+    </p>
+
+</div>
+
+
+<!-- IPSEC -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">05</span>
+
+    <h3>
+        La sécurisation avec IPsec
+    </h3>
+
+    <p>
+        Le tunnel GRE étant amené à traverser un réseau public,
+        nous avons associé <strong>IPsec</strong> afin de sécuriser
+        les communications.
+    </p>
+
+    <p style="margin-top:12px;">
+        IPsec permet de chiffrer les données échangées et de
+        protéger les communications contre l’interception.
+        L’association de GRE et IPsec permettait donc d’avoir
+        une interconnexion adaptée à notre architecture tout en
+        protégeant les données qui circulaient entre les sites.
+    </p>
+
+</div>
+
+
+<!-- FILTRAGE -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">06</span>
+
+    <h3>
+        Le filtrage des flux
+    </h3>
+
+    <p>
+        Une fois la communication entre les sites établie,
+        il fallait contrôler les flux autorisés. J’ai donc
+        travaillé sur les règles de filtrage du pare-feu afin
+        de limiter les communications aux services nécessaires.
+    </p>
+
+    <p style="margin-top:12px;">
+        Cette étape était importante pour éviter qu’un utilisateur
+        ou une machine puisse accéder librement à l’ensemble du
+        réseau sans autorisation.
+    </p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+    <span class="card-number">07</span>
+
+    <h3>
+        Les difficultés rencontrées
+    </h3>
+
+    <p>
+        La principale difficulté a été de comprendre comment les
+        différents éléments fonctionnaient ensemble. Il fallait
+        notamment prendre en compte le routage, le tunnel GRE,
+        IPsec et les règles du pare-feu Stormshield.
+    </p>
+
+    <p style="margin-top:12px;">
+        Une erreur dans une route ou dans une règle de filtrage
+        pouvait empêcher complètement la communication entre
+        les deux réseaux. Les tests et les vérifications ont donc
+        été importants pour identifier les problèmes.
+    </p>
+
+</div>
+
+
+<!-- TECHNOLOGIES -->
+
+<div class="project-card tech-card reveal">
+
+    <span class="card-number">08</span>
+
+    <h3>
+        Les technologies utilisées
+    </h3>
+
+    <p>
+        Ce projet m’a permis de mettre en pratique plusieurs
+        technologies liées à l’interconnexion et à la sécurité
+        des réseaux.
+    </p>
+
+    <div class="tech-list">
+
+        <span class="tech">Stormshield</span>
+        <span class="tech">Pare-feu</span>
+        <span class="tech">GRE</span>
+        <span class="tech security">IPsec</span>
+        <span class="tech security">VPN</span>
+        <span class="tech security">Filtrage</span>
+        <span class="tech">Routage</span>
+        <span class="tech security">Sécurité réseau</span>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+    <h3>
+        Ce que je retiens de ce projet
+    </h3>
+
+    <p>
+        Ce projet m’a permis de mieux comprendre le rôle d’un
+        pare-feu dans une infrastructure réseau. J’ai appris
+        qu’un équipement de sécurité ne sert pas uniquement à
+        bloquer des connexions, mais qu’il doit être configuré
+        précisément pour autoriser les communications nécessaires
+        tout en limitant les accès inutiles.
+    </p>
+
+    <p style="margin-top:12px;">
+        J’ai également développé mes connaissances sur
+        l’interconnexion de réseaux avec <strong>GRE</strong> et
+        sur la sécurisation des communications avec
+        <strong>IPsec</strong>. La mise en place du tunnel m’a
+        permis de mieux comprendre comment deux sites peuvent
+        communiquer de manière sécurisée à travers un réseau public.
+    </p>
+
+    <p style="margin-top:12px;">
+        Enfin, ce projet m’a appris l’importance des tests et du
+        dépannage dans la configuration d’une infrastructure.
+        Lorsqu’une communication ne fonctionne pas, il faut
+        vérifier méthodiquement le routage, le tunnel et les règles
+        de sécurité afin d’identifier précisément l’origine du
+        problème.
+    </p>
+
+</div>

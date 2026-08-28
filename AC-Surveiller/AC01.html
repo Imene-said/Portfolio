@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Surveiller l'activité du système d'information</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   ELEMENTS SENTINELONE
+========================= */
+
+.argument-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.argument {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.argument.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   BILAN
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Surveiller l'activité du système d'information
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Superviser • Détecter • Analyser • Réagir
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Surveiller l'activité du système d'information
+</h3>
+
+<p>
+Dans le cadre de mon alternance, j’ai utilisé la solution
+SentinelOne afin de participer à la surveillance de la sécurité
+des postes et des équipements présents dans le système
+d'information de l’entreprise.
+</p>
+
+<p style="margin-top:12px;">
+Cet outil permet de centraliser les informations de sécurité,
+de détecter des comportements suspects et de faire remonter
+des alertes lorsqu’une activité inhabituelle est détectée.
+J’ai ainsi pu découvrir concrètement le fonctionnement d’un
+outil utilisé pour surveiller et protéger un environnement
+informatique professionnel.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Surveillance avec SentinelOne</h3>
+
+<p>
+Cet espace peut présenter une capture d’écran de l’interface
+SentinelOne montrant les alertes, les machines supervisées
+ou les événements de sécurité détectés.
+</p>
+
+</div>
+
+
+<img
+    src="../assets/images/sentinelone-supervision.png"
+    alt="Interface de supervision SentinelOne"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Exemple de surveillance et d'analyse des événements de sécurité
+</p>
+
+</div>
+
+
+<!-- CE QUE J'AI FAIT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>CE QUE J'AI FAIT</h3>
+
+<p>
+Pendant mon alternance, j’ai utilisé SentinelOne pour consulter
+les informations de sécurité remontées par les différents postes
+protégés.
+</p>
+
+<p style="margin-top:12px;">
+J’ai appris à consulter les alertes, à identifier les machines
+concernées et à analyser les événements afin de comprendre
+l’origine d’un comportement considéré comme suspect.
+</p>
+
+</div>
+
+
+<!-- POURQUOI -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>POURQUOI</h3>
+
+<p>
+La surveillance du système d'information permet de détecter
+rapidement une activité inhabituelle ou une menace potentielle.
+Cela permet d’intervenir avant qu’un incident de sécurité
+n’ait des conséquences importantes sur l’entreprise.
+</p>
+
+<p style="margin-top:12px;">
+L’objectif est donc d’avoir une visibilité sur l’état de sécurité
+des équipements et de pouvoir réagir rapidement lorsqu’une
+alerte importante apparaît.
+</p>
+
+</div>
+
+
+<!-- COMMENT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>COMMENT</h3>
+
+<p>
+SentinelOne centralise les événements de sécurité remontés
+par les agents installés sur les postes. Depuis l’interface,
+je pouvais consulter les alertes et les informations associées
+à une machine ou à un événement.
+</p>
+
+<p style="margin-top:12px;">
+Je pouvais notamment regarder le type de détection, la machine
+concernée et les éléments permettant de comprendre pourquoi
+l'activité avait été considérée comme suspecte.
+</p>
+
+<div class="argument-list">
+
+<span class="argument">Supervision</span>
+<span class="argument">Alertes</span>
+<span class="argument">Endpoints</span>
+<span class="argument important">Détection</span>
+<span class="argument important">Analyse</span>
+<span class="argument important">Réponse</span>
+
+</div>
+
+</div>
+
+
+<!-- ANALYSE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>L'analyse des alertes</h3>
+
+<p>
+Lorsqu’une alerte apparaissait, il était important de ne pas
+simplement la considérer comme une attaque. Il fallait d’abord
+analyser les informations disponibles afin de comprendre
+ce qui s’était réellement produit.
+</p>
+
+<p style="margin-top:12px;">
+Cette analyse permet notamment de différencier une activité
+légitime d’un comportement réellement suspect et d’éviter
+de multiplier les faux positifs.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>DIFFICULTÉS</h3>
+
+<p>
+La principale difficulté a été de comprendre la quantité
+d’informations remontées par l’outil. Une alerte peut contenir
+de nombreux éléments techniques qu’il faut apprendre à interpréter.
+</p>
+
+<p style="margin-top:12px;">
+Il fallait également prendre le temps de comprendre le contexte
+de chaque événement afin de ne pas réagir trop rapidement
+à une alerte qui pouvait finalement correspondre à une activité
+normale d’un utilisateur.
+</p>
+
+</div>
+
+
+<!-- APPRENTISSAGE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>CE QUE J'EN AI APPRIS</h3>
+
+<p>
+Cette expérience m’a permis de comprendre l’importance de la
+supervision dans la cybersécurité. Une infrastructure ne peut
+pas être considérée comme sécurisée uniquement parce que des
+protections sont installées.
+</p>
+
+<p style="margin-top:12px;">
+Il faut également surveiller les événements, analyser les alertes
+et être capable d’identifier rapidement les comportements
+anormaux.
+</p>
+
+</div>
+
+
+<!-- AUTREMENT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">07</span>
+
+<h3>CE QUE JE FERAIS AUTREMENT</h3>
+
+<p>
+Avec davantage d’expérience, je chercherais à mieux automatiser
+le traitement des alertes afin de faciliter le travail quotidien
+des équipes techniques.
+</p>
+
+<p style="margin-top:12px;">
+Je mettrais notamment en place des règles permettant de
+prioriser automatiquement les alertes les plus importantes
+et de transmettre les informations nécessaires aux personnes
+chargées de la sécurité.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+L’utilisation de SentinelOne pendant mon alternance m’a permis
+de découvrir concrètement la surveillance d’un système
+d'information dans un environnement professionnel.
+</p>
+
+<p style="margin-top:12px;">
+J’ai appris à consulter des alertes, à analyser des événements
+de sécurité et à comprendre qu’une bonne supervision permet
+de détecter plus rapidement les problèmes et les menaces.
+</p>
+
+<p style="margin-top:12px;">
+Cette expérience m’a également permis de développer mon regard
+sur la cybersécurité : protéger une infrastructure ne consiste
+pas uniquement à installer des solutions de sécurité, mais aussi
+à surveiller leur environnement et à savoir réagir lorsqu’un
+événement inhabituel est détecté.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

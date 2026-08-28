@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Administrer les outils de surveillance du système d'information</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================
+   CARTES
+========================= */
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE CENTREON
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   OUTILS
+========================= */
+
+.tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.tool {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.tool.security {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   BILAN
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Administrer les outils de surveillance du système d'information
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Supervision • Administration • Centreon • Alertes • Infrastructure
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+AC 35.04
+</div>
+
+<h3>
+Administrer les outils de surveillance du système d'information
+</h3>
+
+<p>
+Lors de mon stage de troisième année au Centre Hospitalier
+de Béthune-Beuvry, j’ai découvert et utilisé l’outil Centreon
+pour participer à la surveillance de l’infrastructure
+informatique de l’établissement.
+</p>
+
+<p style="margin-top:12px;">
+J’ai notamment appris à intégrer de nouveaux équipements
+dans la solution de supervision afin qu’ils puissent être
+surveillés par la DSI et que les équipes techniques soient
+alertées en cas de problème.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>
+Administration de Centreon
+</h3>
+
+<p>
+Cette image peut présenter une capture d’écran de Centreon,
+d’un groupe d’hôtes, d’un équipement supervisé ou du tableau
+de bord utilisé pour suivre l’état de l’infrastructure.
+</p>
+
+</div>
+
+
+<img
+    src="../assets/images/centreon-administration.png"
+    alt="Administration de la supervision Centreon"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Exemple d’administration et de supervision avec Centreon
+</p>
+
+</div>
+
+
+<!-- CONTEXTE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>
+Le contexte
+</h3>
+
+<p>
+Lors de mon stage au Centre Hospitalier de Béthune-Beuvry,
+j’ai été amenée à découvrir le fonctionnement de la
+supervision informatique utilisée par la DSI.
+</p>
+
+<p style="margin-top:12px;">
+La supervision permet de suivre l’état des équipements
+et des services afin de détecter rapidement les pannes
+ou les anomalies pouvant avoir un impact sur les utilisateurs.
+</p>
+
+</div>
+
+
+<!-- OBJECTIF -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>
+L’objectif
+</h3>
+
+<p>
+L’objectif était de faire évoluer la supervision en ajoutant
+les nouveaux équipements du parc informatique dans Centreon.
+</p>
+
+<p style="margin-top:12px;">
+Une machine qui n’est pas correctement déclarée dans l’outil
+ne peut pas être surveillée. Il est donc important de maintenir
+la configuration de la solution à jour.
+</p>
+
+</div>
+
+
+<!-- ADMINISTRATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>
+L’administration de Centreon
+</h3>
+
+<p>
+J’ai appris à utiliser l’interface d’administration de
+Centreon afin d’ajouter et d’organiser les équipements
+à superviser.
+</p>
+
+<p style="margin-top:12px;">
+J’ai notamment travaillé avec les notions d’hôtes et de
+services afin d'associer à chaque équipement les contrôles
+nécessaires à sa surveillance.
+</p>
+
+<div class="tools-list">
+
+<span class="tool">Centreon</span>
+<span class="tool">Hôtes</span>
+<span class="tool">Services</span>
+<span class="tool security">Supervision</span>
+
+</div>
+
+</div>
+
+
+<!-- CONFIGURATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>
+La configuration des équipements
+</h3>
+
+<p>
+Lors de l’ajout d’un équipement, plusieurs informations
+doivent être renseignées correctement, notamment son nom,
+son adresse IP et les paramètres permettant au collecteur
+de communiquer avec lui.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également appris à organiser les équipements dans
+des groupes afin de faciliter leur gestion et de conserver
+une supervision claire et structurée.
+</p>
+
+</div>
+
+
+<!-- VERIFICATION -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>
+La validation de la supervision
+</h3>
+
+<p>
+Après avoir configuré un nouvel équipement, il est nécessaire
+de vérifier que les contrôles fonctionnent correctement.
+</p>
+
+<p style="margin-top:12px;">
+J’ai appris à vérifier les remontées de supervision et à
+m’assurer que les services associés étaient bien pris en
+compte par le système.
+</p>
+
+<p style="margin-top:12px;">
+La validation de la configuration permet de s’assurer que
+l’équipement sera bien surveillé et qu’une alerte pourra
+être générée en cas de problème.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>
+Les difficultés rencontrées
+</h3>
+
+<p>
+La principale difficulté était de ne pas oublier d’informations
+lors de la configuration d’un nouvel équipement.
+</p>
+
+<p style="margin-top:12px;">
+Une simple erreur dans le nom de la machine, son adresse IP,
+le groupe d’hôtes ou le collecteur peut empêcher la supervision
+de fonctionner correctement.
+</p>
+
+<p style="margin-top:12px;">
+Il fallait donc être rigoureux et vérifier chaque paramètre
+avant de valider la configuration.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>
+Ce que je retiens de cette compétence
+</h3>
+
+<p>
+Cette expérience m’a permis de comprendre qu’administrer
+un outil de supervision demande de la rigueur et une bonne
+organisation.
+</p>
+
+<p style="margin-top:12px;">
+J’ai appris qu’un outil comme Centreon doit évoluer en même
+temps que le système d’information. Lorsqu’un nouvel équipement
+est ajouté au réseau, il doit également être intégré à la
+supervision afin de ne pas créer une zone non surveillée.
+</p>
+
+<p style="margin-top:12px;">
+Cette expérience m’a également permis de mieux comprendre
+le rôle de la supervision dans le travail quotidien d’une DSI :
+détecter rapidement les problèmes permet d’intervenir avant
+qu’ils ne deviennent trop importants pour les utilisateurs.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>

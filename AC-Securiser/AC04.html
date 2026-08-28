@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Proposer une architecture sécurisée de système d'information pour une petite structure</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<script defer src="../assets/js/main.js"></script>
+
+<style>
+
+/* =========================
+   PAGE COMPÉTENCE
+========================= */
+
+.ac31-content {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+.project-intro {
+    padding: 35px;
+    margin-bottom: 25px;
+    border-left: 4px solid #3b82f6;
+}
+
+.project-intro .label {
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-intro h3 {
+    margin: 0 0 15px;
+    font-size: 27px;
+}
+
+.project-intro p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(59,130,246,0.45);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,0.10);
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: rgba(96,165,250,0.6);
+}
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+}
+
+.project-card h3::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.8);
+}
+
+.project-card p {
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.demo-image-box {
+    grid-column: span 2;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59,130,246,0.09),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(59,130,246,0.20);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.18);
+}
+
+.demo-image-header {
+    margin-bottom: 20px;
+}
+
+.demo-image-header h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.demo-image-header p {
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.demo-image {
+    width: 100%;
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(59,130,246,0.15);
+}
+
+.image-caption {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   ELEMENTS TECHNIQUES
+========================= */
+
+.argument-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.argument {
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #93c5fd;
+
+    background: rgba(59,130,246,0.10);
+
+    border: 1px solid rgba(59,130,246,0.25);
+}
+
+.argument.important {
+    color: #67e8f9;
+
+    background: rgba(34,211,238,0.08);
+
+    border-color: rgba(34,211,238,0.22);
+}
+
+
+/* =========================
+   BILAN
+========================= */
+
+.skills-box {
+    margin-top: 25px;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.10),
+            rgba(34,211,238,0.04)
+        );
+
+    border: 1px solid rgba(59,130,246,0.18);
+}
+
+.skills-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.skills-box p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-image-box {
+        grid-column: span 1;
+    }
+
+    .project-card,
+    .project-intro,
+    .skills-box,
+    .demo-image-box {
+        padding: 23px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 30px !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="page">
+
+<div class="glow"></div>
+<div class="gridlines"></div>
+<canvas id="particles"></canvas>
+
+
+<header>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+
+<div>
+
+<h1>Imene SAID ERRAHMANI</h1>
+
+<p>Portfolio BUT R&T — Alternance</p>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a class="navlink" href="../index.html">Accueil</a>
+<a class="navlink" href="../cv.html">About</a>
+<a class="navlink" href="../pro.html">Projets professionnels</a>
+<a class="navlink active" href="../cours.html">Apprentissage</a>
+<a class="navlink" href="../faq.html">FAQ</a>
+<a class="navlink" href="../contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="pageActions">
+
+<button class="btnIcon warn" onclick="history.back()">
+
+<span class="ico">←</span>
+
+Retour
+
+</button>
+
+</div>
+
+
+<div
+class="sectionHeader"
+style="justify-content:center;text-align:center;margin-top:20px;"
+>
+
+<div>
+
+<h2 style="font-size:40px;color:#3b82f6;">
+Proposer une architecture sécurisée
+</h2>
+
+<p style="opacity:0.7;margin-top:10px;">
+Analyser • Concevoir • Sécuriser • Garantir la continuité
+</p>
+
+</div>
+
+</div>
+
+
+<div class="ac31-content">
+
+
+<!-- INTRODUCTION -->
+
+<div class="glass reveal project-intro">
+
+<div class="label">
+La compétence
+</div>
+
+<h3>
+Proposer une architecture sécurisée de système d'information pour une petite structure
+</h3>
+
+<p>
+Dans le cadre de la SAÉ 3.03, j’ai participé à la conception
+d’une architecture réseau pour une entreprise composée d’un
+site principal et d’une succursale.
+</p>
+
+<p style="margin-top:12px;">
+L’objectif était de proposer une infrastructure permettant aux
+différents utilisateurs d’accéder aux ressources de l’entreprise
+tout en sécurisant les échanges entre les deux sites et en
+limitant les accès non autorisés.
+</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<!-- IMAGE -->
+
+<div class="demo-image-box reveal">
+
+<div class="demo-image-header">
+
+<h3>Architecture réseau sécurisée</h3>
+
+<p>
+Cette image présente l’architecture mise en place pour relier
+les différents équipements et sécuriser les communications
+entre les réseaux de l’entreprise.
+</p>
+
+</div>
+
+
+<img
+    src="../assets/images/architecture-securisee.png"
+    alt="Architecture réseau sécurisée de l'entreprise"
+    class="demo-image"
+>
+
+
+<p class="image-caption">
+Schéma de l’architecture réseau sécurisée
+</p>
+
+</div>
+
+
+<!-- CE QUE J'AI FAIT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">01</span>
+
+<h3>CE QUE J'AI FAIT</h3>
+
+<p>
+Dans le cadre de la SAÉ 3.03, j’ai participé à la conception
+et à la configuration d’une architecture réseau sécurisée
+pour une entreprise possédant plusieurs sites.
+</p>
+
+<p style="margin-top:12px;">
+J’ai travaillé sur la segmentation du réseau, la configuration
+des équipements et la sécurisation des communications entre
+le siège et la succursale.
+</p>
+
+</div>
+
+
+<!-- POURQUOI -->
+
+<div class="project-card reveal">
+
+<span class="card-number">02</span>
+
+<h3>POURQUOI</h3>
+
+<p>
+L’objectif était de permettre aux collaborateurs de travailler
+sur les différentes ressources de l’entreprise tout en limitant
+les risques de sécurité.
+</p>
+
+<p style="margin-top:12px;">
+La séparation des différents réseaux permet notamment de limiter
+la propagation d’un problème de sécurité et de contrôler les
+communications entre les utilisateurs, les serveurs et Internet.
+</p>
+
+</div>
+
+
+<!-- COMMENT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">03</span>
+
+<h3>COMMENT</h3>
+
+<p>
+J’ai participé à la mise en place de plusieurs réseaux virtuels
+afin de séparer les différents usages de l’entreprise.
+Des règles de filtrage ont ensuite été configurées pour contrôler
+les flux autorisés entre ces différents réseaux.
+</p>
+
+<p style="margin-top:12px;">
+Pour sécuriser les échanges entre les deux sites, nous avons
+également mis en place un tunnel GRE over IPsec. Le protocole
+IPsec permet de chiffrer les communications qui transitent
+entre les deux infrastructures.
+</p>
+
+<div class="argument-list">
+
+<span class="argument">VLAN</span>
+<span class="argument">Routage</span>
+<span class="argument">ACL</span>
+<span class="argument important">GRE</span>
+<span class="argument important">IPsec</span>
+<span class="argument important">VPN</span>
+
+</div>
+
+</div>
+
+
+<!-- SECURITE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">04</span>
+
+<h3>La sécurité de l'architecture</h3>
+
+<p>
+La sécurité a été prise en compte directement lors de la
+conception de l’architecture. Les différents réseaux n’avaient
+pas tous les mêmes droits de communication.
+</p>
+
+<p style="margin-top:12px;">
+Les ACL permettaient de filtrer les communications et de limiter
+les accès inutiles. Le tunnel VPN permettait quant à lui de
+protéger les données échangées entre le site principal et
+la succursale lorsqu’elles traversaient le réseau public.
+</p>
+
+</div>
+
+
+<!-- DIFFICULTES -->
+
+<div class="project-card reveal">
+
+<span class="card-number">05</span>
+
+<h3>DIFFICULTÉS</h3>
+
+<p>
+La principale difficulté a été de faire fonctionner correctement
+les différents éléments de l’architecture sans bloquer les
+communications nécessaires.
+</p>
+
+<p style="margin-top:12px;">
+Il fallait notamment vérifier que le routage, les règles ACL
+et le tunnel GRE over IPsec fonctionnaient ensemble. Une simple
+erreur de configuration pouvait empêcher les deux sites de
+communiquer correctement.
+</p>
+
+</div>
+
+
+<!-- APPRENTISSAGE -->
+
+<div class="project-card reveal">
+
+<span class="card-number">06</span>
+
+<h3>CE QUE J'EN AI APPRIS</h3>
+
+<p>
+Ce projet m’a permis de mieux comprendre qu’une architecture
+réseau doit être pensée en prenant en compte à la fois les
+besoins des utilisateurs, les performances et la sécurité.
+</p>
+
+<p style="margin-top:12px;">
+J’ai également appris qu’il est important de segmenter les
+réseaux et de sécuriser les communications entre les différents
+sites afin de réduire les risques en cas d’incident.
+</p>
+
+</div>
+
+
+<!-- AUTREMENT -->
+
+<div class="project-card reveal">
+
+<span class="card-number">07</span>
+
+<h3>CE QUE JE FERAIS AUTREMENT</h3>
+
+<p>
+En situation réelle, je chercherais à renforcer davantage
+la supervision de l’architecture afin de détecter rapidement
+les comportements anormaux ou les problèmes de communication.
+</p>
+
+<p style="margin-top:12px;">
+Je mettrais également en place une documentation détaillée
+de l’architecture et des règles de sécurité afin de faciliter
+la maintenance et les futures évolutions du réseau.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- BILAN -->
+
+<div class="skills-box reveal">
+
+<h3>Ce que je retiens de cette compétence</h3>
+
+<p>
+Ce projet m’a permis de mettre en pratique plusieurs notions
+de réseau et de cybersécurité dans une architecture complète.
+J’ai compris qu’une infrastructure sécurisée ne repose pas
+sur un seul équipement, mais sur plusieurs mécanismes
+complémentaires.
+</p>
+
+<p style="margin-top:12px;">
+La segmentation avec les VLAN, le filtrage avec les ACL et
+le chiffrement des communications avec IPsec permettent
+ensemble de construire une architecture plus résistante
+aux différentes menaces.
+</p>
+
+<p style="margin-top:12px;">
+Cette SAÉ m’a également permis de mieux comprendre le rôle
+d’un administrateur réseau dans la conception d’une
+infrastructure adaptée aux besoins d’une entreprise.
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<footer class="siteFooter">
+
+<div class="container footerLine">
+
+<span>
+<strong>© 2026 Imene SAID ERRAHMANI</strong>
+</span>
+
+<span>
+Portfolio BUT R&T
+</span>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
